@@ -74,3 +74,23 @@
     </div>
   </div>
 </div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+        <img src=".\public\imgs\uploads\mujeres\4.jpg" alt="45$" width="300" height="250">
+      <h3>Adidas con Nora</h3>
+      <p>Tenis Adidas en colaboracion con Nora</p>
+    </div>
+    <div class="col">
+      <img src=".\public\imgs\uploads\mujeres\13.jpg" alt="30$" width="300" height="250">
+      <h3>Puma Rosado</h3>
+      <p>Tenis Puma Rosado fabricado en taiwan</p>
+    </div>
+    <div class="col">
+      <img src=".\public\imgs\uploads\mujeres\5.jpg" alt="70$" width="300" height="250">
+      <h3>Adidas con Stan Smith</h3>
+      <p>Adidas en colaboracion con Stan Smith</p>
+    </div>
+  </div>
+</div>
