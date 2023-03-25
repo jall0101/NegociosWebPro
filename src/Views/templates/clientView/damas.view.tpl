@@ -38,19 +38,39 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-        <img src="https://www.google.com/search?q=tenis+nike+rosados&sxsrf=APwXEdfnNT8c28-ids3xz6FjMRe_-A6kyA:1679723646490&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi2gpSasvb9AhUpgIQIHUJnDhgQ_AUoAXoECAIQAw&biw=1536&bih=746&dpr=1.25#imgrc=OOBdYXRHerBqdM" alt="50$">
-      <h3>Tenis Nike Rosado</h3>
-      <p>Tenis Nike Rosado fabricado en Taiwan</p>
+        <img src=".\public\imgs\uploads\mujeres\1.jpg" alt="50$" width="300" height="250">
+      <h3>Tenis Adidas Rosado</h3>
+      <p>Tenis Adidas Rosado fabricado en Taiwan</p>
     </div>
     <div class="col">
-      <img src="https://www.google.com/search?q=tenis+nike+rosados&sxsrf=APwXEdfnNT8c28-ids3xz6FjMRe_-A6kyA:1679723646490&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi2gpSasvb9AhUpgIQIHUJnDhgQ_AUoAXoECAIQAw&biw=1536&bih=746&dpr=1.25#imgrc=OOBdYXRHerBqdM" alt="60$">
-      <h3>Tenis Adidas Negros</h3>
-      <p>Tenis Adidas Negro fabricado en Singapur</p>
+      <img src=".\public\imgs\uploads\mujeres\15.jpg" alt="60$" width="300" height="250">
+      <h3>Botas Puma</h3>
+      <p>Botas Puma Negro fabricado en Singapur</p>
     </div>
     <div class="col">
-      <img src="https://www.google.com/search?q=tenis+nike+rosados&sxsrf=APwXEdfnNT8c28-ids3xz6FjMRe_-A6kyA:1679723646490&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi2gpSasvb9AhUpgIQIHUJnDhgQ_AUoAXoECAIQAw&biw=1536&bih=746&dpr=1.25#imgrc=OOBdYXRHerBqdM" alt="69$">
-      <h3>Tenis Puma con Bob Esponja</h3>
-      <p>Colaboracion de Puma con Bob Esponja</p>
+      <img src=".\public\imgs\uploads\mujeres\11.jpg" alt="69$" width="300" height="250">
+      <h3>Tenis Nike Negro</h3>
+      <p>Tenis Nike Negro fabricado en Israel</p>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+        <img src=".\public\imgs\uploads\mujeres\9.jpg" alt="55$" width="300" height="250">
+      <h3>Nike React Morado</h3>
+      <p>Tenis Nike Morado fabricado en Taiwan</p>
+    </div>
+    <div class="col">
+      <img src=".\public\imgs\uploads\mujeres\6.jpg" alt="65$" width="300" height="250">
+      <h3>Adidas con Flores</h3>
+      <p>Tenis adidas con flores</p>
+    </div>
+    <div class="col">
+      <img src=".\public\imgs\uploads\mujeres\18.jpg" alt="70$" width="300" height="250">
+      <h3>Sandalia Puma Morada</h3>
+      <p>Sandalia Puma Morada fabricada en Korea</p>
     </div>
   </div>
 </div>
