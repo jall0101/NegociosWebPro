@@ -1,15 +1,18 @@
 <div class="container-fliud p-2">
-    <h1>Mi Carrito <span class="badge bg-secondary">[ 2 ]</span></h1><br><br>
+    <h1>CHECKOUT</h1><br><br>
     <div class="container">
         <div class="progress" role="progressbar" aria-label="Basic example" style="height: 5px" aria-valuenow="50"
             aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 50%"></div>
+            <div class="progress-bar" style="width: 100%"></div>
         </div>
     </div>
 </div>
 <section class="container-fluid p-0">
     <div class="row">
         <div class="col-lg-6 p-3">
+            <div class="bg-light p-3">
+                <b>1. ORDER DETAILS [ 3 ]</b>
+            </div>
             <div class="row gy-3 ">
                 <div class="col-12 p-0">
                     <div class="row border p-3">
@@ -27,8 +30,6 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
-                                            style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -51,9 +52,7 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
-                                            style="color: #ffffff; font-size:20px;"></i></button>
+                                    <b class="text-danger h3">$54.99</b>
                                 </div>
                             </div>
                         </div>
@@ -76,9 +75,7 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
-                                            style="color: #ffffff; font-size:20px;"></i></button>
+                                    <b class="text-danger h3">$54.99</b>
                                 </div>
                             </div>
                         </div>
@@ -86,8 +83,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 p-3">
+
+            <div class="bg-light p-3 my-5">
+                <b>2. HOW MUCH IS IT?</b>
+            </div>
             <div class="border-top mt-3 border-bottom p-3">
                 <div class="row">
                     <div class="col-6">
@@ -112,8 +111,38 @@
 
                 </div>
             </div>
-
-            <button class="btn col-12 btn-primary p-3">CONTINUAR PEDIDO</button>
+        </div>
+        <div class="col-lg-6 p-3">
+            <div class="bg-light p-3">
+                <b>3. SHIPPING</b>
+            </div>
+            <form class="m-3">
+                <div class="mb-3">
+                    <label for="pais" class="form-label">País</label>
+                    <input type="text" name="pais" id="pais" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado/Departamento</label>
+                    <input type="text" name="estado" id="estado" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="ciudad" class="form-label">Ciudad</label>
+                    <input type="text" name="ciudad" id="ciudad" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" name="direccion" id="direccion" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                    <input type="tel" name="telefono" id="telefono" class="form-control">
+                    <div id="telHelp" class="form-text">No incluya guiones.</div>
+     
+                                   
+                </div>                
+            </form>
+            <br><br>
+            <button class="btn col-12 btn-primary p-3"><i class="fa-brands fa-paypal fa-xl"></i>&nbsp;&nbsp;&nbsp;CONTINUAR CON PAYPAL</button>
         </div>
 
     </div>
