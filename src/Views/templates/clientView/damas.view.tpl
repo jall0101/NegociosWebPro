@@ -59,6 +59,12 @@
   <div class="row">
     <div class="col">
         <img src=".\public\imgs\uploads\mujeres\9.jpg" alt="55$" width="300" height="250">
+        <div class="container text-center">
+    <!-- <div class="row row-cols-auto">
+    <div class="col">Carrito</div>
+    <div class="col">Ver Mas</div>
+    </div>--> 
+</div>
       <h3>Nike React Morado</h3>
       <p>Tenis Nike Morado fabricado en Taiwan</p>
     </div>
