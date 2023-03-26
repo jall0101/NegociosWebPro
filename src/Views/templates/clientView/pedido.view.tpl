@@ -3,14 +3,14 @@
     <div class="container">
         <div class="progress" role="progressbar" aria-label="Basic example" style="height: 5px" aria-valuenow="50"
             aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 100%"></div>
+            <div class="progress-bar bg-dark" style="width: 100%"></div>
         </div>
     </div>
 </div>
 <section class="container-fluid p-0">
     <div class="row">
         <div class="col-lg-6 p-3">
-            <div class="bg-light p-3">
+            <div class="bg-gris_claro p-3">
                 <b>1. ORDER DETAILS [ 3 ]</b>
             </div>
             <div class="row gy-3 ">
@@ -29,7 +29,9 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
+                                            style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +54,9 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b>
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
+                                            style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -75,16 +79,19 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b>
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
+                                            style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
+                
             </div>
 
-            <div class="bg-light p-3 my-5">
+            <div class="bg-gris_claro p-3 my-5">
                 <b>2. HOW MUCH IS IT?</b>
             </div>
             <div class="border-top mt-3 border-bottom p-3">
@@ -113,7 +120,7 @@
             </div>
         </div>
         <div class="col-lg-6 p-3">
-            <div class="bg-light p-3">
+            <div class="bg-gris_claro p-3">
                 <b>3. SHIPPING</b>
             </div>
             <form class="m-3">
@@ -142,7 +149,7 @@
                 </div>                
             </form>
             <br><br>
-            <button class="btn col-12 btn-primary p-3"><i class="fa-brands fa-paypal fa-xl"></i>&nbsp;&nbsp;&nbsp;CONTINUAR CON PAYPAL</button>
+            <button class="btn col-12 bg-cafe p-3"><i class="fa-brands fa-paypal fa-xl text-white"></i>&nbsp;&nbsp;&nbsp;<span class="txt-blanco">CONTINUAR CON PAYPAL</span></button>
         </div>
 
     </div>
@@ -151,7 +158,7 @@
 
 </div>
 
-<div class="container-fluid bg-light p-2">
+<div class="container-fluid bg-gris_claro2 p-2">
     <div class="container px-4 text-center">
         <div class="row gx-3 gy-3">
             <div class="col-lg-4 p-1">

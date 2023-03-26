@@ -1,9 +1,9 @@
 <div class="container-fliud p-2">
-    <h1>Mi Carrito <span class="badge bg-secondary">[ 2 ]</span></h1><br><br>
+    <h1>Mi Carrito <span class="badge bg-gris_oscuro">[ 2 ]</span></h1><br><br>
     <div class="container">
         <div class="progress" role="progressbar" aria-label="Basic example" style="height: 5px" aria-valuenow="50"
             aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 50%"></div>
+            <div class="progress-bar bg-dark" style="width: 50%"></div>
         </div>
     </div>
 </div>
@@ -26,8 +26,8 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
                                             style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
@@ -51,8 +51,8 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
                                             style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
@@ -76,8 +76,8 @@
 
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <b class="text-danger h3">$54.99</b><br>
-                                    <button class="btn m-2 p-2 btn-success"><i class="fa-sharp fa-solid fa-trash"
+                                    <b class="txt-rojo h3">$54.99</b><br>
+                                    <button class="btn bg-dark m-2 p-2"><i class="fa-sharp fa-solid fa-trash"
                                             style="color: #ffffff; font-size:20px;"></i></button>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                 </div>
             </div>
 
-            <button class="btn col-12 btn-primary p-3">CONTINUAR PEDIDO</button>
+            <button class="btn col-12 bg-cafe txt-blanco p-3">CONTINUAR PEDIDO</button>
         </div>
 
     </div>
@@ -122,7 +122,7 @@
 
 </div>
 
-<div class="container-fluid bg-light p-2">
+<div class="container-fluid bg-gris_claro2 p-2">
     <div class="container px-4 text-center">
         <div class="row gx-3 gy-3">
             <div class="col-lg-4 p-1">
