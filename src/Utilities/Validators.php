@@ -18,6 +18,16 @@ class Validators {
         return preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,32}$/", $valor) && true;
     }
 
+    static public function IsPhoneNumber($valor, int $minDigits, int $maxDigits) {
+        return preg_match('/^[0-9]{'.$minDigits.','.$maxDigits.'}\z/', $valor);
+    }
+
+    static public function onlyNumbers($valor){
+        return preg_match('/^[0-9]*$/', $valor);
+    }
+    
+    
+
     private function __construct()
     {
         
