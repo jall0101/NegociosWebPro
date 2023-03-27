@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -35,7 +35,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -46,7 +46,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -57,7 +57,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src="..\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -92,7 +92,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -103,7 +103,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -114,7 +114,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -137,7 +137,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -148,7 +148,7 @@
     
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -159,7 +159,7 @@
     
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -170,7 +170,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="../css/4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
