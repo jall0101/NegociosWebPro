@@ -1,0 +1,15 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+.containerPrincipal{
+    background-color: rgb(158, 114, 63);
+    justify-content: center;
+    text-align: center;
+}
+
+.row{
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+
