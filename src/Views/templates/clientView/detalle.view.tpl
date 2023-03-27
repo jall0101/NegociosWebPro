@@ -1,66 +1,92 @@
-<header class="container-fluid d-flex justify-content-center">
-    <p class="text-black mb-0 p-2 fs-3"> Detalle Producto </p>
-</header>
+<div class="container-fluid">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb m-4">
+            <li class="breadcrumb-item"><a href="#" class="text-dark">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Damas</li>
+            <li class="breadcrumb-item active" aria-current="page">Cool Cat Sport Women's Slides</li>
+        </ol>
+    </nav>
+
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-9 py-3">
-            <img src=".\public\imgs\uploads\mujeres\1.jpg" alt="50$" width="600" height="400">
+        <div class="col-sm-12 col-md-9 py-3">
+            <img src=".\public\imgs\uploads\mujeres\1.jpg" alt="50$" class="img-fluid">
         </div>
-        <div class="col-3 py-5 align-center">
-            <center>
-                <h2>Tenis Adidas</h2>
-                <p>Precio:$50</p>
-                <p>Color: Rosado</p>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Talla
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" type="button">Talla 8</button></li>
-                        <li><button class="dropdown-item" type="button">Talla 4</button></li>
-                        <li><button class="dropdown-item" type="button">Talla 6</button></li>
-                    </ul>
-                </div>
-                <br>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Cantidad
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" type="button">1</button></li>
-                        <li><button class="dropdown-item" type="button">2</button></li>
-                        <li><button class="dropdown-item" type="button">3</button></li>
-                    </ul>
-                </div>
-                <br>
-                <button class="btn btn-primary" name="btnAgregar" id="btnAgregar">Agregar al Carrito</button>
-            </center>
+        <div class="col-sm-12 col-md-3 py-5 px-0">
+            <div class="txt-negro">Cool Cat Sport Women's Slides</div>
+            <p class="txt-rojo h3 my-5">$50</p>
+            <b class="txt-negro2">Color</b>
+            <p>Rosado</p>
+            <div class="p-3 my-5 bg-gris_claro2">
+                <b class="txt-negro2">Descripción</b>
+                <p>Stay cool and casual in the Cool Cat Sport slides. Featuring a comfortable textured foot bed and
+                    molded EVA outsole, the Cool Cat Sport combines soft cushioning and classic style for every day.</p>
+                <b class="txt-negro2 my-4">Detalles</b>
+                <p>Breathable knit upper, Slip-on sock collar, Extended lacing system for additional support and midsole
+                    lockdown, Soft, cushioned midsole, Rubber outsole for durable grip and traction, PUMA wordmark
+                    branding at lateral side, Thick woven webbing loop with PUMA branding at tongue</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    TALLA
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Talla</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    CANTIDAD
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">1</a></li>
+                    <li><a class="dropdown-item" href="#">2</a></li>
+                    <li><a class="dropdown-item" href="#">3</a></li>
+                </ul>
+            </div>
+            <br>           
+            <br>
+            <button class="btn btn-dark col-12 py-4" name="btnAgregar" id="btnAgregar">AGREGAR AL CARRITO</button>
+
         </div>
     </div>
+</div><br><br>
+<div class="container">
+    <p class="txt-negro py-5 mx-5 fs-4">PRODUCTOS RELACIONADOS</p>
 </div>
-<div class="container-fluid d-flex justify-content-center">
-    <p class="text-black mb-0 p-1 fs-4"> Productos Relacionados </p>
-</div>
-<br>
-<br>
+
+
 <div class="container text-center">
-    <div class="row">
-        <div class="col">
-            <img src=".\public\imgs\uploads\mujeres\5.jpg" alt="70$" width="300" height="250">
-            <h3>Adidas con Stan Smith</h3>
-            <p>Adidas en colaboracion con Stan Smith</p>
-        </div>
-        <div class="col">
-            <img src=".\public\imgs\uploads\mujeres\15.jpg" alt="60$" width="300" height="250">
-            <h3>Botas Puma</h3>
-            <p>Botas Puma Negro fabricado en Singapur</p>
-        </div>
-        <div class="col">
-            <img src=".\public\imgs\uploads\mujeres\11.jpg" alt="69$" width="300" height="250">
-            <h3>Tenis Nike Negro</h3>
-            <p>Tenis Nike Negro fabricado en Israel</p>
-        </div>
+    <div class="row gx-5 gy-4">
+        <a class="col-sm-12 col-md-4" style="text-decoration: none;" href="">
+            <img src=".\public\imgs\uploads\mujeres\1.jpg" alt="50$" class="img-fluid">
+            <p class="text-start text-dark my-4">COLOR ROJO</p>
+            <div class="row">
+                <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
+                <p class="col-2 txt-rojo"> $34.50</p>
+            </div>
+        </a>
+        <a class="col-sm-12 col-md-4" style="text-decoration: none;" href="">
+            <img src=".\public\imgs\uploads\mujeres\2.jpg" alt="50$" class="img-fluid">
+            <p class="text-start text-dark my-4">COLOR ROJO</p>
+            <div class="row">
+                <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
+                <p class="col-2 txt-rojo"> $34.50</p>
+            </div>
+        </a>
+        <a class="col-sm-12 col-md-4" style="text-decoration: none;" href="">
+            <img src=".\public\imgs\uploads\mujeres\3.jpg" alt="50$" class="img-fluid">
+            <p class="text-start text-dark my-4">COLOR ROJO</p>
+            <div class="row">
+                <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
+                <p class="col-2 txt-rojo"> $34.50</p>
+            </div>
+        </a>
     </div>
 </div>
