@@ -17,7 +17,7 @@
     </div>
 
     <!--ANUNCIO #1 DE LA PÁGINA-->
-    <div class="row"><img src="../css/1eranuncio.jpg" alt=""></div>
+    <div class="row"><img src="public\css\1eranuncio.jpg" alt=""></div>
     <hr>
     <!--TARJETAS #1 DE PRODUCTO DE LA PÁGINA-->
     <div class="containerImages1">
@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="btn btn-primary btn-radio">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
     <!--ANUNCIO #2 DE LA PÁGINA-->
     <div class="row">
-        <img src="../css/2doanuncio.jpg" alt=""> 
+        <img src="public\css\2doanuncio.jpg" alt=""> 
     </div>
     <hr>
 
@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="..\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
+                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -92,7 +92,7 @@
 
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
+                    <img src="public\css\4.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
@@ -128,7 +128,7 @@
 
     <!--ANUNCIO #3 DE LA PÁGINA-->
     <div class="row">
-        <img src="../css/2doanuncio.jpg" alt=""> 
+        <img src="public\css\2doanuncio.jpg" alt=""> 
     </div>
     <hr>
     

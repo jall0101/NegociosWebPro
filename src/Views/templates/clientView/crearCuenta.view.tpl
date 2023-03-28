@@ -16,7 +16,7 @@
 
   <form class="formulario" action="/action_page.php">
     <h1>Crear Cuenta</h1>
-    <p>Por favor introdusca sus datos para crear una cuenta</p>
+    <p>Por favor introduzca sus datos para crear una cuenta</p>
     <hr>
   
     <div class="contenedor">

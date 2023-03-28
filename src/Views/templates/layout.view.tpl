@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/appstyle.css" />
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/backgrounds.css" />
+  <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/crearCuenta.css" />
+    <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/inicio.css" />
+        <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/login.css" />
   <script src="https://kit.fontawesome.com/{{FONT_AWESOME_KIT}}.js" crossorigin="anonymous"></script>
   {{foreach SiteLinks}}
     <link rel="stylesheet" href="/{{~BASE_DIR}}/{{this}}" />
