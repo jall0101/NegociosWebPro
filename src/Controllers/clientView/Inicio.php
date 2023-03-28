@@ -10,7 +10,7 @@ class Inicio extends PublicController {
    
     public function run() :void
     {
-        /* index.php?page=clienteView-Inicio */
+        /* localhost/NegociosWebPro/index.php?page=clienteView-Inicio */
         $viewData = array();        
         Renderer::render('clientView/inicio', $viewData);
     }
