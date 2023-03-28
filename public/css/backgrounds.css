@@ -14,6 +14,10 @@
 
 }
 
+.txt-blanco:hover{
+    color: var(--blanco);
+}
+
 .bg-cafe:hover{
     background-color: var(--cafe);
     color: var(--blanco);
@@ -51,8 +55,67 @@
     background-color: var(--gris_oscuro);
 }
 
+.lineas {
+    border: 1px solid var(--blanco);
+}
+
 
 .tb-align{
     vertical-align: middle;
 }
+
+.bg-negro{
+    background-color: var(--negro);
+}
+
+/*MENU*/
+.menuItem2:hover{
+    background-color: var(--cafe);
+    border-radius: 2px;
+
+}
+.menuItem {
+   
+    position: relative;
+    transition: .5s ease;
+  }
+  
+  .menuItem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--cafe);
+    transition: .5s ease;
+  }
+  
+  .menuItem:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+  }
+  
+  .menuItem:hover::before {
+    width: 100%;
+  }
+  
+  .menuItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--cafe);
+    transition: .4s ease;
+    z-index: -1;
+  }
+  
+  .menuItem:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+  }
+
 
