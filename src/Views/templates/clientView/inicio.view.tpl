@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary btn-radio">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tenis Adidas</h5>
                         <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        <a href="#" class="button">Agregar al carrito</a>
                       </div>
                 </div>
             </div>
