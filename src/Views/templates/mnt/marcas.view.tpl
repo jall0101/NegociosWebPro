@@ -31,9 +31,10 @@
               <button type="submit">Editar</button>
           </form>
           {{endif ~edit_enabled}}
+          <br>
           {{if ~delete_enabled}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="Mnt_Marca"/>
+             <input type="hidden" name="page" value="mnt_marca"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="marcacod" value={{marcacod}} />
               <button type="submit">Eliminar</button>

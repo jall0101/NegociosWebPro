@@ -82,7 +82,7 @@ class Marca extends PublicController{
         if(isset($_POST["nombremarca"])){
             if(\Utilities\Validators::IsEmpty($_POST["nombremarca"])){
                 $this->viewData["has_errors"] = true;
-                $this->viewData["nombremarca_error"] = "El nombre no puede ir vacío!";
+                $this->viewData["general_error"] = "El nombre no puede ir vacío!";
             }
         } else {
             throw new Exception("nombremarca not present in form");
@@ -162,16 +162,13 @@ class Marca extends PublicController{
             if(!$tmpMarcas){
                 throw new Exception("Marca no existe en DB");
             }
-            /*
+            
             \Utilities\ArrUtils::mergeFullArrayTo($tmpMarcas, $this->viewData);
-            $this->viewData["catest_ACT"] = $this->viewData["catest"] === "ACT" ? "selected": "";
-            $this->viewData["catest_INA"] = $this->viewData["catest"] === "INA" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
-                $this->viewData["catnom"],
-                $this->viewData["catid"]
+                $this->viewData["nombremarca"],
+                $this->viewData["marcacod"]
             );
-            */
             if(in_array($this->viewData["mode"], array("DSP","DEL"))){
                 $this->viewData["readonly"] = "readonly";
             }
