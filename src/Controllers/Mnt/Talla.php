@@ -162,16 +162,15 @@ class Talla extends PublicController{
             if(!$tmpTallas){
                 throw new Exception("Talla no existe en DB");
             }
-            /*
-            \Utilities\ArrUtils::mergeFullArrayTo($tmpMarcas, $this->viewData);
-            $this->viewData["catest_ACT"] = $this->viewData["catest"] === "ACT" ? "selected": "";
-            $this->viewData["catest_INA"] = $this->viewData["catest"] === "INA" ? "selected": "";
+            
+            \Utilities\ArrUtils::mergeFullArrayTo($tmpTallas, $this->viewData);
+            
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
-                $this->viewData["catnom"],
-                $this->viewData["catid"]
+                $this->viewData["descripciontalla"],
+                $this->viewData["tallacod"]
             );
-            */
+            
             if(in_array($this->viewData["mode"], array("DSP","DEL"))){
                 $this->viewData["readonly"] = "readonly";
             }
