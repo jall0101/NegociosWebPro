@@ -35,7 +35,7 @@
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Talla"/>
               <input type="hidden" name="mode" value="DEL" />
-              <input type="hidden" name="tallacod" value={{tallaacod}} />
+              <input type="hidden" name="tallacod" value={{tallacod}} />
               <button type="submit">Eliminar</button>
           </form>
           {{endif ~delete_enabled}}

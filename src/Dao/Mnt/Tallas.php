@@ -16,7 +16,7 @@ class Tallas extends Table{
         string $descripciontalla,
         int $tallacod
     ){
-        $sqlstr = "UPDATE tallas set descripciontalla = :descripciontalla where tallaacod=:tallacod;";
+        $sqlstr = "UPDATE tallas set descripciontalla = :descripciontalla where tallacod=:tallacod;";
         $rowsUpdated = self::executeNonQuery(
             $sqlstr,
             array(
@@ -27,11 +27,11 @@ class Tallas extends Table{
         return $rowsUpdated;
     }
     public static function delete(int $tallacod){
-        $sqlstr = "DELETE from tallas where tallacod=:tallaacod;";
+        $sqlstr = "DELETE from tallas where tallacod=:tallacod;";
         $rowsDeleted = self::executeNonQuery(
             $sqlstr,
             array(
-                "marcacod" => $tallacod
+                "tallacod" => $tallacod
             )
         );
         return $rowsDeleted;
@@ -48,7 +48,7 @@ class Tallas extends Table{
         $row = self::obtenerUnRegistro(
             $sqlstr,
             array(
-                "marcacod"=> $tallacod
+                "tallacod"=> $tallacod
             )
         );
         return $row;
