@@ -1,11 +1,11 @@
 <?php
 namespace Controllers\Mnt;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Usuario extends PublicController{
+class Usuario extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Usuarios";
         
     private $viewData = array(

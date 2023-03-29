@@ -14,7 +14,13 @@ class Site
     {
         $pageRequest = "index";
         if (\Utilities\Security::isLogged()) {
-            $pageRequest = "Admin\\Admin";
+            if(\Utilities\Security::isAdmin()){
+                $pageRequest = "Admin\\Admin";
+            }
+            else{                
+                $pageRequest = "clientView\\Inicio";
+            }
+            
         }
         if (isset($_GET["page"])) {
             $pageRequest = str_replace(array("_", "-", "."), "\\", $_GET["page"]);

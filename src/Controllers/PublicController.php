@@ -30,7 +30,11 @@ abstract class PublicController implements IController
     {
         $this->name = get_class($this);
         if (\Utilities\Security::isLogged()){
-            $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
+            if(\Utilities\Security::isAdmin()){
+                $layoutFile = \Utilities\Context::getContextByKey("ADMIN_LAYOUT");
+            }else{
+                $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
+            }
             if ($layoutFile !== "") {
                 \Utilities\Context::setContext(
                     "layoutFile",

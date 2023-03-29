@@ -1,10 +1,10 @@
 <?php
 namespace Controllers\Mnt;
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Departamento extends PublicController{
+class Departamento extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Departamentos";
     private $viewData = array(
         "mode" => "DSP",

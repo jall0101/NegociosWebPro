@@ -15,18 +15,27 @@ class Security {
     {
         unset($_SESSION["login"]);
     }
-    public static function login($userId, $userName, $userEmail)
+    public static function login($userId, $userName, $userEmail, $userType)
     {
         $_SESSION["login"] = array(
             "isLogged" => true,
             "userId" => $userId,
             "userName" => $userName,
-            "userEmail" => $userEmail
+            "userEmail" => $userEmail,
+            "userType" => $userType
         );
     }
     public static function isLogged():bool
     {
         return isset($_SESSION["login"]) && $_SESSION["login"]["isLogged"];
+    }
+
+    public static function isAdmin():bool
+    {
+        if($_SESSION["login"]["userType"] === "ADM"){
+            return true;
+        }
+        return false;
     }
     public static function getUser()
     {

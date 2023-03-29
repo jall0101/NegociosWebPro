@@ -71,7 +71,7 @@ class Security extends \Dao\Table
         $newUser["userpswdexp"] = date('Y-m-d', time() + 7776000);  //(3*30*24*60*60) (m d h mi s)
         $newUser["userest"] = Estados::ACTIVO;
         $newUser["useractcod"] = hash("sha256", $email.time());
-        $newUser["usertipo"] = UsuarioTipo::PUBLICO;
+        $newUser["usertipo"] = UsuarioTipo::ADMINITRADAOR;
 
         $sqlIns = "INSERT INTO `usuario` (`useremail`, `username`, `userpswd`,
             `userfching`, `userpswdest`, `userpswdexp`, `userest`, `useractcod`,
