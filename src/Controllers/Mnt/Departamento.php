@@ -162,7 +162,8 @@ class Departamento extends PublicController{
             if(!$tmpDepartamentos){
                 throw new Exception("Departamento no existe en DB");
             }
-            if(in_array($this->viewData["mode"], array("DSP","DEL"))){
+            \Utilities\ArrUtils::mergeFullArrayTo($tmpDepartamentos, $this->viewData);
+            if(in_array($this->viewData["mode"], array("DSP","DEL"))){  
                 $this->viewData["readonly"] = "readonly";
             }
             if($this->viewData["mode"] === "DSP") {
