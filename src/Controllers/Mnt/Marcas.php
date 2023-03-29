@@ -4,13 +4,13 @@
  */
 namespace Controllers\Mnt;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Views\Renderer;
 
 /**
  * Marcas
  */
-class Marcas extends PublicController {
+class Marcas extends PrivateController {
     public function run() :void
     {
         $viewData = array(

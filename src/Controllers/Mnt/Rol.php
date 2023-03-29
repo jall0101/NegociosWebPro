@@ -1,11 +1,11 @@
 <?php
 namespace Controllers\Mnt;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Rol extends PublicController{
+class Rol extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Roles";
     private $viewData = array(
         "mode" => "DSP",

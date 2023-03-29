@@ -63,10 +63,7 @@
   <main>
     {{{page_content}}}
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-
+  
   <footer class="bg-gris_oscuro">
     <div class="container p-4 bg-gris_oscuro">
       <div class="row justify-content-center bg-gris_oscuro pb-0">
@@ -94,6 +91,8 @@
   {{foreach EndScripts}}
   <script src="/{{~BASE_DIR}}/{{this}}"></script>
   {{endfor EndScripts}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 <?php
 namespace Controllers\Mnt;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Funcion extends PublicController{
+class Funcion extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Funciones";
     private $viewData = array(
         "mode" => "DSP",

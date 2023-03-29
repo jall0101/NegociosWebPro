@@ -1,10 +1,10 @@
 <?php
 namespace Controllers\Mnt;
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Marca extends PublicController{
+class Marca extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Marcas";
     private $viewData = array(
         "mode" => "DSP",
