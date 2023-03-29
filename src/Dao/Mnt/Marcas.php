@@ -20,8 +20,8 @@ class Marcas extends Table{
         $rowsUpdated = self::executeNonQuery(
             $sqlstr,
             array(
-                "catnom" => $nombremarca,
-                "catid" => $marcacod
+                "nombremarca" => $nombremarca,
+                "marcacod" => $marcacod
             )
         );
         return $rowsUpdated;
