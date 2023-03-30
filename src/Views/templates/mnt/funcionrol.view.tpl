@@ -1,6 +1,6 @@
 <h1>{{modedsc}}</h1>
 <section class="row">
-  <form action="index.php?page=Mnt_FuncionRol&mode={{mode}}&rolescod={{rolescod}}"
+  <form action="index.php?page=Mnt_FuncionRol&mode={{mode}}&rolescod={{rolescod}}&fncod={{fncod}}"
     method="POST"
     class="col-6 col-3-offset"
   >
@@ -32,7 +32,7 @@
 
     <section class="row">
       <label for="fnexp" class="col-4">Fecha de Expiración</label>
-      <input type="date" {{readonly}} name="fnexp" value="{{fnexp}}" maxlength="45" placeholder="Fecha expiración"/>
+      <input type="date" {{readonly}} name="fnexp" value="{{fnexp}}" />
       {{if fnexp_error}}
         <span class="error col-12">{{fnexp_error}}</span>
       {{endif fnexp_error}}

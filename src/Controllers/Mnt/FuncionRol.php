@@ -129,6 +129,8 @@ class FuncionRol extends PublicController{
             throw new Exception("fncod not present in form");
         }
 
+        $this->viewData["fnexp"] = $_POST["fnexp"];
+
 
         if($this->viewData["mode"] === "INS"){
             $this->viewData["rolescod"] = $_POST["rolescoddummy"];
@@ -206,7 +208,6 @@ class FuncionRol extends PublicController{
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
                 $this->viewData["fncod"],
-                $this->viewData["fnexp"],
                 $this->viewData["rolescod"]
             );
             if(in_array($this->viewData["mode"], array("DSP","DEL"))){
