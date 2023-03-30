@@ -7,7 +7,7 @@
   </nav>
   <h1 class="m-4">COMPRAR ESTILOS DE MUJER</h1>
 
-
+  
 </div>
 <hr>
 <div class="container-fluid m-4">
