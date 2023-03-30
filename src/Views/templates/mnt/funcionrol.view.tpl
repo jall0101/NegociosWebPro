@@ -5,30 +5,28 @@
     class="col-6 col-3-offset"
   >
 
-
     <section class="row">
       <label for="rolescod" class="col-4">Código Rol</label>
-      <input type="hidden" name="xssToken" value="{{xssToken}}">
-      <input type="text" {{readonly}} name="rolescod" value="{{rolescod}}" maxlength="45" placeholder="Código Rol"/>
-      {{if rolescod}}
-        <span class="error col-12">{{rolescod}}</span>
-      {{endif rolescod}}
+      <input type="hidden" id="rolescod" name="rolescod" value="{{rolescod}}"/>
+      <input type="hidden" id="mode" name="mode" value="{{mode}}"/>
+      <input type="hidden"  name="xssToken" value="{{xssToken}}"/>
+      <input type="text" {{readonly}} name="rolescoddummy" value="{{rolescod}}"/>
     </section>
+    
 
     <section class="row">
       <label for="fncod" class="col-4">Código Función</label>
-      <input type="text" {{readonly}} name="fncod" value="{{fncod}}" maxlength="45" placeholder="Código Función"/>
-      {{if fncod}}
-        <span class="error col-12">{{fncod}}</span>
-      {{endif fncod}}
+      <input type="hidden" id="fncod" name="fncod" value="{{fncod}}"/>
+      <input type="hidden" id="mode" name="mode" value="{{mode}}"/>
+      <input type="hidden"  name="xssToken" value="{{xssToken}}"/>
+      <input type="text" {{readonly}} name="fncoddummy" value="{{fncod}}"/>
     </section>
-
 
     <section class="row">
       <label for="fnrolest" class="col-4">Estado</label>
       <select id="fnrolest" name="fnrolest" {{if readonly}} disabled{{endif readonly}}>
-        <option value="ACTIVO" {{fnrolest_ACT}}>ACTIVO</option>
-        <option value="INACTIVO" {{fnrolest_INA}}>INACTIVO</option>
+        <option value="ACT" {{fnrolest_ACT}}>ACTIVO</option>
+        <option value="INA" {{fnrolest_INA}}>INACTIVO</option>
       </select>
     </section>
 

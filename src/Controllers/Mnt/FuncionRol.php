@@ -23,7 +23,9 @@ class FuncionRol extends PublicController{
         "show_action" => true,
         "readonly" => false,
         "readonly_edit" => false,
-        "xssToken" => ""
+        "xssToken" => "",
+        "rolescoddummy" => "",
+        "fncoddummy" => ""
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
