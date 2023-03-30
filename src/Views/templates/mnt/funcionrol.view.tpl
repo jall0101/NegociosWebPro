@@ -8,6 +8,7 @@
 
     <section class="row">
       <label for="rolescod" class="col-4">Código Rol</label>
+      <input type="hidden" name="xssToken" value="{{xssToken}}">
       <input type="text" {{readonly}} name="rolescod" value="{{rolescod}}" maxlength="45" placeholder="Código Rol"/>
       {{if rolescod}}
         <span class="error col-12">{{rolescod}}</span>

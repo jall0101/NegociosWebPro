@@ -28,7 +28,7 @@
         </td>
 
         <td>
-            <a>{{fncod}}</a>
+            <a href="index.php?page=Mnt_FuncionRol&mode=DSP&rolescod={{fncod}}">{{fncod}}</a>
         </td>
 
         <td>

@@ -24,7 +24,7 @@ class FuncionesRoles extends Table{
 
 
     public static function update(string $rolescod ,string $fncod, string $fnrolest, string $fnexp){
-        $sqlstr = "UPDATE funciones_roles set fncod = :fncod, fnrolest = :fnrolest, fnexp = :fnexp where rolescod=:rolescod;";
+        $sqlstr = "UPDATE funciones_roles set fncod = :fncod, fnrolest = :fnrolest, fnexp = :fnexp where rolescod=:rolescod and fncod=:fncod;";
         $rowsUpdated = self::executeNonQuery(
             $sqlstr,
             array(
@@ -37,12 +37,13 @@ class FuncionesRoles extends Table{
         return $rowsUpdated;
     }
 
-    public static function delete(string $rolescod){
-        $sqlstr = "DELETE from funciones_roles where rolescod = :rolescod;";
+    public static function delete(string $rolescod, string $fncod){
+        $sqlstr = "DELETE from funciones_roles where rolescod = :rolescod and fncod=:fncod;";
         $rowsDeleted = self::executeNonQuery(
             $sqlstr,
             array(
-                "rolescod" => $rolescod
+                "rolescod" => $rolescod,
+                "fncod" => $fncod
             )
         );
         return $rowsDeleted;
@@ -54,11 +55,12 @@ class FuncionesRoles extends Table{
     public static function findByFilter(){
 
     }
-    public static function findById(string $rolescod){
-        $sqlstr = "SELECT * from funciones_roles where rolescod = :rolescod;";
+    public static function findById(string $rolescod, string $fncod){
+        $sqlstr = "SELECT * from funciones_roles where rolescod = :rolescod and fncod=:fncod;";
         $row = self::obtenerUnRegistro(
             $sqlstr,
             array(
+                "fncod" => $fncod,
                 "rolescod"=> $rolescod
             )
         );

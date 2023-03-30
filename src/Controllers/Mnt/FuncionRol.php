@@ -70,6 +70,11 @@ class FuncionRol extends PublicController{
             } else {
                 throw new Exception("Id not found on Query Params");
             }
+            if(isset($_GET['fncod'])){
+                $this->viewData["fncod"] = $_GET["fncod"];
+            } else {
+                throw new Exception("Id not found on Query Params");
+            }
         }
     }
     private function validatePostData(){
@@ -84,14 +89,7 @@ class FuncionRol extends PublicController{
         } else {
             throw new Exception("Invalid xss Token");
         }
-        if(isset($_POST["fncod"])){
-            if(\Utilities\Validators::IsEmpty($_POST["fncod"])){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "funcioncod no puede ir vacía!";
-            }
-        } else {
-            throw new Exception("funcioncod not present in form");
-        }
+      
 
         if(isset($_POST["fnrolest"])){
             if (!in_array( $_POST["fnrolest"], array("ACT","INA"))){
@@ -120,12 +118,22 @@ class FuncionRol extends PublicController{
         }else {
             throw new Exception("rolescod not present in form");
         }
+
+        if(isset($_POST["fncod"])){            
+            if($this->viewData["fncod"]!== $_POST["fncod"] && $this->viewData["mode"] !== "INS"){
+                throw new Exception("fncod value is different from query");
+            }
+        }else {
+            throw new Exception("fncod not present in form");
+        }
+
+
         if($this->viewData["mode"] === "INS"){
-            $this->viewData["rolescod"] = $_POST["rolescoddummy"];       
+            $this->viewData["rolescod"] = $_POST["rolescoddummy"];
+            $this->viewData["fncod"] = $_POST["fncoddummy"];
             
         }        
-         
-        $this->viewData["fncod"] = $_POST["fncod"];        
+              
         if($this->viewData["mode"]!=="DEL"){
             $this->viewData["fnrolest"] = $_POST["fnrolest"];
         }
@@ -163,7 +171,8 @@ class FuncionRol extends PublicController{
                 break;
             case "DEL":
                 $deleted = \Dao\Mnt\FuncionesRoles::delete(
-                    $this->viewData["rolescod"]
+                    $this->viewData["rolescod"],
+                    $this->viewData["fncod"]
                 );
                 if($deleted > 0){
                     \Utilities\Site::redirectToWithMsg(
@@ -182,7 +191,10 @@ class FuncionRol extends PublicController{
         if($this->viewData["mode"] === "INS") {
             $this->viewData["modedsc"] = $this->modes["INS"];
         } else {
-            $tmpFuncionesRoles = \Dao\Mnt\FuncionesRoles::findById($this->viewData["rolescod"]);
+            $tmpFuncionesRoles = \Dao\Mnt\FuncionesRoles::findById(
+                $this->viewData["rolescod"],
+                 $this->viewData["fncod"]);
+                 
             if(!$tmpFuncionesRoles){
                 throw new Exception("FuncionRol no existe en DB");
             }
