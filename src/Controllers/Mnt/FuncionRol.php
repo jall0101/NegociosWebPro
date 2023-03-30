@@ -70,12 +70,12 @@ class FuncionRol extends PublicController{
             if(isset($_GET['rolescod'])){
                 $this->viewData["rolescod"] = $_GET["rolescod"];
             } else {
-                throw new Exception("Id not found on Query Params");
+                throw new Exception("rolescod not found on Query Params");
             }
             if(isset($_GET['fncod'])){
                 $this->viewData["fncod"] = $_GET["fncod"];
             } else {
-                throw new Exception("Id not found on Query Params");
+                throw new Exception("fncod not found on Query Params");
             }
         }
     }

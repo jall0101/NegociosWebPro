@@ -20,7 +20,7 @@
     </thead>
 
     <tbody>
-      {{foreach funciones_roles}}
+      {{foreach funcionesroles}}
       <tr>
 
         <td>
@@ -46,6 +46,7 @@
              <input type="hidden" name="page" value="Mnt_FuncionRol"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="rolescod" value={{rolescod}} />
+              <input type="hidden" name="fncod" value={{fncod}} />
               <button type="submit">Editar</button>
           </form>
 
@@ -55,13 +56,14 @@
              <input type="hidden" name="page" value="Mnt_FuncionRol"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="rolescod" value={{rolescod}} />
+              <input type="hidden" name="fncod" value={{fncod}} />
               <button type="submit">Eliminar</button>
           </form>
           {{endif ~delete_enabled}}
         </td>
 
       </tr>
-      {{endfor funciones_roles}}
+      {{endfor funcionesroles}}
     </tbody>
 
   </table>
