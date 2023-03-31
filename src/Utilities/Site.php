@@ -18,7 +18,7 @@ class Site
                 $pageRequest = "Admin\\Admin";
             }
             else{                
-                $pageRequest = "clientView\\Inicio";
+                $pageRequest = "Index";
             }
             
         }

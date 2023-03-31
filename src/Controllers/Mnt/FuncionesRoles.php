@@ -1,10 +1,11 @@
 <?php
 namespace Controllers\Mnt;
 
+use Controllers\PrivateController;
 use Controllers\PublicController;
 use Views\Renderer;
 
-class FuncionesRoles extends PublicController {
+class FuncionesRoles extends PrivateController {
     public function run() :void
     {
         $viewData = array(

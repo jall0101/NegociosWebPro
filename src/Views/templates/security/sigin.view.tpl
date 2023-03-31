@@ -1,30 +1,43 @@
-<section class="fullCenter">
-  <form class="grid" method="post" action="index.php?page=sec_register">
-    <section class="depth-1 row col-12 col-m-8 offset-m-2 col-xl-6 offset-xl-3">
-      <h1 class="col-12">Crea tu cuenta</h1>
-    </section>
-    <section class="depth-1 py-5 row col-12 col-m-8 offset-m-2 col-xl-6 offset-xl-3">
-      <div class="row">
-        <label class="col-12 col-m-4 flex align-center" for="txtEmail">Correo Electrónico</label>
-        <div class="col-12 col-m-8">
-          <input class="width-full" type="email" id="txtEmail" name="txtEmail" value="{{txtEmail}}" />
-        </div>
-        {{if errorEmail}}
+<form class="formulario" method="post" action="index.php?page=sec_register">
+  <h1>Crear Cuenta</h1>
+    <p>Por favor introduzca sus datos para crear una cuenta</p>
+  <hr>
+  <div class="contenedor">
+
+      <label><b>Nombre</b></label>
+      <br>
+      <input class="nombre" type="text" placeholder="Nombre" name="nombre" required>
+      <br>
+
+      <label><b>Apellido</b></label>
+      <br>
+      <input class="apellido" type="text" placeholder="Apellido" name="apellido" required>
+      <br>
+      
+      <label><b>Correo</b></label>
+      <br>
+      <input class="correo" type="text" placeholder="Correo" id="txtEmail" name="txtEmail" value="{{txtEmail}}" required>
+      <br>
+      {{if errorEmail}}
         <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorEmail}}</div>
-        {{endif errorEmail}}
-      </div>
-      <div class="row">
-        <label class="col-12 col-m-4 flex align-center" for="txtPswd">Contraseña</label>
-        <div class="col-12 col-m-8">
-          <input class="width-full" type="password" id="txtPswd" name="txtPswd" value="{{txtPswd}}" />
-        </div>
-        {{if errorPswd}}
+      {{endif errorEmail}}
+      <label><b>Contraseña</b></label>
+      <br>
+      <input class="contrasena" type="password" placeholder="Contraseña" id="txtPswd" name="txtPswd" value="{{txtPswd}}" required>
+      <br>
+      {{if errorPswd}}
         <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorPswd}}</div>
-        {{endif errorPswd}}
+      {{endif errorPswd}}
+      <hr>
+      <p>Creado por PowerCods ©.<a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="botones">
+        <button id="btnSignin" type="submit" class="signupbtn">Crear Cuenta</button>
       </div>
-      <div class="row right flex-end px-4">
-        <button class="primary" id="btnSignin" type="submit">Crear Cuenta</button>
+
+      <div class="text-center m-4 h5">
+        <b>¿Ya tienes una cuenta? <a href="index.php?page=sec_login" class="txt-cafe">Iniciar Sesión</a></b>
       </div>
-    </section>
-  </form>
-</section>
+    </div>
+  
+</form>
