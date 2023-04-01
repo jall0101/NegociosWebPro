@@ -28,6 +28,12 @@ class Rol extends PrivateController{
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
+    private $modesAuth = array(
+        "DSP" => "mnt_roles_view",
+        "INS" => "mnt_roles_new",
+        "UPD" => "mnt_roles_edit",
+        "DEL" => "mnt_roles_delete"
+    );
     public function run() :void
     {
         try {
