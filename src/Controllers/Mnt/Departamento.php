@@ -24,7 +24,12 @@ class Departamento extends PrivateController{
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
-
+    private $modesAuth = array(
+        "DSP" => "mnt_departamentos_view",
+        "INS" => "mnt_departamentos_new",
+        "UPD" => "mnt_departamentos_edit",
+        "DEL" => "mnt_departamentos_delete"
+    );
     public function run() :void
     {
         try {
