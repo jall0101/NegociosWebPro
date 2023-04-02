@@ -21,24 +21,31 @@
       {{foreach departamentos}}
         <tr>
         <td>{{departamentocod}}</td>
-        <td><a href="index.php?page=Mnt_Departamento&mode=DSP&departamentocod={{departamentocod}}">{{nombredepartamento}}</a></td>
         <td>
-        {{if ~edit_enabled}}
+          {{if ~departamentos_view}}
+          <a href="index.php?page=Mnt_Departamento&mode=DSP&departamentocod={{departamentocod}}">{{nombredepartamento}}</a>
+           {{endif ~departamentos_view}}
+          {{ifnot ~departamentos_view}}
+          {{nombredepartamento}}
+           {{endifnot ~departamentos_view}}
+          </td>
+        <td>
+        {{if ~departamentos_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Departamento"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="departamentocod" value={{departamentocod}} />
               <button type="submit">Editar</button>
           </form>
-          {{endif ~edit_enabled}}
-          {{if ~delete_enabled}}
+           {{endif ~departamentos_edit}}
+          {{if ~departamentos_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Departamento"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="departamentocod" value={{departamentocod}} />
               <button type="submit">Eliminar</button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~departamentos_delete}}
         </td>
       </tr>
       {{endfor departamentos}}

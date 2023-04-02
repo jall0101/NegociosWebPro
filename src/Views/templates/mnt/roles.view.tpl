@@ -20,26 +20,31 @@
       {{foreach roles}}
       <tr class="bg-white">
         <td>{{rolescod}}</td>
+        {{if ~roles_view}}
         <td><a href="index.php?page=mnt_rol&mode=DSP&rolescod={{rolescod}}">{{rolesdsc}}</a></td>
+         {{endif ~roles_view}}
+          {{ifnot ~roles_view}}
+          {{rolesdsc}}
+           {{endifnot ~roles_view}}
         <td>{{rolesest}}</td>
 
         <td>
-          {{if ~edit_enabled}}
+          {{if ~roles_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_rol"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="rolescod" value={{rolescod}} />
               <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
-          {{endif ~edit_enabled}} <br>
-          {{if ~delete_enabled}}
+          {{endif ~roles_edit}}
+          {{if ~roles_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_rol"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="rolescod" value={{rolescod}} />
               <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~roles_delete}}
         </td>
       </tr>
       {{endfor roles}}
