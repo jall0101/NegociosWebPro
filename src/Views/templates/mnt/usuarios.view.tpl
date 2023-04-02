@@ -25,31 +25,36 @@
       {{foreach usuarios}}
       <tr class="bg-white">
         <td><b>{{usercod}}</b></td>
-        <td><a href="index.php?page=mnt_usuario&mode=DSP&usercod={{usercod}}">{{useremail}}</a></td>
+        <td>
+          {{if ~usuarios_view}}
+          <a href="index.php?page=mnt_usuario&mode=DSP&usercod={{usercod}}">{{useremail}}</a>
+          {{endif ~usuarios_view}}
+
+        </td>
+
         <td>{{username}}</td>
         <td>{{userfching}}</td>
         <td>{{userpswdest}}</td>
         <td>{{userpswdexp}}</td>
         <td>{{userest}}</td>
         <td>{{usertipo}}</td>
-
         <td>
-          {{if ~edit_enabled}}
+          {{if ~usuarios_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_usuario"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="usercod" value={{usercod}} />
               <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
-          {{endif ~edit_enabled}} <br>
-          {{if ~delete_enabled}}
+          {{endif ~usuarios_edit}} <br>
+          {{if ~usuarios_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_usuario"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="usercod" value={{usercod}} />
               <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~usuarios_delete}}
         </td>
       </tr>
       {{endfor usuarios}}
