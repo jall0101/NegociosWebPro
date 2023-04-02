@@ -11,9 +11,9 @@
         <th>Estado</th>
         <th>Tipo</th>
         <th>
-          {{if new_enabled}}
+          {{if funciones_new}}
           <button id="btnAdd">Nuevo</button>
-          {{endif new_enabled}}
+          {{endif funciones_new}}
         </th>
       </tr>
     </thead>
@@ -21,26 +21,31 @@
       {{foreach funciones}}
       <tr>
         <td>{{fncod}}</td>
-        <td><a href="index.php?page=mnt_funcion&mode=DSP&fncod={{fncod}}">{{fndsc}}</a></td>
-        <td>{{fnest}}</td>
-        <td>{{fntyp}}</td>
         <td>
-          {{if ~edit_enabled}}
+           {{if ~funciones_view}}
+          <a href="index.php?page=mnt_funcion&mode=DSP&fncod={{fncod}}">{{fndsc}}</a></td>
+          {{endif ~funciones_view}}
+          {{ifnot ~funciones_view}}
+           {{fndsc}}
+           {{endifnot ~funciones_view}}
+        
+        <td>
+          {{if ~funciones_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_funcion"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="fncod" value={{fncod}} />
               <button type="submit">Editar</button>
           </form>
-          {{endif ~edit_enabled}}
-          {{if ~delete_enabled}}
+          {{endif ~funciones_edit}}
+          {{if ~funciones_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_funcion"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="fncod" value={{fncod}} />
               <button type="submit">Eliminar</button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~funciones_delete}}
         </td>
       </tr>
       {{endfor funciones}}

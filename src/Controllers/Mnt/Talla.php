@@ -25,6 +25,13 @@ class Talla extends PrivateController{
         "DEL" => "Borrar %s (%s)"
     );
 
+    private $modesAuth = array(
+        "DSP" => "mnt_tallas_view",
+        "INS" => "mnt_tallas_new",
+        "UPD" => "mnt_tallas_edit",
+        "DEL" => "mnt_tallas_delete"
+    );
+
     public function run() :void
     {
         try {
@@ -51,6 +58,9 @@ class Talla extends PrivateController{
     {
         if(isset($_GET['mode'])){
             if(isset($this->modes[$_GET['mode']])){
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
                 $this->viewData["mode"] = $_GET['mode'];
             } else {
                 throw new Exception("Mode Not available");
@@ -66,6 +76,7 @@ class Talla extends PrivateController{
             }
         }
     }
+
 
     private function validatePostData(){
         if(isset($_POST["xssToken"])){

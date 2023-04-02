@@ -14,9 +14,11 @@ class Tallas extends PrivateController {
     public function run() :void
     {
         $viewData = array(
-            "edit_enabled"=>true,
-            "delete_enabled"=>true,
-            "new_enabled"=>true
+            "tallas_view"=>$this->isFeatureAutorized('mnt_tallas_view'),
+            "tallas_edit"=>$this->isFeatureAutorized('mnt_tallas_edit'),
+            "tallas_delete"=>$this->isFeatureAutorized('mnt_tallas_delete'),
+            "tallas_new"=>$this->isFeatureAutorized('mnt_tallas_new')
+
         );
         $viewData["tallas"] = \Dao\Mnt\Tallas::findAll();
         Renderer::render('mnt/tallas', $viewData);

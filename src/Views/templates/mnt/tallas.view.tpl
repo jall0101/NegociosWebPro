@@ -9,9 +9,9 @@
         <th>Código</th>
         <th>Talla</th>
         <th>
-          {{if new_enabled}}
+          {{if tallas_new}}
           <button id="btnAdd">Nuevo</button>
-          {{endif new_enabled}}
+          {{endif tallas_new}}
         </th>
       </tr>
     </thead>
@@ -21,24 +21,30 @@
       {{foreach tallas}}
         <tr>
         <td>{{tallacod}}</td>
-        <td><a href="index.php?page=Mnt_Talla&mode=DSP&tallacod={{tallacod}}">{{descripciontalla}}</a></td>
         <td>
-        {{if ~edit_enabled}}
+           {{if ~tallas_view}}
+          <a href="index.php?page=Mnt_Talla&mode=DSP&tallacod={{tallacod}}">{{descripciontalla}}</a></td>
+           {{endif ~tallas_view}}
+           {{ifnot ~tallas_view}}
+            {{descripciontalla}}
+          {{endifnot ~tallass_view}}
+        <td>
+        {{if ~tallas_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Talla"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="tallacod" value={{tallacod}} />
               <button type="submit">Editar</button>
           </form>
-          {{endif ~edit_enabled}}
-          {{if ~delete_enabled}}
+          {{endif ~tallas_edit}}
+          {{if ~tallas_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Talla"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="tallacod" value={{tallacod}} />
               <button type="submit">Eliminar</button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~tallas_delete}}
         </td>
       </tr>
       {{endfor tallas}}
