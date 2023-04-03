@@ -8,9 +8,10 @@ class Usuarios extends PrivateController {
     public function run() :void
     {
         $viewData = array(
-            "edit_enabled"=>true,
-            "delete_enabled"=>true,
-            "new_enabled"=>true
+            "usuarios_view"=>$this->isFeatureAutorized('mnt_usuarios_view'),
+            "usuarios_edit"=>$this->isFeatureAutorized('mnt_usuarios_edit'),
+            "usuarios_delete"=>$this->isFeatureAutorized('mnt_usuarios_delete'),
+            "usuarios_new"=>$this->isFeatureAutorized('mnt_usuarios_new')
         );
         $viewData["usuarios"] = \Dao\Mnt\Usuarios::findAll();
         Renderer::render('mnt/usuarios', $viewData);
