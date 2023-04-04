@@ -52,9 +52,6 @@ class FuncionesRoles extends Table{
         $sqlstr = "SELECT * from funciones_roles;";
         return self::obtenerRegistros($sqlstr, array());
     }
-    public static function findByFilter(){
-
-    }
     public static function findById(string $rolescod, string $fncod){
         $sqlstr = "SELECT * from funciones_roles where rolescod = :rolescod and fncod=:fncod;";
         $row = self::obtenerUnRegistro(

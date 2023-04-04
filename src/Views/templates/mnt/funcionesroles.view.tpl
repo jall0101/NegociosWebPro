@@ -12,9 +12,9 @@
         <th>Fecha de Expiración</th>
 
         <th>
-          {{if new_enabled}}
+          {{if funcionesroles_new}}
           <button id="btnAdd">Nuevo</button>
-          {{endif new_enabled}}
+          {{endif funcionesroles_new}}
         </th>
       </tr>
     </thead>
@@ -24,11 +24,22 @@
       <tr>
 
         <td>
+          {{if ~funcionesroles_view}}
             <a href="index.php?page=Mnt_FuncionRol&mode=DSP&rolescod={{rolescod}}">{{rolescod}}</a>
+          {{endif ~funcionesroles_view}}
+          {{ifnot ~funcionesroles_view}}
+            {{rolescod}}
+          {{endifnot ~funcionesroles_view}}
         </td>
 
         <td>
-            <a href="index.php?page=Mnt_FuncionRol&mode=DSP&rolescod={{fncod}}">{{fncod}}</a>
+          {{if ~funcionesroles_view}}
+           <a href="index.php?page=Mnt_FuncionRol&mode=DSP&rolescod={{fncod}}">{{fncod}}</a>
+          {{endif ~funcionesroles_view}}
+          {{ifnot ~funcionesroles_view}}
+            {{fncod}}
+          {{endifnot ~funcionesroles_view}}
+            
         </td>
 
         <td>
@@ -40,7 +51,7 @@
         </td>
 
         <td>
-          {{if ~edit_enabled}}
+          {{if ~funcionesroles_edit}}
 
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_FuncionRol"/>
@@ -50,8 +61,8 @@
               <button type="submit">Editar</button>
           </form>
 
-          {{endif ~edit_enabled}}
-          {{if ~delete_enabled}}
+          {{endif ~funcionesroles_edit}}
+          {{if ~funcionesroles_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_FuncionRol"/>
               <input type="hidden" name="mode" value="DEL" />
@@ -59,7 +70,7 @@
               <input type="hidden" name="fncod" value={{fncod}} />
               <button type="submit">Eliminar</button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~funcionesroles_delete}}
         </td>
 
       </tr>
