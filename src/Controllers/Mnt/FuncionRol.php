@@ -34,6 +34,14 @@ class FuncionRol extends PrivateController{
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
+
+    private $modesAuth = array(
+        "DSP" => "mnt_funcionesroles_view",
+        "INS" => "mnt_funcionesroles_new",
+        "UPD" => "mnt_funcionesroles_edit",
+        "DEL" => "mnt_funcionesroles_delete"
+    );
+
     public function run() :void
     {
         try {
@@ -60,6 +68,9 @@ class FuncionRol extends PrivateController{
     {
         if(isset($_GET['mode'])){
             if(isset($this->modes[$_GET['mode']])){
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
                 $this->viewData["mode"] = $_GET['mode'];
             } else {
                 throw new Exception("Mode Not available");
