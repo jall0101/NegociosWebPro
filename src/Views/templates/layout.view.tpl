@@ -69,19 +69,19 @@
       <div class="row justify-content-center bg-gris_oscuro pb-0">
           <div class="col-12 text-center">
             <a class="text-white mx-3" style="text-decoration: none;" href="">INICIO</a>
-            <a class="text-white mx-3" style="text-decoration: none;" href="">CABALLEROS</a>
-            <a class="text-white mx-3" style="text-decoration: none;"href="">DAMAS</a>
-            <a class="text-white mx-3" style="text-decoration: none;"href="">NIÑOS</a>            
+            <a class="text-white mx-3" style="text-decoration: none;" href="index.php?page=clientView-caballeros">CABALLEROS</a>
+            <a class="text-white mx-3" style="text-decoration: none;"href="index.php?page=clientView-damas">DAMAS</a>
+            <a class="text-white mx-3" style="text-decoration: none;"href="#">NIÑOS</a>            
           </div>
           <hr class="lineas my-4">
           <div class="row my-4">
             <div class="col-6 text-white">
-             ShoesNW todos los derechos reservados 2022 &copy;
+             ShoesNW | todos los derechos reservados 2023 &copy;
             </div>
             <div class="col-6 text-end">
-              <a class="mx-3" href=""><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i></a>
-              <a class="mx-3" href=""><i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"></i></a>
-              <a class="mx-3" href=""><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+              <a class="mx-3" href="https://www.twitter.com/"><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i></a>
+              <a class="mx-3" href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"></i></a>
+              <a class="mx-3" href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
             </div>
           </div>
       </div>
