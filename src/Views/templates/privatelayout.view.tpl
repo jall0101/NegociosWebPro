@@ -80,7 +80,7 @@
           <hr class="lineas my-4">
           <div class="row my-4">
             <div class="col-6 text-white">
-             ShoesNW todos los derechos reservados 2022 &copy;
+             ShoesNW todos los derechos reservados 2023 &copy;
             </div>
             <div class="col-6 text-end">
               <a class="mx-3" href=""><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i></a>
