@@ -23,7 +23,7 @@ class Damas extends PublicController {
         if (isset($_GET['marcacod'])) {
             $this->viewData["damas"] = \Dao\Mnt\Zapatos::findByBrand($_GET['marcacod'],2);
         }else if(isset($_GET['nombre'])){
-            $this->viewData["damas"] = \Dao\Mnt\Zapatos::findByName($_GET['nombre']);
+            $this->viewData["damas"] = \Dao\Mnt\Zapatos::findByName($_GET['nombre'],2);
         }
          else {
             $this->viewData["damas"] = \Dao\Mnt\Zapatos::findByDepartment(2);

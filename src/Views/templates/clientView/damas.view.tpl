@@ -26,8 +26,9 @@
         <li><a class="dropdown-item" href="index.php?page=clientView-damas">Todas</a></li>
     </ul>
   </div>
-   <form action ="index.php?page=clientView-damas" method ="get" class="d-flex col-sm-12 col-md-8">
-        <input class="form-control me-2" type="search" name="nombre" placeholder="Buscar por nombre de zapato" aria-label="Search">
+   <form action="index.php" method="get" class="d-flex col-sm-12 col-md-8">
+      <input type="hidden" name="page" value="clientView-damas"/>
+        <input class="form-control me-2" type="text" name="nombre" placeholder="Buscar por nombre de zapato" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
   </div>

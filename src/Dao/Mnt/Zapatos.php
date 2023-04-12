@@ -90,13 +90,12 @@ class Zapatos extends Table{
         return $row;
     }
 
-    public static function findByName(string $nombre){
-        $sqlstr = "SELECT * FROM zapatos where nombrezapato like '%:nombre%';";
+    public static function findByName(string $nombre, int $departcod){
+        $sqlstr = "SELECT * FROM zapatos where nombrezapato like '%".$nombre."%' and departamentocod = :departamentocod;";
         $row = self::obtenerRegistros(
             $sqlstr,
             array(                
-                "nombre" => $nombre,
-
+                "departamentocod" => $departcod                
             )
         );
         return $row;
