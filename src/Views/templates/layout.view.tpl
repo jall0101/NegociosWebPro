@@ -43,7 +43,7 @@
             <a class="nav-link active" style="color:var(--blanco)" aria-current="page" href="#">Caballeros</a>
           </li>
           <li class="nav-item menuItem">
-            <a class="nav-link active" style="color:var(--blanco)" href="#">Damas</a>
+            <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-damas">Damas</a>
           </li>
           <li class="nav-item menuItem">
             <a class="nav-link active" style="color:var(--blanco)" href="#">Niños</a>

@@ -5,105 +5,53 @@
       <li class="breadcrumb-item active" aria-current="page">Damas</li>
     </ol>
   </nav>
-  <h1 class="m-4">COMPRAR ESTILOS DE MUJER</h1>
+  <h1 class="m-4">COMPRAR ESTILOS DE DAMAS</h1>
 
-  
+
 </div>
 <hr>
 <div class="container-fluid m-4">
-  <i class="fa-solid fa-filter" style="color: #050505;"></i>&nbsp;&nbsp;
-  <div class="btn-group">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      TALLA
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Talla</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-  </div>
+  <i class="fa-solid fa-filter fa-2xl" style="color: #000000;"></i>&nbsp;&nbsp;
+  
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="btn-group">
+  <div class="row">
+    <div class="btn-group py-3 col-sm-12 col-md-2">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       MARCA
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Marca</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      {{foreach marcas}}
+        <li><a class="dropdown-item" href="index.php?page=clientView-damas&marcacod={{marcacod}}">{{nombremarca}}</a></li>
+      {{endfor marcas}}
+        <li><a class="dropdown-item" href="index.php?page=clientView-damas">Todas</a></li>
     </ul>
   </div>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="btn-group">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      COLOR
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Color</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
+   <form action ="index.php?page=clientView-damas" method ="get" class="d-flex col-sm-12 col-md-8">
+        <input class="form-control me-2" type="search" name="nombre" placeholder="Buscar por nombre de zapato" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
   </div>
+ 
 </div>
 <hr>
 
-<div class="m-5 h5"><b>18 PRODUCTOS</b></div>
+<div class="m-5 h5"><b>{{cantidad}} PRODUCTOS</b></div>
 <div class="row m-4">
   <div class="container my-5 text-center">
     <div class="row gx-5">
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\1.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>      
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\2.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\3.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>
+      {{foreach damas}}
+        <a class="col-lg-4" style="text-decoration: none;" href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}">
+          <img src="{{imagenzapato}}" alt="50$" class="img-fluid">
+          <p class="text-start text-dark my-4">COLOR {{color}}</p>
+          <div class="row">
+            <b class="col-10 text-start text-dark p-0">{{nombrezapato}}</b>
+            <p class="col-2 txt-rojo"> ${{precio}}</p>
+          </div>
+        </a>
+      {{endfor damas}}
+
     </div>
   </div>
 
-  <div class="container my-5 text-center">
-    <div class="row gx-5">
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\4.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>      
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\5.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>
-      <a class="col" style="text-decoration: none;" href="">
-        <img src=".\public\imgs\uploads\mujeres\6.jpg" alt="50$" class="img-fluid">
-        <p class="text-start text-dark my-4">COLOR ROJO</p>
-        <div class="row">
-          <b class="col-10 text-start text-dark p-0">Tenis Adidas Rosado</b>
-          <p class="col-2 txt-rojo"> $34.50</p>
-        </div>
-      </a>
-    </div>
-  </div>
+
 </div>

@@ -14,7 +14,7 @@ use Dao\Table;
   `userpswdchg` varchar(128) DEFAULT NULL,
   `usertipo` char(3) DEFAULT NULL COMMENT 'Tipo de Usuario, Normal, Consultor o Cliente',
 */
-class Usuarios extends Table{
+class Zapatos extends Table{
     
     public static function insert(string $useremail, string $username, string $userpswd, string $userpswdest, string $userest, string $usertipo): int
     {
@@ -49,18 +49,75 @@ class Usuarios extends Table{
         return $rowsDeleted;
     }
     public static function findAll(){
-        $sqlstr = "SELECT * from usuario;";
+        $sqlstr = "SELECT * from zapatos;";
         return self::obtenerRegistros($sqlstr, array());
     }
-    public static function findByFilter(){
-
+    public static function findByDepartment(int $codValue ){
+        $sqlstr = "SELECT * FROM zapatos WHERE departamentocod = :codValue";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                
+                "codValue" => $codValue
+            )
+        );
+        return $row;
     }
-    public static function findById(int $usercod){
-        $sqlstr = "SELECT * from usuario where usercod = :usercod;";
+
+    public static function findByBrand(int $codValue, int $departCod ){
+        $sqlstr = "SELECT * FROM zapatos WHERE marcacod = :marcacod and departamentocod = :departamentocod";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "marcacod" => $codValue,
+                "departamentocod" => $departCod
+            )
+        );
+        return $row;
+    }
+
+    public static function findByRelated(int $codValue, int $departcod , int $zapatocod){
+        $sqlstr = "SELECT * FROM zapatos where marcacod = :marcacod and departamentocod = :departamentocod and zapatocod <> :zapatocod limit 3 ;";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "marcacod" => $codValue,
+                "departamentocod" => $departcod,
+                "zapatocod" => $zapatocod
+
+            )
+        );
+        return $row;
+    }
+
+    public static function findByName(string $nombre){
+        $sqlstr = "SELECT * FROM zapatos where nombrezapato like '%:nombre%';";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "nombre" => $nombre,
+
+            )
+        );
+        return $row;
+    }
+
+    public static function findSizes(int $codValue ){
+        $sqlstr = "SELECT * FROM tallas_zapatos tz INNER JOIN tallas t ON tz.tallacod = t.tallacod WHERE zapatocod = :zapatocod;";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "zapatocod" => $codValue
+            )
+        );
+        return $row;
+    }
+    public static function findById(int $zapatocod){
+        $sqlstr = "SELECT * from zapatos where zapatocod = :zapatocod;";
         $row = self::obtenerUnRegistro(
             $sqlstr,
             array(
-                "usercod"=> $usercod
+                "zapatocod"=> $zapatocod
             )
         );
         return $row;
