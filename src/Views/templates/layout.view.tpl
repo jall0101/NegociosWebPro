@@ -40,7 +40,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item menuItem">
-            <a class="nav-link active" style="color:var(--blanco)" aria-current="page" href="#">Caballeros</a>
+            <a class="nav-link active" style="color:var(--blanco)" aria-current="page" href="index.php?page=clientView-caballeros">Caballeros</a>
           </li>
           <li class="nav-item menuItem">
             <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-damas">Damas</a>
