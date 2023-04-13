@@ -55,6 +55,16 @@ class Usuarios extends Table{
     public static function findByFilter(){
 
     }
+
+    public static function findLast(){
+        $sqlstr = "SELECT usercod FROM shoesnw.usuario  order by usercod desc LIMIT 1 ;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
+
     public static function findById(int $usercod){
         $sqlstr = "SELECT * from usuario where usercod = :usercod;";
         $row = self::obtenerUnRegistro(
