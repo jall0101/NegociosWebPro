@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHOESNW | Inicio</title>
     <link rel="stylesheet" href="../css/inicio.css">
+        <link rel="stylesheet" href="../css/backgrounds.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
@@ -13,7 +14,12 @@
 <body>
   
     <!--ANUNCIO #1 DE LA PÁGINA-->
-    <div class="row"><img src="public\css\1eranuncio.jpg" alt=""></div>
+    <div class="container-fluid banner">
+        <div class="row justify-content-start">
+            <a href="index.php?page=clientView_caballeros" class="text-dark m-4 button-index col-2">ZAPATOS CABALLEROS</a>
+
+        </div>
+    </div>
     <hr>
     <!--TARJETAS #1 DE PRODUCTO DE LA PÁGINA-->
     <div class="containerImages1">        
@@ -37,11 +43,13 @@
 
 
     <!--ANUNCIO #2 DE LA PÁGINA-->
-    <div class="row">
-        <img src="public\css\2doanuncio.jpg" alt=""> 
+    <div class="container-fluid banner2">
+        <div class="row justify-content-start">
+            <a href="index.php?page=clientView_damas" class="text-dark m-4 button-index col-2">ZAPATOS DAMAS</a>
+
+        </div>
     </div>
     <hr>
-
     <!--TARJETAS #2 DE LA PÁGINA-->
     <div class="containerImages2">
         <div class="row">
@@ -64,11 +72,13 @@
     <hr>
 
     <!--ANUNCIO #3 DE LA PÁGINA-->
-    <div class="row">
-        <img src="public\css\2doanuncio.jpg" alt=""> 
+    <div class="container-fluid banner3">
+        <div class="row justify-content-start">
+            <a href="index.php?page=clientView_ninos" class="text-dark m-4 button-index col-2">ZAPATOS NIÑOS</a>
+
+        </div>
     </div>
     <hr>
-    
     <!--TARJETAS #3 DE LA PÁGINA-->
     <div class="containerImages3">
         <div class="row">

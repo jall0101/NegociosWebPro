@@ -4,6 +4,12 @@
     background-color: var(--cafe);
 }
 
+.bg-cafe2:hover {
+    color: var(--blanco);
+    background-color: var(--cafe);
+}
+
+
 .tb-padding {
     padding: 20px;
 }
@@ -160,3 +166,61 @@
     background-color: var(--verde);
     border-radius: 10px;
 }
+
+.banner {
+    background: url(../imgs/inicio/banner1.png);    
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-position: center;
+    padding-top: 250px;
+    padding-bottom: 150px;
+}
+
+.banner2 {
+    background: url(../imgs/inicio/banner2.png);    
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-position: center;
+    padding-top: 250px;
+    padding-bottom: 150px;
+}
+
+.banner3 {
+    background: url(../imgs/inicio/banner3.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-position: center;
+    padding-top: 250px;
+    padding-bottom: 150px;
+}
+
+.banner-btn {
+    margin-bottom: 20px;
+}
+
+/*BOTONES MENU*/
+
+.button-index {
+    background-color: white;
+    color: black;
+   
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+  }
+  
+  .button-index:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 var(--rojo);
+  };
+  
+  .button-index:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 var(--rojo);
+  };
