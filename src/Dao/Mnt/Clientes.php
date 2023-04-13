@@ -105,4 +105,15 @@ class Clientes extends Table{
         );
         return $row;
     }
+
+    public static function findByUserId(int $clientcod){
+        $sqlstr = "SELECT * from clientes where clientusercreates = :clientusercreates;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array(
+                "clientusercreates"=> $clientcod
+            )
+        );
+        return $row;
+    }
 }

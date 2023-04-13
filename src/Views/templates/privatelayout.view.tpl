@@ -55,7 +55,7 @@
                 style="color: #ffffff;"></i></a>
           </li>
           <li class="nav-item mx-4 menuItem2">
-            <a class="nav-link active" style="color:var(--blanco)" href="#"><i class="fa-solid fa-user"
+            <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-perfil"><i class="fa-solid fa-user"
                 style="color: #ffffff;"></i></a>
           </li>
           <li class="nav-item mx-4 menuItem2">

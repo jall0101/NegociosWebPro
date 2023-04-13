@@ -8,7 +8,7 @@
      <h3 class="m-4">Dashboard</h3>
   <h2 class="m-4">My Account</h2>
    <ol class="breadcrumb m-4">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Logout</a></li>
+            <li class="breadcrumb-item"><a href="index.php?page=sec_logout" class="text-dark">Logout</a></li>
         </ol>
 </div>
 </div>
@@ -19,10 +19,10 @@
             <i class="fa fa-user fa-lg" style="color: #050505;"></i>
             <h4>Profile</h4>
             <hr>
-            <h5>Full Name: Shoes NW</h5>
-            <h5>Gender: M</h5>
-            <h5>Phone: 12345678</h5>
-            <h5>Email: shoesnw2023@gmail.com</h5>
+            <h5>Full Name: {{clientname}}</h5>
+            <h5>Gender: {{clientgender}}</h5>
+            <h5>Phone: {{clientphone1}}</h5>
+            <h5>Email: {{clientemail}}</h5>
             <ol class="breadcrumb m-4">
             <li class="breadcrumb-item"><a href="#" class="text-dark">Edit Profile</a></li>
         </ol>
