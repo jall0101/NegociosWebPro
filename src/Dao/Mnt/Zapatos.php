@@ -64,6 +64,17 @@ class Zapatos extends Table{
         return $row;
     }
 
+    public static function findTopByDepartment(int $codValue ){
+        $sqlstr = "SELECT * FROM zapatos WHERE departamentocod = :codValue limit 4";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                
+                "codValue" => $codValue
+            )
+        );
+        return $row;
+    }
     public static function findByBrand(int $codValue, int $departCod ){
         $sqlstr = "SELECT * FROM zapatos WHERE marcacod = :marcacod and departamentocod = :departamentocod";
         $row = self::obtenerRegistros(

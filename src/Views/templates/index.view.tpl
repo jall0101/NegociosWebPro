@@ -16,52 +16,22 @@
     <div class="row"><img src="public\css\1eranuncio.jpg" alt=""></div>
     <hr>
     <!--TARJETAS #1 DE PRODUCTO DE LA PÁGINA-->
-    <div class="containerImages1">
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+    <div class="containerImages1">        
+            <div class="row">
+            {{foreach hombres}}
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src=".\public\imgs\uploads\hombres\1.jpg" class="card-img-top" alt="...">
+                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
+                        <h5 class="card-title">{{nombrezapato}}</h5>
+                        <p class="card-text txt-rojo">$ {{precio}}</p>
+                        <a href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}" class="button">VER MÁS</a>
                       </div>
                 </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\hombres\2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\hombres\3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\hombres\4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
+            </div>      
+            {{endfor hombres}}         
         </div>
+        
     </div>
     <hr>
 
@@ -75,49 +45,20 @@
     <!--TARJETAS #2 DE LA PÁGINA-->
     <div class="containerImages2">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            {{foreach mujeres}}
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src=".\public\imgs\uploads\mujeres\1.jpg" class="card-img-top" alt="...">
+                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
+                        <h5 class="card-title">{{nombrezapato}}</h5>
+                        <p class="card-text txt-rojo">$ {{precio}}</p>
+                        <a href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}" class="button">VER MÁS</a>
                       </div>
                 </div>
-            </div>
+            </div>      
+            {{endfor mujeres}}               
 
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\mujeres\2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\mujeres\3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\mujeres\4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
+            
         </div> 
     </div>
     <hr>
@@ -131,49 +72,19 @@
     <!--TARJETAS #3 DE LA PÁGINA-->
     <div class="containerImages3">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            {{foreach ninos}}
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src=".\public\imgs\uploads\ninos\1.jpg" class="card-img-top" alt="...">
+                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
+                        <h5 class="card-title">{{nombrezapato}}</h5>
+                        <p class="card-text txt-rojo">$ {{precio}}</p>
+                        <a href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}" class="button">VER MÁS</a>
                       </div>
                 </div>
-            </div>
-    
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\ninos\2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-    
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\ninos\3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="card">
-                    <img src=".\public\imgs\uploads\ninos\4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Adidas</h5>
-                        <p class="card-text">LOS MEJORES</p>
-                        <a href="#" class="button">Agregar al carrito</a>
-                      </div>
-                </div>
-            </div>
+            </div>      
+            {{endfor ninos}}  
+ 
         </div> 
     </div>
    
