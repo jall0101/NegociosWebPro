@@ -42,7 +42,7 @@
   <div class="container my-5 text-center">
     <div class="row gx-5">
       {{foreach ninos}}
-        <a class="col-lg-4" style="text-decoration: none;" href="#">
+        <a class="col-lg-4" style="text-decoration: none;" href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}">
           <img src="{{imagenzapato}}" alt="50$" class="img-fluid">
           <p class="text-start text-dark my-4">COLOR {{color}}</p>
           <div class="row">
