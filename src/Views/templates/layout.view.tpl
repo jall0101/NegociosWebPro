@@ -46,7 +46,7 @@
             <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-damas">Damas</a>
           </li>
           <li class="nav-item menuItem">
-            <a class="nav-link active" style="color:var(--blanco)" href="#">Niños</a>
+            <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-ninos">Niños</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-3"> 
@@ -71,7 +71,7 @@
             <a class="text-white mx-3" style="text-decoration: none;" href="">INICIO</a>
             <a class="text-white mx-3" style="text-decoration: none;" href="index.php?page=clientView-caballeros">CABALLEROS</a>
             <a class="text-white mx-3" style="text-decoration: none;"href="index.php?page=clientView-damas">DAMAS</a>
-            <a class="text-white mx-3" style="text-decoration: none;"href="#">NIÑOS</a>            
+            <a class="text-white mx-3" style="text-decoration: none;"href="index.php?page=clientView-ninos">NIÑOS</a>            
           </div>
           <hr class="lineas my-4">
           <div class="row my-4">
