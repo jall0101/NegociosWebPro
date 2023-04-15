@@ -2,16 +2,16 @@
 <section class="WWFilter">
 
 </section>
-<section class="WWList">
-  <table>
+<section class="WWList table-responsive">
+  <table class="table table-striped table-hover tb-align">
     <thead>
-      <tr>
-        <th>Código</th>
-        <th>Marca</th>
+      <tr class="bg-gris_oscuro tb-align text-white p-5">
+        <th scope="col">Código</th>
+        <th scope="col">Marca</th>
         <th>
-          {{if new_enabled}}
-          <button id="btnAdd">Nuevo</button>
-          {{endif new_enabled}}
+          {{if marcas_new}}
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+          {{endif marcas_new}}
         </th>
       </tr>
     </thead>
@@ -19,28 +19,35 @@
 
     <tbody>
       {{foreach marcas}}
-        <tr>
-        <td>{{marcacod}}</td>
-        <td><a href="index.php?page=Mnt_Marca&mode=DSP&marcacod={{marcacod}}">{{nombremarca}}</a></td>
+        <tr class="bg-white">
         <td>
-        {{if ~edit_enabled}}
+          {{marcacod}}
+        </td>
+
+        <td>
+          <a href="index.php?page=Mnt_Marca&mode=DSP&marcacod={{marcacod}}">{{nombremarca}}</a>
+        </td>
+        
+        <td>
+        {{if ~marcas_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="Mnt_Marca"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="marcacod" value={{marcacod}} />
-              <button type="submit">Editar</button>
+              <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
-          {{endif ~edit_enabled}}
+          {{endif ~marcas_edit}}
           <br>
-          {{if ~delete_enabled}}
+          {{if ~marcas_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_marca"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="marcacod" value={{marcacod}} />
-              <button type="submit">Eliminar</button>
+              <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~marcas_delete}}
         </td>
+
       </tr>
       {{endfor marcas}}
     </tbody>

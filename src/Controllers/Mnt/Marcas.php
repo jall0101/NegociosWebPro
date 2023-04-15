@@ -14,9 +14,10 @@ class Marcas extends PrivateController {
     public function run() :void
     {
         $viewData = array(
-            "edit_enabled"=>true,
-            "delete_enabled"=>true,
-            "new_enabled"=>true
+            "marcas_view"=>$this->isFeatureAutorized('mnt_marcas_view'),
+            "marcas_edit"=>$this->isFeatureAutorized('mnt_marcas_edit'),
+            "marcas_delete"=>$this->isFeatureAutorized('mnt_marcas_delete'),
+            "marcas_new"=>$this->isFeatureAutorized('mnt_marcas_new')
         );
         $viewData["marcas"] = \Dao\Mnt\Marcas::findAll();
         Renderer::render('mnt/marcas', $viewData);
