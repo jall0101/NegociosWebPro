@@ -2,25 +2,25 @@
 <section class="WWFilter">
 
 </section>
-<section class="WWList">
-  <table>
+<section class="WWList table-responsive">
+  <table class="table table-striped table-hover tb-align">
     <thead>
-      <tr>
-        <th>Código</th>
-        <th>Descripción</th>
-        <th>Estado</th>
-        <th>Tipo</th>
+      <tr  class="bg-gris_oscuro tb-align text-white p-5"></tr> >
+        <th scope="col">Código</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Tipo</th>
         <th>
           {{if funciones_new}}
-          <button id="btnAdd">Nuevo</button>
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
           {{endif funciones_new}}
         </th>
       </tr>
     </thead>
     <tbody>
       {{foreach funciones}}
-      <tr>
-        <td>{{fncod}}</td>
+      <tr class="bg-white">
+        <td><b>{{fncod}}</b></td>
         <td>
            {{if ~funciones_view}}
           <a href="index.php?page=mnt_funcion&mode=DSP&fncod={{fncod}}">{{fndsc}}</a></td>
@@ -35,7 +35,7 @@
              <input type="hidden" name="page" value="mnt_funcion"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="fncod" value={{fncod}} />
-              <button type="submit">Editar</button>
+              <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
           {{endif ~funciones_edit}}
           {{if ~funciones_delete}}
@@ -43,7 +43,7 @@
              <input type="hidden" name="page" value="mnt_funcion"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="fncod" value={{fncod}} />
-              <button type="submit">Eliminar</button>
+              <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
           {{endif ~funciones_delete}}
         </td>
