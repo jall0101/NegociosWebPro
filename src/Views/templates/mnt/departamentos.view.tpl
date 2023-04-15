@@ -2,15 +2,15 @@
 <section class="WWFilter">
 
 </section>
-<section class="WWList">
-  <table>
+<section class="WWList table-responsive">
+  <table class="table table-striped table-hover tb-align">
     <thead>
-      <tr>
-        <th>Código</th>
-        <th>Departamento</th>
+      <tr class="bg-gris_oscuro tb-align text-white p-5">
+        <th scope="col">Código</th>
+        <th scope="col">Departamento</th>
         <th>
           {{if new_enabled}}
-          <button id="btnAdd">Nuevo</button>
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i>Nuevo</button>
           {{endif new_enabled}}
         </th>
       </tr>
@@ -19,7 +19,7 @@
 
     <tbody>
       {{foreach departamentos}}
-        <tr>
+        <tr class="bg-white">
         <td>{{departamentocod}}</td>
         <td>
           {{if ~departamentos_view}}
