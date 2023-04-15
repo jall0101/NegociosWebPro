@@ -27,7 +27,7 @@
            {{endif ~tallas_view}}
            {{ifnot ~tallas_view}}
             {{descripciontalla}}
-          {{endifnot ~tallass_view}}
+          {{endifnot ~tallas_view}}
         <td>
         {{if ~tallas_edit}}
           <form action="index.php" method="get">

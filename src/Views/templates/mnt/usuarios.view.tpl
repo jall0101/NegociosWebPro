@@ -15,9 +15,9 @@
         <th scope="col">Estado usuario</th>
         <th scope="col">Tipo</th>
         <th>
-          {{if new_enabled}}
+          {{if usuarios_new}}
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-          {{endif new_enabled}}
+          {{endif usuarios_new}}
         </th>
       </tr>
     </thead>
