@@ -59,7 +59,7 @@ class Nav {
 
         if (\Utilities\Security::isAuthorized($userID, "Menu_MntHistorialTransacciones")) {
             $tmpNAVIGATION[] = array(
-                "nav_url" => "index.php?page=mnt_historial",
+                "nav_url" => "index.php?page=mnt_ventas",
                 "nav_label" => "Historial Transacciones"
             );
         }
