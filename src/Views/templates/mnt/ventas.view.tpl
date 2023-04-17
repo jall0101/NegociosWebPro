@@ -20,11 +20,19 @@
     <tbody>
       {{foreach ventas}}
         <tr class="bg-white">
-            <td>{{ventacod}}</td>
+
             <td>
                 <a href="index.php?page=Mnt_Venta&mode=DSP&cod={{ventacod}}">{{ventacod}}</a>
             </td>
+            <td>
+                <a href="index.php?page=Mnt_Venta&mode=DSP&cod={{usercod}}">{{usercod}}</a>
+            </td>
 
+            <td>{{fechaventa}}</td>
+            <td>{{isv}}</td>
+            <td>{{cantidadBruta}}</td>
+            <td>{{comisionPayPal}}</td>
+            <td>{{cantidadNeta}}</td>
       </tr>
       {{endfor ventas}}
     </tbody>

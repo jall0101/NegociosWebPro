@@ -13,7 +13,7 @@ class Pedidos extends PrivateController {
 
         );
         $viewData["pedidos"] = \Dao\Mnt\Pedidos::findAll();
-        Renderer::render('mnt/Pedidos', $viewData);
+        Renderer::render('mnt/pedidos', $viewData);
     }
 }
 ?>

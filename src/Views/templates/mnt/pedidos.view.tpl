@@ -21,10 +21,22 @@
     <tbody>
       {{foreach pedidos}}
         <tr class="bg-white">
-            <td>{{pedidocod}}</td>
             <td>
-                <a href="index.php?page=Mnt_Pedido&mode=DSP&cod={{pedidocod}}">{{pedidocod}}</a>
+              <a href="index.php?page=Mnt_Pedido&mode=DSP&cod={{pedidocod}}">{{pedidocod}}</a>
+              </td>
+            <td>
+                <a href="index.php?page=Mnt_Pedido&mode=DSP&cod={{ventacod}}">{{ventacod}}</a>
             </td>
+            <td>{{direccion}}</td>
+
+            <td>{{ciudad}}</td>
+
+            <td>{{estado}}</td>
+
+            <td>{{pais}}</td>
+
+            <td>{{telefonoCont}}</td>
+            <td>{{pedidoest}}</td>
 
       </tr>
       {{endfor pedidos}}
