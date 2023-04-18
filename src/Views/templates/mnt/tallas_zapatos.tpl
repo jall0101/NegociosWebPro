@@ -1,4 +1,4 @@
-<h1>Gestión de Zapatos</h1>
+<h1>Gestión de Tallas Zapatos</h1>
 <section class="WWFilter">
 
 </section>
@@ -7,61 +7,50 @@
     <thead>
       <tr class="bg-gris_oscuro tb-align text-white p-5">
         <th scope="col">Código</th>
-        <th scope="col">Código Departamento</th>
-        <th scope="col">precio</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Imagen</th>
-        <th scope="col">Color</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Detalles</th>
-        <th scope="col">Nombre Zapato</th>
+        <th scope="col">Código Talla</th>
+        <th scope="col">Codigo Zapato</th>
+        <th scope="col">Stock</th>
+        
         <th>
-          {{if zapatos_new}}
+          {{if tallas_zapatos_new}}
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-          {{endif zapatos_new}}
+          {{endif tallas_zapatos_new}}
         </th>
       </tr>
     </thead>
 
     
     <tbody>
-      {{foreach zapatos}}
+      {{foreach tallas_zapatos}}
       <tr class="bg-white">
-         {{if zapatos_view}}
-        <td><a href="index.php?page=mnt_zapato&mode=DSP&zapatocod={{zapatocod}}">{{zapatocod}}</a></td>
-         {{endif zapatos_view}}
-        <td><b>{{departamentocod}}</b></td>
-        <td>{{precio}}</td>
-        <td>{{zapatoest}}</td>
-        <td>
-          <img src="{{imagenzapato}}" alt="" class="img-fluid">
-        </td>
-        <td>{{color}}</td>
-        <td>{{descripcion}}</td>
-        <td>{{detalles}}</td>
-        <td>{{nombrezapato}}</td>
+         {{if tallas_zapatos_view}}
+        <td><a href="index.php?page=mnt_talla_zapato&mode=DSP&talla_zapatocod={{talla_zapatocod}}">{{talla_zapatocod}}</a></td>
+         {{endif tallas_zapatos_view}}
+        <td><b>{{tallacod}}</b></td>
+        <td>{{zapatocod}}</td>
+        <td>{{stock}}</td>
 
         <td>
-          {{if ~zapatos_edit}}
+          {{if ~tallas_zapatos_edit}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="mnt_zapato"/>
+             <input type="hidden" name="page" value="mnt_talla_zapato"/>
               <input type="hidden" name="mode" value="UPD" />
-              <input type="hidden" name="zapatocod" value={{zapatocod}} />
+              <input type="hidden" name="talla_zapatocod" value={{talla_zapatocod}} />
               <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
-          {{endif ~zapatos_edit}} <br>
+          {{endif ~tallas_zapatos_edit}} <br>
 
-          {{if ~zapatos_delete}}
+          {{if ~tallas_zapatos_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_zapato"/>
               <input type="hidden" name="mode" value="DEL" />
-              <input type="hidden" name="zapatocod" value={{zapatocod}} />
+              <input type="hidden" name="talla_zapatocod" value={{talla_zapatocod}} />
               <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
-          {{endif ~zapatos_delete}}
+          {{endif ~tallas_zapatos_delete}}
         </td>
       </tr>
-      {{endfor zapatos}}
+      {{endfor tallas_zapatos}}
     </tbody>
   </table>
 </section>
@@ -70,7 +59,7 @@
       document.getElementById("btnAdd").addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_zapato&mode=INS&zapatocod=0");
+        window.location.assign("index.php?page=mnt_talla_zapato&mode=INS&talla_zapatocod=0");
       });
     });
 </script>

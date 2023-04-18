@@ -3,69 +3,39 @@
 </div>
 <section class="container">
   <div class="row justify-content-center">
-    <form action="index.php?page=Mnt_Zapato&mode={{mode}}&zapatocod={{zapatocod}}" method="POST"
+    <form action="index.php?page=Mnt_Talla_Zapato&mode={{mode}}&talla_zapatocod={{talla_zapatocod}}" method="POST"
       class="col-10 align-self-center bg-gris_claro p-4 rounded">
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="zapatocod" class="col-4 form-label">Código</label>
-        <input type="hidden" id="zapatocod" name="zapatocod" value="{{zapatocod}}" />
+        <label for="talla_zapatocod" class="col-4 form-label">Código</label>
+        <input type="hidden" id="talla_zapatocod" name="Talla zapatocod" value="{{talla_zapatocod}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" readonly class="form-control" name="talla_zapatocoddummy" value="{{talla_zapatocod}}" />
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="tallacod" class="col-4 form-label">Código de talla</label>
+        <input type="hidden" id="tallacod" name="tallacod" value="{{tallacod}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" readonly class="form-control" name="tallacoddummy" value="{{tallacod}}" />
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="zapatocod" class="col-4 form-label">Zapato Cod</label>
+        <input type="hidden" id="precio" name="zapatocod" value="{{zapatocod}}" />
         <input type="hidden" id="mode" name="mode" value="{{mode}}" />
         <input type="hidden" name="xssToken" value="{{xssToken}}">
         <input type="text" readonly class="form-control" name="zapatocoddummy" value="{{zapatocod}}" />
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="departamentocod" class="col-4 form-label">Código del departamento</label>
-        <input type="hidden" id="departamentocod" name="departamentocod" value="{{departamentocod}}" />
+        <label for="stock" class="col-4 form-label">Stock</label>
+        <input type="hidden" id="stock" name="stock" value="{{stock}}" />
         <input type="hidden" id="mode" name="mode" value="{{mode}}" />
         <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="departamentocoddummy" value="{{departamentocod}}" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="precio" class="col-4 form-label">Precio</label>
-        <input type="hidden" id="precio" name="precio" value="{{precio}}" />
-        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
-        <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="preciodummy" value="{{precio}}" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="zapatoest" class="col-4 form-label">Estado Zapato</label>
-        <select id="zapatoest" class="form-select" name="zapatoest" {{if readonly}}disabled{{endif readonly}}>
-          <option value="ACT" {{zapatoest_ACT}}>ACTIVO </option>
-          <option value="DES" {{zapatoest_ACT}}>Desactivo </option>
-        </select>
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="imagenzapato" class="col-4 form-label">Imagen</label>
-        <input type="text" {{readonly}} class="form-control" name="imagenzapato" value="{{imagenzapato}}" maxlength="45"
-          placeholder="Imagen Zapato" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="color" class="col-4 form-label">Color</label>
-        <input type="text" {{readonly}} class="form-control" name="color" value="{{color}}" maxlength="45"
-          placeholder="Color Zapato" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="descripcion" class="col-4 form-label">Descripcion</label>
-        <input type="text" {{readonly}} class="form-control" name="descripcion" value="{{descripcion}}" maxlength="45"
-          placeholder="Descripcion Zapato" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="detalles" class="col-4 form-label">Detalles</label>
-        <input type="text" {{readonly}} class="form-control" name="detalles" value="{{detalles}}" maxlength="45"
-          placeholder="Detalles Zapato" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="nombrezapato" class="col-4 form-label">Nombre Zapato</label>
-        <input type="text" {{readonly}} class="form-control" name="nombrezapato" value="{{nombrezapato}}" maxlength="45"
-          placeholder="Nombre Zapato" />
+        <input type="text" readonly class="form-control" name="stock" value="{{stock}}" />
       </section>
 
       {{if has_errors}}
