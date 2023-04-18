@@ -19,4 +19,15 @@ class Ventas extends Table{
         );
         return $row;
     }
+
+    public static function findByUser(int $usercod){
+        $sqlstr = "SELECT * from ventas where usercod = :usercod;";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                "usercod"=> $usercod
+            )
+        );
+        return $row;
+    }
 }

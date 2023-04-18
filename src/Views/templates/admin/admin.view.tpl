@@ -11,11 +11,25 @@
   
   <div class="container-fluid">
     <div class="row gy-4 gx-4">
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">USUARIOS</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">ROLES</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">FUNCIONES</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">ROLES PARA USUARIOS</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">FUNCIONES PARA ROLES</button>
+        <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <a href="index.php?page=mnt_usuarios" class="text-decoration-none text-dark">USUARIOS</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <a href="index.php?page=mnt_roles"  class="text-decoration-none text-dark">ROLES</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <a href="index.php?page=mnt_funciones"  class="text-decoration-none text-dark">FUNCIONES</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <a href="index.php?page=mnt_rolesUsuarios"  class="text-decoration-none text-dark">ROLES PARA USUARIOS</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <a href="index.php?page=mnt_funcionesroles"  class="text-decoration-none text-dark">FUNCIONES PARA ROLES</a>
+        </button>
     </div>
   </div>
 
@@ -34,10 +48,22 @@
 
   <div class="container-fluid">
     <div class="row gy-4 gx-4">
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">ZAPATOS</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">MARCAS</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">TALLAS</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">DEPARTAMENTOS</button>
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_zapatos" class="text-decoration-none text-dark">ZAPATOS</a>
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_marcas"  class="text-decoration-none text-dark">MARCAS</a>
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_tallas"  class="text-decoration-none text-dark">TALLAS</a>
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_departamentos"  class="text-decoration-none text-dark">DEPARTAMENTOS</a>
+      </button>
     </div>
   </div>
 </div>
@@ -52,8 +78,15 @@
   <h1 class="m-4">HISTORIAL TRANSACCIONES</h1>
    <div class="container-fluid">
     <div class="row gy-4 gx-4">
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">HISTORIAL TRANSACCIONES</button>
-        <button type="button" class="btn btn-outline-dark p-5 col-md-3 offset-sm-1">PEDIDOS</button>
+
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_ventas" class="text-decoration-none text-dark">HISTORIAL TRANSACCIONES</a>
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+        <a href="index.php?page=mnt_pedidos"  class="text-decoration-none text-dark">PEDIDOS</a>
+      </button>
     </div>
   </div>  
 </div>

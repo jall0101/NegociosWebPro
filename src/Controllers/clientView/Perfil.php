@@ -14,10 +14,14 @@ class Perfil extends PublicController {
             "clientname" => "",
             "clientgender" => "",
             "clientphone1" => "",
-            "clientemail" => ""
+            "clientemail" => "",
+            "ventas" => array()
+
+
         ); 
         $cod = \Utilities\Security::getUserId();
         $cliente = \Dao\Mnt\Clientes::findByUserId($cod);
+        $viewData["ventas"] = \Dao\Mnt\Ventas::findByUser($cod);
         \Utilities\ArrUtils::mergeFullArrayTo($cliente, $viewData);
         
         Renderer::render('clientView/perfil', $viewData);

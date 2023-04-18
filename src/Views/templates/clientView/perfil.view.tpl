@@ -72,7 +72,7 @@
 
                     <td>{{cantidadBruta}}</td>
 
-                    <td>{{ComisionPayPal}}</td>
+                    <td>{{comisionPayPal}}</td>
 
                     <td>{{cantidadNeta}}</td>
             </tr>
