@@ -16,9 +16,9 @@
         <th scope="col">Detalles</th>
         <th scope="col">Nombre Zapato</th>
         <th>
-          {{if new_enabled}}
+          {{if zapatos_new}}
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-          {{endif new_enabled}}
+          {{endif zapatos_new}}
         </th>
       </tr>
     </thead>
@@ -27,7 +27,9 @@
     <tbody>
       {{foreach zapatos}}
       <tr class="bg-white">
+         {{if zapatos_view}}
         <td><a href="index.php?page=mnt_zapato&mode=DSP&zapatocod={{zapatocod}}">{{zapatocod}}</a></td>
+         {{endif zapatos_view}}
         <td><b>{{departamentocod}}</b></td>
         <td>{{precio}}</td>
         <td>{{zapatoest}}</td>
@@ -40,22 +42,23 @@
         <td>{{nombrezapato}}</td>
 
         <td>
-          {{if ~edit_enabled}}
+          {{if ~zapatos_edit}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_zapato"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="zapatocod" value={{zapatocod}} />
               <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
-          {{endif ~edit_enabled}} <br>
-          {{if ~delete_enabled}}
+          {{endif ~zapatos_edit}} <br>
+
+          {{if ~zapatos_delete}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_zapato"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="zapatocod" value={{zapatocod}} />
               <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
-          {{endif ~delete_enabled}}
+          {{endif ~zapatos_delete}}
         </td>
       </tr>
       {{endfor zapatos}}
