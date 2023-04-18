@@ -123,10 +123,11 @@ class Detalle extends PrivateController{
             }
             
             \Utilities\ArrUtils::mergeFullArrayTo($tmpDetalles, $this->viewData);
-
+           
             
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
+                $this->viewData["detallecod"],
                 $this->viewData["nombrezapato"],
                 $this->viewData["descripcion"],
                 $this->viewData["cantidad"],
