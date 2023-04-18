@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Archivo Controlador de Categorias el Listado
  */
