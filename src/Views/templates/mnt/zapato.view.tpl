@@ -3,14 +3,14 @@
 </div>
 <section class="container">
   <div class="row justify-content-center">
-    <form action="index.php?page=Mnt_Usuario&mode={{mode}}&usercod={{usercod}}" method="POST"
+    <form action="index.php?page=Mnt_Zapato&mode={{mode}}&zapatocod={{zapatocod}}" method="POST"
       class="col-10 align-self-center bg-gris_claro p-4 rounded">
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="usercod" class="col-4 form-label">Código</label>
-        <input type="hidden" id="usercod" name="usercod" value="{{usercod}}" />
+        <label for="zapatocod" class="col-4 form-label">Código</label>
+        <input type="hidden" id="zapatocod" name="zapatocod" value="{{zapatocod}}" />
         <input type="hidden" id="mode" name="mode" value="{{mode}}" />
         <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="usercoddummy" value="{{usercod}}" />
+        <input type="text" readonly class="form-control" name="zapatocoddummy" value="{{zapatocod}}" />
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">

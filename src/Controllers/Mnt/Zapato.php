@@ -5,29 +5,23 @@ use Controllers\PublicController;
 use Exception;
 use Views\Renderer;
 
-class Usuario extends PublicController{
-    private $redirectTo = "index.php?page=Mnt-Usuarios";
+class Zapato extends PublicController{
+    private $redirectTo = "index.php?page=Mnt-Zapatos";
         
     private $viewData = array(
         "mode" => "DSP",
         "modedsc" => "",
-        "usercod" => 0,
-        "useremail" => "",
-        "username" => "",
-        "userpswd" => "",
-        "userpswdest" => "ACT",
-        "userpswdexp" => "",
-        "userest" => "ACT",
-        "useractcod" => "",
-        "userpswdchg" => "", 
-        "usertipo" => "NOR",        
-        "userpswdest_ACT" => "selected",
-        "userpswdest_INA" => "",
-        "userest_ACT" => "selected",
-        "userest_INA" => "",
-        "usertipo_NOM" => "selected",
-        "usertipo_CON" => "",
-        "usertipo_CLI" => "",
+        "zapatocod" => 0,
+        "departamentocod" => 0,
+        "precio" => 0,
+        "zapatoest" => "ACT",
+        "zapatoest_ACT" =>"selected",
+        "zapatoest_DES" => "",
+        "imagenzapato" => "",
+        "color" => "", 
+        "descripcion" => "",        
+        "detalles" => "",
+        "nombrezapato" => "",
         "general_errors"=> array(),
         "has_errors" =>false,
         "show_action" => true,
@@ -36,7 +30,7 @@ class Usuario extends PublicController{
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
-        "INS" => "Nuevo Usuario",
+        "INS" => "Nuevo Zapato",
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
@@ -52,8 +46,8 @@ class Usuario extends PublicController{
             }
             $this->render();
         } catch (Exception $error) {
-            unset($_SESSION["xssToken_Mnt_Usuario"]);
-            error_log(sprintf("Controller/Mnt/Usuario ERROR: %s", $error->getMessage()));
+            unset($_SESSION["xssToken_Mnt_Zapato"]);
+            error_log(sprintf("Controller/Mnt/Zapato ERROR: %s", $error->getMessage()));
             \Utilities\Site::redirectToWithMsg(
                 $this->redirectTo,
                 "Algo Inesperado Sucedió. Intente de Nuevo."
@@ -74,8 +68,8 @@ class Usuario extends PublicController{
             throw new Exception("Mode not defined on Query Params");
         }
         if($this->viewData["mode"] !== "INS") {
-            if(isset($_GET['usercod'])){
-                $this->viewData["usercod"] = intval($_GET["usercod"]);
+            if(isset($_GET['zapatocod'])){
+                $this->viewData["zapatocod"] = intval($_GET["zapatocod"]);
             } else {
                 throw new Exception("Id not found on Query Params");
             }
@@ -84,7 +78,7 @@ class Usuario extends PublicController{
     private function validatePostData(){
         if(isset($_POST["xssToken"])){
             if(isset($_SESSION["xssToken_Mnt_Usuario"])){
-                if($_POST["xssToken"] !== $_SESSION["xssToken_Mnt_Usuario"]){
+                if($_POST["xssToken"] !== $_SESSION["xssToken_Mnt_Zapato"]){
                     throw new Exception("Invalid Xss Token no match");
                 }
             } else {
@@ -93,18 +87,7 @@ class Usuario extends PublicController{
         } else {
             throw new Exception("Invalid xss Token");
         }
-        if(isset($_POST["useremail"])){
-            if(\Utilities\Validators::IsEmpty($_POST["useremail"])){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "El email no puede ir vacío!";
-            }
-            if(!(\Utilities\Validators::IsValidEmail($_POST["useremail"]))){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "El email no es válido!";
-            }
-        } else {
-            throw new Exception("useremail not present in form");
-        }
+        
         if(isset($_POST["username"])){
             if(\Utilities\Validators::IsEmpty($_POST["username"])){
                 $this->viewData["has_errors"] = true;
@@ -113,45 +96,14 @@ class Usuario extends PublicController{
         } else {
             throw new Exception("username not present in form");
         }
-        if(isset($_POST["userpswd"])){
-            if(\Utilities\Validators::IsEmpty($_POST["userpswd"])){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "El password no puede ir vacío!";
-            }
-            if(!(\Utilities\Validators::IsValidPassword($_POST["userpswd"]))){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "El password no es válido!";
-            }
-        } else {
-            throw new Exception("userpswd not present in form");
-        }
-        if(isset($_POST["userpswdest"])){
-            if (!in_array( $_POST["userpswdest"], array("ACT","INA"))){
-                throw new Exception("Password state incorrect value");
-            }
-        }else {
-            if($this->viewData["mode"]!=="DEL") {
-                throw new Exception("userpswdest not present in form");
-            }
-        }
         
-        if(isset($_POST["userest"])){
-            if (!in_array( $_POST["userest"], array("ACT","INA"))){
-                throw new Exception("User state incorrect value");
+        if(isset($_POST["zapatoest"])){
+            if (!in_array( $_POST["zapatoest"], array("ACT","DES"))){
+                throw new Exception("zapato state incorrect value");
             }
         }else {
             if($this->viewData["mode"]!=="DEL") {
-                throw new Exception("userest not present in form");
-            }
-        }
-        
-        if(isset($_POST["usertipo"])){
-            if (!in_array( $_POST["usertipo"], array("NOR","CON", "CLI"))){
-                throw new Exception("User type incorrect value");
-            }
-        }else {
-            if($this->viewData["mode"]!=="DEL") {
-                throw new Exception("usertipo not present in form");
+                throw new Exception("zapatoest not present in form");
             }
         }
         if(isset($_POST["mode"])){
@@ -164,102 +116,95 @@ class Usuario extends PublicController{
         }else {
             throw new Exception("mode not present in form");
         }
-        if(isset($_POST["usercod"])){
-            if(($this->viewData["mode"] !== "INS" && intval($_POST["usercod"])<=0)){
-                throw new Exception("usercod is not Valid");
+        if(isset($_POST["zapatocod"])){
+            if(($this->viewData["mode"] !== "INS" && intval($_POST["zapatocod"])<=0)){
+                throw new Exception("zapatocod is not Valid");
             }
-            if($this->viewData["usercod"]!== intval($_POST["usercod"])){
-                throw new Exception("usercod value is different from query");
+            if($this->viewData["zapatocod"]!== intval($_POST["zapatocod"])){
+                throw new Exception("zapatocod value is different from query");
             }
         }else {
-            throw new Exception("usercod not present in form");
-        }
-        $this->viewData["useremail"] = $_POST["useremail"];
-        $this->viewData["username"] = $_POST["username"];
-        $this->viewData["userpswd"] = $_POST["userpswd"];       
-       
-        if($this->viewData["mode"]!=="DEL"){
-            $this->viewData["userpswdest"] = $_POST["userpswdest"];
-        }
-        if($this->viewData["mode"]!=="DEL"){
-            $this->viewData["userest"] = $_POST["userest"];
-        }
-        if($this->viewData["mode"]!=="DEL"){
-            $this->viewData["usertipo"] = $_POST["usertipo"];
+            throw new Exception("zapatocod not present in form");
         }
     }
     private function executeAction(){
         switch($this->viewData["mode"]){
             case "INS":
-                $inserted = \Dao\Mnt\Usuarios::insert(
-                    $this->viewData["useremail"],
-                    $this->viewData["username"],
-                    $this->viewData["userpswd"],
-                    $this->viewData["userpswdest"],
-                    $this->viewData["userest"],
-                    $this->viewData["usertipo"]
+                $inserted = \Dao\Mnt\Zapatos::insert(
+                    $this->viewData["departamentocod"],
+                    $this->viewData["precio"],
+                    $this->viewData["zapatoest"],
+                    $this->viewData["imagenzapato"],
+                    $this->viewData["color"],
+                    $this->viewData["descripcion"],
+                    $this->viewData["detalles"],
+                    $this->viewData["nombrezapato"]
                 );
                 if($inserted > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Usuario Creado Exitosamente"
+                        "Zapato añadido Exitosamente"
                     );
                 }
                 break;
             case "UPD":
-                $updated = \Dao\Mnt\Usuarios::update(
-                    $this->viewData["usercod"],
-                    $this->viewData["useremail"],
-                    $this->viewData["username"],
-                    $this->viewData["userpswd"],
-                    $this->viewData["userpswdest"],
-                    $this->viewData["userest"],
-                    $this->viewData["usertipo"]
+                $updated = \Dao\Mnt\Zapatos::update(
+                    $this->viewData["zapatocod"],
+                    $this->viewData["departamentocod"],
+                    $this->viewData["precio"],
+                    $this->viewData["zapatoest"],
+                    $this->viewData["imagenzapato"],
+                    $this->viewData["color"],
+                    $this->viewData["descripcion"],
+                    $this->viewData["detalles"],
+                    $this->viewData["nombrezapato"]
                 );
                 if($updated > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Usuario Actualizado Exitosamente"
+                        "Zapato Actualizado Exitosamente"
                     );
                 }
                 break;
             case "DEL":
-                $deleted = \Dao\Mnt\Usuarios::delete(
-                    $this->viewData["usercod"]
+                $deleted = \Dao\Mnt\Zapatos::delete(
+                    $this->viewData["zapatocod"]
                 );
                 if($deleted > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Usuario Eliminado Exitosamente"
+                        "Zapato Eliminado Exitosamente"
                     );
                 }
                 break;
         }
     }
     private function render(){
-        $xssToken = md5("Usuario" . rand(0,4000) * rand(5000,9999));
+        $xssToken = md5("ZAPATO" . rand(0,4000) * rand(5000,9999));
         $this-> viewData["xssToken"] = $xssToken;
-        $_SESSION["xssToken_Mnt_Usuario"] = $xssToken;
+        $_SESSION["xssToken_Mnt_Zapato"] = $xssToken;
 
         if($this->viewData["mode"] === "INS") {
             $this->viewData["modedsc"] = $this->modes["INS"];
         } else {
-            $tmpUsuarios = \Dao\Mnt\Usuarios::findById($this->viewData["usercod"]);
-            if(!$tmpUsuarios){
-                throw new Exception("Usuario no existe en DB");
+            $tmpZapatos = \Dao\Mnt\Zapatos::findById($this->viewData["zapatocod"]);
+            if(!$tmpZapatos){
+                throw new Exception("Zapatos no existe en DB");
             }
-            \Utilities\ArrUtils::mergeFullArrayTo($tmpUsuarios, $this->viewData);
-            $this->viewData["userpswdest_ACT"] = $this->viewData["userpswdest"] === "ACT" ? "selected": "";
-            $this->viewData["userpswdest_INA"] = $this->viewData["userpswdest"] === "INA" ? "selected": "";
-            $this->viewData["userest_ACT"] = $this->viewData["userest"] === "ACT" ? "selected": "";
-            $this->viewData["userest_INA"] = $this->viewData["userest"] === "INA" ? "selected": "";
-            $this->viewData["usertipo_NOR"] = $this->viewData["usertipo"] === "NOR" ? "selected": "";
-            $this->viewData["usertipo_CON"] = $this->viewData["usertipo"] === "CON" ? "selected": "";
-            $this->viewData["usertipo_CLI"] = $this->viewData["usertipo"] === "CLI" ? "selected": "";
+            \Utilities\ArrUtils::mergeFullArrayTo($tmpZapatos, $this->viewData);
+            $this->viewData["zapatoest_ACT"] = $this->viewData["zapatoest"] === "ACT" ? "selected": "";
+            $this->viewData["zapatoest_DES"] = $this->viewData["zapatoest"] === "DES" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
-                $this->viewData["username"],
-                $this->viewData["usercod"]
+                $this->viewData["departamentocod"],
+                $this->viewData["precio"],
+                $this->viewData["zapatoest"],
+                $this->viewData["imagenzapato"],
+                $this->viewData["color"],
+                $this->viewData["descripcion"],
+                $this->viewData["detalles"],
+                $this->viewData["nombrezapato"],
+                $this->viewData["zapatocod"]
             );
             if(in_array($this->viewData["mode"], array("DSP","DEL"))){
                 $this->viewData["readonly"] = "readonly";
@@ -268,7 +213,7 @@ class Usuario extends PublicController{
                 $this->viewData["show_action"] = false;
             }
         }
-        Renderer::render("mnt/usuario", $this->viewData);
+        Renderer::render("mnt/zapato", $this->viewData);
     }
 }
 

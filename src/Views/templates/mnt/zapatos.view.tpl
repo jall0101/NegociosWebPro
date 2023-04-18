@@ -1,4 +1,4 @@
-<h1>Gestión de Usuarios</h1>
+<h1>Gestión de Zapatos</h1>
 <section class="WWFilter">
 
 </section>
@@ -7,13 +7,14 @@
     <thead>
       <tr class="bg-gris_oscuro tb-align text-white p-5">
         <th scope="col">Código</th>
-        <th scope="col">Email</th>
-        <th scope="col">Username</th>
-        <th scope="col">User Fetching</th>
-        <th scope="col">Estado Password</th>
-        <th scope="col">Password Exp</th>
-        <th scope="col">Estado usuario</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Código Departamento</th>
+        <th scope="col">precio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Color</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Detalles</th>
+        <th scope="col">Nombre Zapato</th>
         <th>
           {{if new_enabled}}
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
@@ -21,38 +22,43 @@
         </th>
       </tr>
     </thead>
+
+    
     <tbody>
-      {{foreach usuarios}}
+      {{foreach zapatos}}
       <tr class="bg-white">
-        <td><b>{{usercod}}</b></td>
-        <td><a href="index.php?page=mnt_usuario&mode=DSP&usercod={{usercod}}">{{useremail}}</a></td>
-        <td>{{username}}</td>
-        <td>{{userfching}}</td>
-        <td>{{userpswdest}}</td>
-        <td>{{userpswdexp}}</td>
-        <td>{{userest}}</td>
-        <td>{{usertipo}}</td>
+        <td><a href="index.php?page=mnt_zapato&mode=DSP&zapatocod={{zapatocod}}">{{zapatocod}}</a></td>
+        <td><b>{{departamentocod}}</b></td>
+        <td>{{precio}}</td>
+        <td>{{zapatoest}}</td>
+        <td>
+          <img src="{{imagenzapato}}" alt="" class="img-fluid">
+        </td>
+        <td>{{color}}</td>
+        <td>{{descripcion}}</td>
+        <td>{{detalles}}</td>
+        <td>{{nombrezapato}}</td>
 
         <td>
           {{if ~edit_enabled}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="mnt_usuario"/>
+             <input type="hidden" name="page" value="mnt_zapato"/>
               <input type="hidden" name="mode" value="UPD" />
-              <input type="hidden" name="usercod" value={{usercod}} />
+              <input type="hidden" name="zapatocod" value={{zapatocod}} />
               <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
           {{endif ~edit_enabled}} <br>
           {{if ~delete_enabled}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="mnt_usuario"/>
+             <input type="hidden" name="page" value="mnt_zapato"/>
               <input type="hidden" name="mode" value="DEL" />
-              <input type="hidden" name="usercod" value={{usercod}} />
+              <input type="hidden" name="zapatocod" value={{zapatocod}} />
               <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
           {{endif ~delete_enabled}}
         </td>
       </tr>
-      {{endfor usuarios}}
+      {{endfor zapatos}}
     </tbody>
   </table>
 </section>
@@ -61,7 +67,7 @@
       document.getElementById("btnAdd").addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_usuario&mode=INS&usercod=0");
+        window.location.assign("index.php?page=mnt_zapato&mode=INS&zapatocod=0");
       });
     });
 </script>

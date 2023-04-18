@@ -1,19 +1,19 @@
 <?php
 namespace Controllers\Mnt;
-
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Views\Renderer;
 
-class Usuarios extends PublicController {
+class Zapatos extends PrivateController {
     public function run() :void
     {
         $viewData = array(
-            "edit_enabled"=>true,
-            "delete_enabled"=>true,
-            "new_enabled"=>true
+            "zapatos_view"=>$this->isFeatureAutorized('mnt_zapatos_view'),
+            "zapatos_edit"=>$this->isFeatureAutorized('mnt_zapatos_edit'),
+            "zapatos_delete"=>$this->isFeatureAutorized('mnt_zapatos_delete'),
+            "zapatos_new"=>$this->isFeatureAutorized('mnt_zapatos_new')
         );
-        $viewData["usuarios"] = \Dao\Mnt\Usuarios::findAll();
-        Renderer::render('mnt/usuarios', $viewData);
+        $viewData["zapatos"] = \Dao\Mnt\Zapatos::findAll();
+        Renderer::render('mnt/zapatos', $viewData);
     }
 }
 ?>
