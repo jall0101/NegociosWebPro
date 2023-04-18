@@ -51,7 +51,7 @@
         </ul>
         <ul class="navbar-nav mx-3"> 
           <li class="nav-item mx-4 menuItem2">
-            <a class="nav-link active" style="color:var(--blanco)" href="#"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #ffffff;"></i></a>
+            <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=clientView-carrito"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #ffffff;"></i></a>
           </li>         
           <li class="nav-item mx-4 menuItem2">
             <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=sec_login"><i class="fa-regular fa-user fa-lg" style="color: #ffffff;"></i></a>

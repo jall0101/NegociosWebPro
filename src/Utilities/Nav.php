@@ -98,6 +98,13 @@ class Nav {
                 "nav_label" => "Departamentos"
             );
         }
+
+        if (\Utilities\Security::isAuthorized($userID, "Menu_Perfil")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=Checkout_Checkout",
+                "nav_label" => "Pagar"
+            );
+        }
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
         \Utilities\Context::setContext("NAVIGATION2", $tmpNAVIGATION2);
         \Utilities\Context::setContext("NAVIGATION3", $tmpNAVIGATION3);

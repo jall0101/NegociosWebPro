@@ -1,5 +1,6 @@
 <?php
 namespace Controllers\Sec;
+use Exception;
 class Login extends \Controllers\PublicController
 {
     private $txtEmail = "";
@@ -61,7 +62,15 @@ class Login extends \Controllers\PublicController
                                 \Utilities\Context::getContextByKey("redirto")
                             );
                         } else {
-                            \Utilities\Site::redirectTo("index.php");
+                            try{
+                                $this->pasarCarretillaAnonACarretilla();
+                                \Utilities\Site::redirectTo("index.php");
+                            }
+                            catch (Exception $error){
+                                \Utilities\Site::redirectToWithMsg("index.php", "Problemas con el carrito");
+
+                            }
+                            
                         }
                     }
                 } else {
@@ -78,5 +87,29 @@ class Login extends \Controllers\PublicController
         $dataView = get_object_vars($this);
         \Views\Renderer::render("security/login", $dataView);
     }
+
+    private function pasarCarretillaAnonACarretilla(){
+
+        $userId = \Utilities\Security::getUserId();
+
+        $productosCarroAnonimo = \Dao\Cart\CarretillaAnon::findByUser(session_id());
+
+        if(!empty($productosCarroAnonimo)){
+            error_log("mesnajeeeeeeeeeeee");
+            foreach($productosCarroAnonimo as $producto){
+                $verSiExiste = \Dao\Cart\Carretilla::comprobarProductoEnCarretilla($userId,$producto["talla_zapatocod"]);
+                error_log($producto[$userId]);
+                if(empty($verSiExiste)){                    
+                    \Dao\Cart\Carretilla::insert($userId,$producto["talla_zapatocod"],$producto["crrctd"], $producto["crrprc"] );
+                } else {
+                    \Dao\Cart\Carretilla::sumarCantidadEnCarretilla($userId, $producto["crrctd"] ,$producto["talla_zapatocod"]);
+                }
+                
+            }
+
+            \Dao\Cart\CarretillaAnon::deleteAllByUser(session_id());
+        }
+    }
+
 }
 ?>
