@@ -4,18 +4,6 @@ use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-/*
-pedidocod bigint NOT NULL AUTO_INCREMENT,
-  ventacod bigint NOT NULL,
-  direccion varchar(250) NOT NULL,
-  ciudad varchar(60) NOT NULL,
-  estado varchar(60) NOT NULL,
-  pais varchar(60) NOT NULL,
-  telefonoCont varchar(15) NOT NULL,
-  pedidoest char(4) DEFAULT 'PEND',
-  PRIMARY KEY (pedidocod),
-  KEY ventacod (ventacod),
-*/
 
 class Pedido extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Pedidos";
