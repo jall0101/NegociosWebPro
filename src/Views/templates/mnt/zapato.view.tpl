@@ -5,6 +5,7 @@
   <div class="row justify-content-center">
     <form action="index.php?page=Mnt_Zapato&mode={{mode}}&zapatocod={{zapatocod}}" method="POST"
       class="col-10 align-self-center bg-gris_claro p-4 rounded">
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
         <label for="zapatocod" class="col-4 form-label">Código</label>
         <input type="hidden" id="zapatocod" name="zapatocod" value="{{zapatocod}}" />
@@ -14,41 +15,57 @@
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="useremail" class="col-4 form-label">Useremail</label>
-        <input type="text" {{readonly}} class="form-control" name="useremail" value="{{useremail}}" maxlength="45"
-          placeholder="Correo de Usuario" />
+        <label for="departamentocod" class="col-4 form-label">Código del departamento</label>
+        <input type="hidden" id="departamentocod" name="departamentocod" value="{{departamentocod}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" readonly class="form-control" name="departamentocoddummy" value="{{departamentocod}}" />
       </section>
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="username" class="col-4 form-label">Username</label>
-        <input type="text" {{readonly}} class="form-control" name="username" value="{{username}}" maxlength="45"
-          placeholder="Nombre de Usuario" />
+        <label for="precio" class="col-4 form-label">Precio</label>
+        <input type="hidden" id="precio" name="precio" value="{{precio}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" readonly class="form-control" name="preciodummy" value="{{precio}}" />
       </section>
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="userpswd" class="col-4 form-label">Password</label>
-        <input type="password" {{readonly}} class="form-control" name="userpswd" value="{{userpswd}}" maxlength="45"
-          placeholder="Password de Usuario" />
-      </section>
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="userpswdest" class="col-4 form-label">userpswdest</label>
-        <select id="userpswdest" class="form-select" name="userpswdest" {{if readonly}}disabled{{endif readonly}}>
-          <option value="ACT" {{userpswdest_ACT}}>ACTIVO </option>
-          <option value="INA" {{userpswdest_INA}}>INACTIVO </option>
+        <label for="zapatoest" class="col-4 form-label">Estado Zapato</label>
+        <select id="zapatoest" class="form-select" name="zapatoest" {{if readonly}}disabled{{endif readonly}}>
+          <option value="ACT" {{zapatoest_ACT}}>ACTIVO </option>
+          <option value="DES" {{zapatoest_ACT}}>Desactivo </option>
         </select>
       </section>
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="userest" class="col-4 form-label">Estado</label>
-        <select id="userest" class="form-select" name="userest" {{if readonly}}disabled{{endif readonly}}>
-          <option value="ACT" {{userest_ACT}}>ACTIVO </option>
-          <option value="INA" {{userest_INA}}>INACTIVO </option>
-        </select>
+        <label for="imagenzapato" class="col-4 form-label">Imagen</label>
+        <input type="text" {{readonly}} class="form-control" name="imagenzapato" value="{{imagenzapato}}" maxlength="45"
+          placeholder="Imagen Zapato" />
       </section>
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="usertipo" class="col-4 form-label">Tipo</label>
-        <select id="usertipo" class="form-select" name="usertipo" {{if readonly}}disabled{{endif readonly}}>
-          <option value="NOR" {{usertipo_NOR}}>NORMAL </option>
-          <option value="CON" {{usertipo_CON}}>CONSULTOR </option>
-          <option value="CLI" {{usertipo_CLI}}>CLIENTE </option>
-        </select>
+        <label for="color" class="col-4 form-label">Color</label>
+        <input type="text" {{readonly}} class="form-control" name="color" value="{{color}}" maxlength="45"
+          placeholder="Color Zapato" />
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="descripcion" class="col-4 form-label">Descripcion</label>
+        <input type="text" {{readonly}} class="form-control" name="descripcion" value="{{descripcion}}" maxlength="45"
+          placeholder="Descripcion Zapato" />
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="detalles" class="col-4 form-label">Detalles</label>
+        <input type="text" {{readonly}} class="form-control" name="detalles" value="{{detalles}}" maxlength="45"
+          placeholder="Detalles Zapato" />
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="nombrezapato" class="col-4 form-label">Nombre Zapato</label>
+        <input type="text" {{readonly}} class="form-control" name="nombrezapato" value="{{nombrezapato}}" maxlength="45"
+          placeholder="Nombre Zapato" />
       </section>
 
       {{if has_errors}}
@@ -72,13 +89,12 @@
   </div>
 </section>
 
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("btnCancelar").addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.assign("index.php?page=Mnt_Usuarios");
+      window.location.assign("index.php?page=Mnt_Zapatos");
     });
   });
 </script>
