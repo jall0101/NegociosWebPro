@@ -4,7 +4,8 @@ use Dao\Table;
 
 class Zapatos extends Table{
     
-    public static function insert(int $marcacod, 
+    public static function insert(
+            int $marcacod, 
             int $departamentocod, 
             float $precio, 
             string $zapatoest="ACT", 
@@ -14,7 +15,8 @@ class Zapatos extends Table{
             string $detalles, 
             string $nombrezapato): int
     {
-        $sqlstr = "INSERT INTO zapatos (marcacod, 
+        $sqlstr = "INSERT INTO zapatos (
+            marcacod, 
             departamentocod, 
             precio, 
             zapatoest, 
@@ -23,7 +25,8 @@ class Zapatos extends Table{
             descripcion, 
             detalles, 
             nombrezapato) 
-            values(:marcacod, 
+            values(
+            :marcacod, 
             :departamentocod, 
             :precio, 
             :zapatoest, 

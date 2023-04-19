@@ -36,9 +36,12 @@
 
     <section>
       {{if show_action}}
-      <button type="submit" name="btnGuardar" value="G">Guardar</button>
+      <button type="submit" name="btnGuardar" class="bg-dark text-white" value="G"><i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i>&nbsp;&nbsp;Guardar</button>
+        &nbsp;&nbsp;&nbsp;
       {{endif show_action}}
-      <button type="button" id="btnCancelar">Cancelar</button>
+      <button type="button" id="btnCancelar" class="bg-dark text-white"><i class="fa-solid fa-xmark"
+            style="color: #ffffff;"></i>&nbsp;&nbsp;Cancelar</button>
+      </section>
     </section>
   </form>
 </section>

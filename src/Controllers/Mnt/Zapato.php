@@ -144,7 +144,6 @@ class Zapato extends PublicController{
                 break;
             case "UPD":
                 $updated = \Dao\Mnt\Zapatos::update(
-                    $this->viewData["zapatocod"],
                     $this->viewData["marcacod"],
                     $this->viewData["departamentocod"],
                     $this->viewData["precio"],
@@ -153,7 +152,8 @@ class Zapato extends PublicController{
                     $this->viewData["color"],
                     $this->viewData["descripcion"],
                     $this->viewData["detalles"],
-                    $this->viewData["nombrezapato"]
+                    $this->viewData["nombrezapato"],
+                    $this->viewData["zapatocod"]
                 );
                 if($updated > 0){
                     \Utilities\Site::redirectToWithMsg(

@@ -40,9 +40,6 @@ class Marcas extends Table{
         $sqlstr = "SELECT * from marcas;";
         return self::obtenerRegistros($sqlstr, array());
     }
-    public static function findByFilter(){
-
-    }
     public static function findById(int $marcacod){
         $sqlstr = "SELECT * from marcas where marcacod = :marcacod;";
         $row = self::obtenerUnRegistro(

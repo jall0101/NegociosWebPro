@@ -25,6 +25,13 @@ class Marca extends PrivateController{
         "DEL" => "Borrar %s (%s)"
     );
 
+    private $modesAuth = array(
+        "DSP" => "mnt_marcas_view",
+        "INS" => "mnt_marcas_new",
+        "UPD" => "mnt_marcas_edit",
+        "DEL" => "mnt_marcas_delete"
+    );
+
     public function run() :void
     {
         try {
@@ -51,6 +58,10 @@ class Marca extends PrivateController{
     {
         if(isset($_GET['mode'])){
             if(isset($this->modes[$_GET['mode']])){
+                $this->viewData["mode"] = $_GET['mode'];
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
                 $this->viewData["mode"] = $_GET['mode'];
             } else {
                 throw new Exception("Mode Not available");
