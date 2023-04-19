@@ -4,22 +4,54 @@ use Dao\Table;
 
 class Zapatos extends Table{
     
-    public static function insert(int $departamentocod, float $precio, string $zapatoest="ACT", string $imagenzapato, string $color,
-                                  string $descripcion, string $detalles, string $nombrezapato): int
+    public static function insert(int $marcacod, 
+            int $departamentocod, 
+            float $precio, 
+            string $zapatoest="ACT", 
+            string $imagenzapato, 
+            string $color,
+            string $descripcion, 
+            string $detalles, 
+            string $nombrezapato): int
     {
-        $sqlstr = "INSERT INTO zapatos (departamentocod, precio, zapatoest, imagenzapato, color, descripcion, detalles, nombrezapato) 
-            values(:departamentocod, :precio, :zapatoest, :imagenzapato, :color, :descripcion, :detalles, :nombrezapato);";
+        $sqlstr = "INSERT INTO zapatos (marcacod, 
+            departamentocod, 
+            precio, 
+            zapatoest, 
+            imagenzapato, 
+            color, 
+            descripcion, 
+            detalles, 
+            nombrezapato) 
+            values(:marcacod, 
+            :departamentocod, 
+            :precio, 
+            :zapatoest, 
+            :imagenzapato, 
+            :color, 
+            :descripcion, 
+            :detalles, 
+            :nombrezapato);";
         $rowsInserted = self::executeNonQuery(
             $sqlstr,
-            array("departamentocod"=>$departamentocod, "precio"=>$precio, "zapatoest"=>$zapatoest, "imagenzapato" => $imagenzapato,
-             "color"=>$color, "descripcion" => $descripcion, "detalles"=>$detalles, "nombrezapato" => $nombrezapato)
+            array("marcacod"=> $marcacod,
+            "departamentocod"=>$departamentocod, 
+            "precio"=>$precio, 
+            "zapatoest"=>$zapatoest, 
+            "imagenzapato" => $imagenzapato,
+            "color"=>$color, 
+            "descripcion" => $descripcion, 
+            "detalles"=>$detalles, 
+            "nombrezapato" => $nombrezapato)
         );
         return $rowsInserted;
     }
 
 
 
-    public static function update(int $zapatocod, 
+    public static function update(
+                int $zapatocod,
+                int $marcacod,
                 int $departamentocod, 
                 float $precio, 
                 string $zapatoest="ACT", 
@@ -29,7 +61,9 @@ class Zapatos extends Table{
                 string $detalles, 
                 string $nombrezapato
         ){
-        $sqlstr = "UPDATE zapatos set departamentocod = :departamentocod, 
+        $sqlstr = "UPDATE zapatos set
+                    marcacod = :marcacod, 
+                    departamentocod = :departamentocod, 
                     precio = :precio, 
                     zapatoest = :zapatoest, 
                     imagenzapato = :imagenzapato,
@@ -40,7 +74,8 @@ class Zapatos extends Table{
 
         $rowsUpdated = self::executeNonQuery(
             $sqlstr,
-            array("zapatocod" => $zapatocod, 
+            array("zapatocod" => $zapatocod,
+                "marcacod"=>$marcacod, 
                 "departamentocod"=>$departamentocod, 
                 "precio"=>$precio, 
                 "zapatoest"=>$zapatoest, 

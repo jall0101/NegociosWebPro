@@ -14,6 +14,16 @@
         <input type="text" readonly class="form-control" name="zapatocoddummy" value="{{zapatocod}}" />
       </section>
 
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="marcacod" class="col-4 form-label">Código Marca</label>
+        <input type="hidden" id="marcacod" name="marcacod" value="{{marcacod}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" readonly class="form-control" name="marcacoddummy" value="{{marcacod}}" />
+      </section>
+
+
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
         <label for="departamentocod" class="col-4 form-label">Código del departamento</label>
         <input type="hidden" id="departamentocod" name="departamentocod" value="{{departamentocod}}" />

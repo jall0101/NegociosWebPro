@@ -7,6 +7,7 @@
     <thead>
       <tr class="bg-gris_oscuro tb-align text-white p-5">
         <th scope="col">Código</th>
+        <th scope="col">Código Marca</th>
         <th scope="col">Código Departamento</th>
         <th scope="col">precio</th>
         <th scope="col">Estado</th>
@@ -16,9 +17,9 @@
         <th scope="col">Detalles</th>
         <th scope="col">Nombre Zapato</th>
         <th>
-          {{if zapatos_new}}
+          {{if ~zapatos_new}}
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-          {{endif zapatos_new}}
+          {{endif ~zapatos_new}}
         </th>
       </tr>
     </thead>
@@ -27,15 +28,14 @@
     <tbody>
       {{foreach zapatos}}
       <tr class="bg-white">
-         {{if zapatos_view}}
+         {{if ~zapatos_view}}
         <td><a href="index.php?page=mnt_zapato&mode=DSP&zapatocod={{zapatocod}}">{{zapatocod}}</a></td>
-         {{endif zapatos_view}}
-        <td><b>{{departamentocod}}</b></td>
+         {{endif ~zapatos_view}}
+         <td>{{marcacod}}</td>
+        <td>{{departamentocod}}</td>
         <td>{{precio}}</td>
         <td>{{zapatoest}}</td>
-        <td>
-          <img src="{{imagenzapato}}" alt="" class="img-fluid">
-        </td>
+        <td><img src="{{imagenzapato}}" alt="" class="img-fluid"></td>
         <td>{{color}}</td>
         <td>{{descripcion}}</td>
         <td>{{detalles}}</td>

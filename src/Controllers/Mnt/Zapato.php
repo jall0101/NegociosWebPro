@@ -12,6 +12,7 @@ class Zapato extends PublicController{
         "mode" => "DSP",
         "modedsc" => "",
         "zapatocod" => 0,
+        "marcacod" => 0,
         "departamentocod" => 0,
         "precio" => 0,
         "zapatoest" => "ACT",
@@ -77,7 +78,7 @@ class Zapato extends PublicController{
     }
     private function validatePostData(){
         if(isset($_POST["xssToken"])){
-            if(isset($_SESSION["xssToken_Mnt_Usuario"])){
+            if(isset($_SESSION["xssToken_Mnt_Zapato"])){
                 if($_POST["xssToken"] !== $_SESSION["xssToken_Mnt_Zapato"]){
                     throw new Exception("Invalid Xss Token no match");
                 }
@@ -88,14 +89,7 @@ class Zapato extends PublicController{
             throw new Exception("Invalid xss Token");
         }
         
-        if(isset($_POST["username"])){
-            if(\Utilities\Validators::IsEmpty($_POST["username"])){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"][] = "El username no puede ir vacío!";
-            }
-        } else {
-            throw new Exception("username not present in form");
-        }
+        
         
         if(isset($_POST["zapatoest"])){
             if (!in_array( $_POST["zapatoest"], array("ACT","DES"))){
@@ -131,6 +125,7 @@ class Zapato extends PublicController{
         switch($this->viewData["mode"]){
             case "INS":
                 $inserted = \Dao\Mnt\Zapatos::insert(
+                    $this->viewData["marcacod"],
                     $this->viewData["departamentocod"],
                     $this->viewData["precio"],
                     $this->viewData["zapatoest"],
@@ -150,6 +145,7 @@ class Zapato extends PublicController{
             case "UPD":
                 $updated = \Dao\Mnt\Zapatos::update(
                     $this->viewData["zapatocod"],
+                    $this->viewData["marcacod"],
                     $this->viewData["departamentocod"],
                     $this->viewData["precio"],
                     $this->viewData["zapatoest"],
@@ -196,6 +192,7 @@ class Zapato extends PublicController{
             $this->viewData["zapatoest_DES"] = $this->viewData["zapatoest"] === "DES" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
+                $this->viewData["marcacod"],
                 $this->viewData["departamentocod"],
                 $this->viewData["precio"],
                 $this->viewData["zapatoest"],
