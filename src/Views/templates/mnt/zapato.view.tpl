@@ -52,6 +52,15 @@
         <label for="imagenzapato" class="col-4 form-label">Imagen</label>
         <input type="text" {{readonly}} class="form-control" name="imagenzapato" value="{{imagenzapato}}" maxlength="45"
           placeholder="Imagen Zapato" />
+
+          <!--TRAER IMAGEN-->
+          <div class="form-group col-lg-4"  method="post" enctype="multipart/form-data">
+            <label for="my-input">Seleccione una Imagen</label>
+            <input id="my-input" type="file" name="imagen" class="btn btn-light">
+          </div>
+
+
+
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
