@@ -1,11 +1,11 @@
 <?php
 namespace Controllers\Mnt;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Zapato extends PublicController{
+class Zapato extends PrivateController{
     private $redirectTo = "index.php?page=Mnt-Zapatos";
         
     private $viewData = array(
@@ -35,6 +35,13 @@ class Zapato extends PublicController{
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
+
+    private $modesAuth = array(
+        "DSP" => "mnt_zapatos_view",
+        "INS" => "mnt_zapatos_new",
+        "UPD" => "mnt_zapatos_edit",
+        "DEL" => "mnt_zapatos_delete"
+    );
     public function run() :void
     {
         try {
@@ -61,6 +68,13 @@ class Zapato extends PublicController{
     {
         if(isset($_GET['mode'])){
             if(isset($this->modes[$_GET['mode']])){
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
+                $this->viewData["mode"] = $_GET['mode'];
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
                 $this->viewData["mode"] = $_GET['mode'];
             } else {
                 throw new Exception("Mode Not available");

@@ -16,35 +16,34 @@
 
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="marcacod" class="col-4 form-label">Código Marca</label>
-        <input type="hidden" id="marcacod" name="marcacod" value="{{marcacod}}" />
-        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
-        <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="marcacoddummy" value="{{marcacod}}" />
-      </section>
+      <label for="marcacod" class="col-4">Código Marca</label>
+      <input type="text" {{readonly}} name="marcacod" value="{{marcacod}}" maxlength="45" placeholder="Código Marca"/>
+      <!--
+
+      {{if marcacod_error}}
+        <span class="error col-12">{{marcacod_error}}</span>
+      {{endif marcacod_error}}
+      
+      
+      -->
+    </section>
+
+    <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+      <label for="departamentocod" class="col-4">Código Departamento</label>
+      <input type="text" {{readonly}} name="departamentocod" value="{{departamentocod}}" maxlength="45" placeholder="Código Departamento"/>
+    </section>
 
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="departamentocod" class="col-4 form-label">Código del departamento</label>
-        <input type="hidden" id="departamentocod" name="departamentocod" value="{{departamentocod}}" />
-        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
-        <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="departamentocoddummy" value="{{departamentocod}}" />
-      </section>
-
-      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="precio" class="col-4 form-label">Precio</label>
-        <input type="hidden" id="precio" name="precio" value="{{precio}}" />
-        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
-        <input type="hidden" name="xssToken" value="{{xssToken}}">
-        <input type="text" readonly class="form-control" name="preciodummy" value="{{precio}}" />
-      </section>
+      <label for="precio" class="col-4">Precio</label>
+      <input type="text" {{readonly}} name="precio" value="{{precio}}" maxlength="45" placeholder="Precio"/>
+    </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
         <label for="zapatoest" class="col-4 form-label">Estado Zapato</label>
-        <select id="zapatoest" class="form-select" name="zapatoest" {{if readonly}}disabled{{endif readonly}}>
-          <option value="ACT" {{zapatoest_ACT}}>ACTIVO </option>
-          <option value="DES" {{zapatoest_ACT}}>Desactivo </option>
+        <select id="zapatoest" class="form-select" name="zapatoest" {{if readonly}} disabled{{endif readonly}}>
+          <option value="ACT" {{zapatoest_ACT}}>ACTIVO</option>
+          <option value="DES" {{zapatoest_ACT}}>DESACTIVO</option>
         </select>
       </section>
 
@@ -58,9 +57,6 @@
             <label for="my-input">Seleccione una Imagen</label>
             <input id="my-input" type="file" name="imagen" class="btn btn-light">
           </div>
-
-
-
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">

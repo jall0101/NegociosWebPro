@@ -9,9 +9,9 @@
         <th scope="col">Código</th>
         <th scope="col">Departamento</th>
         <th>
-          {{if new_enabled}}
-          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i>Nuevo</button>
-          {{endif new_enabled}}
+          {{if departamentos_new}}
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+          {{endif departamentos_new}}
         </th>
       </tr>
     </thead>
@@ -25,9 +25,7 @@
           {{if ~departamentos_view}}
           <a href="index.php?page=Mnt_Departamento&mode=DSP&departamentocod={{departamentocod}}">{{nombredepartamento}}</a>
            {{endif ~departamentos_view}}
-          {{ifnot ~departamentos_view}}
-          {{nombredepartamento}}
-           {{endifnot ~departamentos_view}}
+
           </td>
         <td>
         {{if ~departamentos_edit}}
