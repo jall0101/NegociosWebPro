@@ -84,6 +84,18 @@ class Zapatos extends Table{
         return $row;
     }
 
+    public static function findTopByDepartment(int $codValue ){
+        $sqlstr = "SELECT * FROM zapatos WHERE departamentocod = :codValue limit 4";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                
+                "codValue" => $codValue
+            )
+        );
+        return $row;
+    }
+
 
 
     public static function findByBrand(int $marcacod, int $departamentocod ){
@@ -117,6 +129,32 @@ class Zapatos extends Table{
             $sqlstr,
             array(
                 "zapatocod"=> $zapatocod
+            )
+        );
+        return $row;
+    }
+
+    public static function findByRelated(int $codValue, int $departcod , int $zapatocod){
+        $sqlstr = "SELECT * FROM zapatos where marcacod = :marcacod and departamentocod = :departamentocod and zapatocod <> :zapatocod limit 3 ;";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "marcacod" => $codValue,
+                "departamentocod" => $departcod,
+                "zapatocod" => $zapatocod
+
+            )
+        );
+        return $row;
+    }
+
+
+    public static function findSizes(int $codValue ){
+        $sqlstr = "SELECT * FROM tallas_zapatos tz INNER JOIN tallas t ON tz.tallacod = t.tallacod WHERE zapatocod = :zapatocod;";
+        $row = self::obtenerRegistros(
+            $sqlstr,
+            array(                
+                "zapatocod" => $codValue
             )
         );
         return $row;

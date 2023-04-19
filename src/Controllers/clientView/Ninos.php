@@ -22,7 +22,7 @@ class Ninos extends PublicController {
         if (isset($_GET['marcacod'])) {
             $this->viewData["ninos"] = \Dao\Mnt\Zapatos::findByBrand($_GET['marcacod'],3);
         }else if(isset($_GET['nombre'])){
-            $this->viewData["ninos"] = \Dao\Mnt\Zapatos::findByName($_GET['nombre']);
+            $this->viewData["ninos"] = \Dao\Mnt\Zapatos::findByName($_GET['nombre'],3);
         }
          else {
             $this->viewData["ninos"] = \Dao\Mnt\Zapatos::findByDepartment(3);
