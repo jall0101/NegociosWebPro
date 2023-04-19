@@ -3,6 +3,31 @@ namespace Dao\Mnt;
 use Dao\Table;
 class Ventas extends Table{
 
+    public static function insert(int $usercod, float $isv, float $cantidadBruta, float $comisionPayPal, float $cantidadNeta, float $amount ): int
+    {
+        $sqlstr = "INSERT INTO `ventas`
+        (
+        `usercod`,
+        `isv`,
+        `cantidadBruta`,
+        `comisionPayPal`,
+        `cantidadNeta`,
+        `amount`)
+        VALUES
+        (
+        :usercod,        
+        :isv,
+        :cantidadBruta,
+        :comisionPayPal,
+        :cantidadNeta,
+        :amount);
+        ";
+        $rowsInserted = self::executeNonQuery(
+            $sqlstr,
+            array("usercod"=>$usercod, "isv"=>$isv, "cantidadBruta"=> $cantidadBruta, "comisionPayPal"=>$comisionPayPal, "cantidadNeta"=> $cantidadNeta, "amount"=> $amount)
+        );
+        return $rowsInserted;
+    }
    
     public static function findAll(){
         $sqlstr = "SELECT * from ventas;";
@@ -23,6 +48,17 @@ class Ventas extends Table{
     public static function findByUser(int $usercod){
         $sqlstr = "SELECT * from ventas where usercod = :usercod;";
         $row = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                "usercod"=> $usercod
+            )
+        );
+        return $row;
+    }
+
+    public static function findLastSellId(int $usercod){
+        $sqlstr = "SELECT MAX(ventacod) as codigo  from ventas where usercod = :usercod;";
+        $row = self::obtenerUnRegistro(
             $sqlstr,
             array(
                 "usercod"=> $usercod

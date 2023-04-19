@@ -68,7 +68,7 @@
     <div class="container p-4 bg-gris_oscuro">
       <div class="row justify-content-center bg-gris_oscuro pb-0">
           <div class="col-12 text-center">
-            <a class="text-white mx-3" style="text-decoration: none;" href="">INICIO</a>
+            <a class="text-white mx-3" style="text-decoration: none;" href="index.php?page=index">INICIO</a>
             <a class="text-white mx-3" style="text-decoration: none;" href="index.php?page=clientView-caballeros">CABALLEROS</a>
             <a class="text-white mx-3" style="text-decoration: none;"href="index.php?page=clientView-damas">DAMAS</a>
             <a class="text-white mx-3" style="text-decoration: none;"href="index.php?page=clientView-ninos">NIÑOS</a>            

@@ -25,6 +25,26 @@ class Security {
             "userType" => $userType
         );
     }
+
+    public static function address($direccion, $ciudad, $estado, $pais, $telefonoCont)
+    {
+        $_SESSION["address"] = array(
+            "direccion" => $direccion,
+            "ciudad" => $ciudad,
+            "estado" => $estado,
+            "pais" => $pais,
+            "telefonoCont" => $telefonoCont
+        );
+
+    }
+
+    public static function clearAddress(){
+        unset($_SESSION["address"]);
+    }
+
+    public static function getAddress(){
+        return $_SESSION["address"];
+    }
     public static function isLogged():bool
     {
         return isset($_SESSION["login"]) && $_SESSION["login"]["isLogged"];

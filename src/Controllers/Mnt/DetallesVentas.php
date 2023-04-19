@@ -8,7 +8,7 @@ use Controllers\PrivateController;
 use Views\Renderer;
 
 
-class Ventas extends PrivateController {
+class DetallesVentas extends PrivateController {
     public function run() :void
     {
         $viewData = array(
@@ -16,7 +16,7 @@ class Ventas extends PrivateController {
 
         );
         $viewData["detalles"] = \Dao\Mnt\Ventas::findAll();
-        Renderer::render('mnt/detalles', $viewData);
+        Renderer::render('mnt/detallesVentas', $viewData);
     }
 }
 ?>

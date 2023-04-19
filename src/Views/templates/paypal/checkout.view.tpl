@@ -14,9 +14,9 @@
                 <b>1. ORDER DETAILS [ {{contador}} ]</b>
             </div>
             <div class="row gy-3 ">
-                
+
                 {{foreach cart}}
-                    <div class="col-12 p-0">
+                <div class="col-12 p-0">
                     <div class="row border p-3">
                         <div class="col-3">
                             <img src="{{imagenzapato}}" class="img-fluid">
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <b class="txt-rojo h3">${{subt}}</b><br>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 {{endfor cart}}
-                
-                
+
+
             </div>
 
             <div class="bg-gris_claro p-3 my-5">
@@ -77,35 +77,43 @@
             <div class="bg-gris_claro p-3">
                 <b>3. SHIPPING</b>
             </div>
-            <form class="m-3">
+            <form action="index.php?page=checkout_checkout" method="post">
                 <div class="mb-3">
                     <label for="pais" class="form-label">País</label>
-                    <input type="text" name="pais" id="pais" class="form-control">
+                    <input type="text" name="pais" value="{{pais}}" id="pais" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="estado" class="form-label">Estado/Departamento</label>
-                    <input type="text" name="estado" id="estado" class="form-control">
+                    <input type="text" name="estado" value="{{estado}}" id="estado" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="ciudad" class="form-label">Ciudad</label>
-                    <input type="text" name="ciudad" id="ciudad" class="form-control">
+                    <input type="text" name="ciudad" value="{{ciudad}}" id="ciudad" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="direccion" class="form-label">Dirección</label>
-                    <input type="text" name="direccion" id="direccion" class="form-control">
+                    <input type="text" name="direccion" value="{{direccion}}" id="direccion" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="telefono" class="form-label">Teléfono de Contacto</label>
-                    <input type="tel" name="telefono" id="telefono" class="form-control">
+                    <input type="tel" name="telefono" id="telefono" value="{{telefono}}" class="form-control">
                     <div id="telHelp" class="form-text">No incluya guiones.</div>
-     
-                                   
-                </div>                
-            </form>
-            <br><br>
-            <form action="index.php?page=checkout_checkout" method="post">
+                </div>
+
+                <br><br>
+
                 <button type="submit" class="btn col-12 bg-cafe p-3"><i class="fa-brands fa-paypal fa-xl text-white"></i>&nbsp;&nbsp;&nbsp;<span class="txt-blanco">CONTINUAR CON PAYPAL</span></button>
+                <br><br>                
             </form>
+            {{if hasErrors}}
+                <div>                   
+                    <ul>
+                        {{foreach errors}}
+                            <li class="text-danger">{{this}}</li>                        
+                        {{endfor errors}}
+                    </ul>                    
+                </div>
+            {{endif hasErrors}}
         </div>
 
     </div>
@@ -139,5 +147,3 @@
         </div>
     </div>
 </div>
-
-

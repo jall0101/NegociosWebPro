@@ -58,6 +58,9 @@ class Marca extends PrivateController{
     {
         if(isset($_GET['mode'])){
             if(isset($this->modes[$_GET['mode']])){
+                if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
+                    throw new Exception("Mode is not Authorized!");
+                }
                 $this->viewData["mode"] = $_GET['mode'];
                 if (!$this->isFeatureAutorized($this->modesAuth[$_GET['mode']])) {
                     throw new Exception("Mode is not Authorized!");
