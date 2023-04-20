@@ -11,7 +11,7 @@ class CartFns {
 
     public static function getUnAuthTimeDelta()
     {
-        return 300 ;// 10 * 60; //h , m, s
+        return 9000 ;// 10 * 60; //h , m, s
         // No puede ser mayor a 34 días
     }
 }

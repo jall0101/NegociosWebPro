@@ -22,7 +22,7 @@
           <td>{{descripciontalla}}</td>
           <td>{{color}}</td>
           <td>
-            <img src="{{imagenzapato}}" height="200" width="200" alt="">
+            <img src="public\imgs\uploads\{{imagenzapato}}" height="200" width="200" alt="">
           </td>
           <td>$ {{cantidad}}</td>
           <td>$ {{precioUnit}}</td>

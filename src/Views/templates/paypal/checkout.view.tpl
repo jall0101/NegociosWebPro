@@ -19,7 +19,7 @@
                 <div class="col-12 p-0">
                     <div class="row border p-3">
                         <div class="col-3">
-                            <img src="{{imagenzapato}}" class="img-fluid">
+                            <img src="public\imgs\uploads\{{imagenzapato}}" class="img-fluid">
                         </div>
                         <div class="col-9 p-0">
                             <div class="row">
