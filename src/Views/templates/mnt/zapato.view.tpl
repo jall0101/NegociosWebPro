@@ -4,7 +4,7 @@
 <section class="container">
   <div class="row justify-content-center">
     <form action="index.php?page=Mnt_Zapato&mode={{mode}}&zapatocod={{zapatocod}}" method="POST"
-      class="col-10 align-self-center bg-gris_claro p-4 rounded">
+      class="col-10 align-self-center bg-gris_claro p-4 rounded" enctype="multipart/form-data">
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
         <label for="zapatocod" class="col-4 form-label">Código</label>
@@ -43,20 +43,18 @@
         <label for="zapatoest" class="col-4 form-label">Estado Zapato</label>
         <select id="zapatoest" class="form-select" name="zapatoest" {{if readonly}} disabled{{endif readonly}}>
           <option value="ACT" {{zapatoest_ACT}}>ACTIVO</option>
-          <option value="DES" {{zapatoest_ACT}}>DESACTIVO</option>
+          <option value="DES" {{zapatoest_DES}}>DESACTIVO</option>
         </select>
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="imagenzapato" class="col-4 form-label">Imagen</label>
-        <input type="text" {{readonly}} class="form-control" name="imagenzapato" value="{{imagenzapato}}" maxlength="45"
-          placeholder="Imagen Zapato" />
-
+        
           <!--TRAER IMAGEN-->
-          <div class="form-group col-lg-4"  method="post" enctype="multipart/form-data">
-            <label for="my-input">Seleccione una Imagen</label>
-            <input id="my-input" type="file" name="imagen" class="btn btn-light">
-          </div>
+          
+        <label for="my-input">Seleccione una Imagen</label>
+        <input type="text" name="verificarImagen" value="{{imagenzapato}}" readonly>
+        <input id="my-input" type="file" name="imagenzapato" class="btn btn-light" {{disabled}}>
+          
       </section>
 
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">

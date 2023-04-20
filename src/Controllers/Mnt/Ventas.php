@@ -16,6 +16,10 @@ class Ventas extends PrivateController {
 
         );
         $viewData["ventas"] = \Dao\Mnt\Ventas::findAll();
+        $ganancias = \Dao\Mnt\Ventas::findEarnings();
+        $viewData["ganancias"] = $ganancias["ganancias"];
+        $numVentas = \Dao\Mnt\Ventas::findNumVentas();
+        $viewData["numVentas"] = $numVentas["numVentas"];
         Renderer::render('mnt/ventas', $viewData);
     }
 }

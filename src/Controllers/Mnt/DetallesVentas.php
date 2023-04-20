@@ -6,17 +6,28 @@ namespace Controllers\Mnt;
 
 use Controllers\PrivateController;
 use Views\Renderer;
+use Exception;
 
 
 class DetallesVentas extends PrivateController {
+    private $viewData = array();
+
     public function run() :void
     {
-        $viewData = array(
-            "detalles_view"=>$this->isFeatureAutorized('mnt_detalles_view')
+        $this->page_loaded();       
+        
+        $this->viewData["detalles"] = \Dao\Mnt\DetallesVentas::findByVentaId($this->viewData["ventacod"]);
+        Renderer::render('mnt/detallesVentas', $this->viewData);
+    }
 
-        );
-        $viewData["detalles"] = \Dao\Mnt\Ventas::findAll();
-        Renderer::render('mnt/detallesVentas', $viewData);
+    private function page_loaded()
+    {
+        if (isset($_GET['ventacod'])) {
+            $this->viewData["ventacod"] = intval($_GET["ventacod"]);
+        } else {
+            throw new Exception("Id not found on Query Params");
+        }
+
     }
 }
 ?>

@@ -48,4 +48,53 @@ class Pedidos extends Table{
         );
         return $row;
     }
+
+    public static function findNumPedidos(){
+        $sqlstr = "SELECT COUNT(pedidocod) numPedidos FROM pedidos;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
+
+    public static function findNumEntregados(){
+        $sqlstr = "SELECT COUNT(pedidocod) numEntre FROM pedidos WHERE pedidoest = 'DONE';";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
+
+    public static function findNumPendientes(){
+        $sqlstr = "SELECT COUNT(pedidocod) numPend FROM pedidos WHERE pedidoest = 'PEND';";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
+
+    public static function cambiarEstadoDone($pedidocod){
+        $sqlstr = "UPDATE pedidos SET pedidoest = 'DONE' WHERE pedidocod = :pedidocod;";
+        $row = self::executeNonQuery(
+            $sqlstr,
+            array(
+                "pedidocod" => $pedidocod
+            )
+        );
+        return $row;
+    }
+
+    public static function cambiarEstadoPend($pedidocod){
+        $sqlstr = "UPDATE pedidos SET pedidoest = 'PEND' WHERE pedidocod = :pedidocod;";
+        $row = self::executeNonQuery(
+            $sqlstr,
+            array(
+                "pedidocod" => $pedidocod
+            )
+        );
+        return $row;
+    }
 }

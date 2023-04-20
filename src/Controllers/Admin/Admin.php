@@ -39,7 +39,23 @@ class Admin extends \Controllers\PrivateController
      */
     public function run() :void
     {
-        \Views\Renderer::render("admin/admin", array());
+        $viewData = array();
+        $userID = \Utilities\Security::getUserId();
+
+        $viewData["menu_usuarios"] = \Utilities\Security::isAuthorized($userID, "Menu_MntUsuarios");
+        $viewData["menu_roles"] = \Utilities\Security::isAuthorized($userID, "Menu_MntRoles");
+        $viewData["menu_funciones"] = \Utilities\Security::isAuthorized($userID, "Menu_MntFunciones");
+        $viewData["menu_rolesUsuarios"] = \Utilities\Security::isAuthorized($userID, "Menu_MntRolesUsuarios");
+        $viewData["menu_funcionesRoles"] = \Utilities\Security::isAuthorized($userID, "Menu_MntFuncionesRoles");
+        $viewData["menu_ventas"] = \Utilities\Security::isAuthorized($userID, "Menu_MntHistorialTransacciones");
+        $viewData["menu_pedidos"] = \Utilities\Security::isAuthorized($userID, "Menu_MntPedidos");
+        $viewData["menu_zapatos"] = \Utilities\Security::isAuthorized($userID, "Menu_MntZapatos");
+        $viewData["menu_marcas"] = \Utilities\Security::isAuthorized($userID, "Menu_MntMarcas");
+        $viewData["menu_tallas"] = \Utilities\Security::isAuthorized($userID, "Menu_MntTallas");
+        $viewData["menu_depart"] = \Utilities\Security::isAuthorized($userID, "Menu_MntDepartamentos");
+
+       
+        \Views\Renderer::render("admin/admin", $viewData);
     }
 }
 ?>

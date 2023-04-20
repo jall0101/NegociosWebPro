@@ -1,6 +1,28 @@
-<h1>Gestión de Ventas</h1>
+<h1>Ventas</h1>
 <section class="WWFilter">
-
+<br><br>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 p-4 bg-dark text-white">
+      VENTAS TOTALES
+    </div>
+    <div class="col-sm-12 col-md-4 p-4 bg-gris_claro2 text-dark">
+      <b>{{numVentas}}</b>
+    </div>
+  </div>
+</section>
+<br>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 p-4 bg-dark text-white">
+      GANANCIAS
+    </div>
+    <div class="col-sm-12 col-md-4 p-4 bg-gris_claro2 text-dark ">
+      <b>$ {{ganancias}}</b>
+    </div>
+  </div>
+</section>
+<br><br>
 </section>
 <section class="WWList table-responsive">
   <table class="table table-striped table-hover tb-align">
@@ -22,7 +44,13 @@
         <tr class="bg-white">
 
             <td>
-                <a href="index.php?page=Mnt_Venta&mode=DSP&cod={{ventacod}}">{{ventacod}}</a>
+                {{if ~ventas_view}}
+                <a href="index.php?page=Mnt_detallesventas&ventacod={{ventacod}}">{{ventacod}}</a>
+                {{endif ~ventas_view}}
+                  
+                {{ifnot ~ventas_view}}
+                  {{ventacod}}
+                {{endifnot ~ventas_view}}
             </td>
             <td>
                 {{usercod}}

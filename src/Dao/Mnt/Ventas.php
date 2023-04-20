@@ -66,4 +66,22 @@ class Ventas extends Table{
         );
         return $row;
     }
+
+    public static function findEarnings(){
+        $sqlstr = "SELECT round(SUM(cantidadNeta),2) ganancias FROM ventas;;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
+
+    public static function findNumVentas(){
+        $sqlstr = "SELECT COUNT(ventacod) numVentas FROM ventas;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array()
+        );
+        return $row;
+    }
 }

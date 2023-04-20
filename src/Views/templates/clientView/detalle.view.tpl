@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-9 py-3">
-            <img src="{{imagenzapato}}" alt="50$" class="img-fluid">
+            <img src="public\imgs\uploads\{{imagenzapato}}" alt="50$" class="img-fluid">
         </div>
         <div class="col-sm-12 col-md-3 py-5 px-0">
             <div class="txt-negro">{{nombrezapato}}</div>

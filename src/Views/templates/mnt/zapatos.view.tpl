@@ -35,7 +35,7 @@
         <td>{{departamentocod}}</td>
         <td>{{precio}}</td>
         <td>{{zapatoest}}</td>
-        <td><img src="{{imagenzapato}}" alt="" class="img-fluid"></td>
+        <td><img src="public\imgs\uploads\{{imagenzapato}}" alt="" class="img-fluid"></td>
         <td>{{color}}</td>
         <td>{{descripcion}}</td>
         <td>{{detalles}}</td>

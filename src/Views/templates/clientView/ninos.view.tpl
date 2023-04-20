@@ -44,7 +44,7 @@
     <div class="row gx-5">
       {{foreach ninos}}
         <a class="col-lg-4" style="text-decoration: none;" href="index.php?page=clientView_detalle&zapatocod={{zapatocod}}">
-          <img src="{{imagenzapato}}" alt="50$" class="img-fluid">
+          <img src="public\imgs\uploads\{{imagenzapato}}" alt="50$" class="img-fluid">
           <p class="text-start text-dark my-4">COLOR {{color}}</p>
           <div class="row">
             <b class="col-10 text-start text-dark p-0">{{nombrezapato}}</b>

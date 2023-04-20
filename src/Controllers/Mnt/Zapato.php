@@ -20,6 +20,7 @@ class Zapato extends PrivateController{
         "zapatoest_DES" => "",
         "imagenzapato" => "",
         "color" => "", 
+        "verificarImagen"=> "",
         "descripcion" => "",        
         "detalles" => "",
         "nombrezapato" => "",
@@ -28,6 +29,7 @@ class Zapato extends PrivateController{
         "show_action" => true,
         "readonly" => false,
         "xssToken" => "",
+        "disabled" => false
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
@@ -126,14 +128,7 @@ class Zapato extends PrivateController{
         } else {
             throw new Exception("precio not present in form");
         }
-        if(isset($_POST["imagenzapato"])){
-            if(\Utilities\Validators::IsEmpty($_POST["imagenzapato"])){
-                $this->viewData["has_errors"] = true;
-                $this->viewData["general_errors"] = "La imagen zapato no puede ir vacía!";
-            }
-        } else {
-            throw new Exception("imagenzapato not present in form");
-        }
+        
         if(isset($_POST["color"])){
             if(\Utilities\Validators::IsEmpty($_POST["color"])){
                 $this->viewData["has_errors"] = true;
@@ -203,13 +198,30 @@ class Zapato extends PrivateController{
 
         $this->viewData["marcacod"] = $_POST["marcacod"];
         $this->viewData["departamentocod"]= $_POST["departamentocod"];
-        $this->viewData["precio"]= $_POST["precio"];        
-        $this->viewData["imagenzapato"]= $_POST["imagenzapato"];
+        $this->viewData["precio"]= $_POST["precio"];    
         $this->viewData["color"]= $_POST["color"];
         $this->viewData["descripcion"]= $_POST["descripcion"];
         $this->viewData["detalles"]= $_POST["detalles"];
         $this->viewData["nombrezapato"]= $_POST["nombrezapato"];
 
+        if($this->viewData["mode"] !== "INS"){
+            $error = $_FILES["imagenzapato"]["error"];
+            if($error !== 0){
+                error_log("aqui-----------------------------1------------");
+                $this->viewData["imagenzapato"] = $_POST["verificarImagen"];
+            } else{
+                error_log("aqui-----------------------------2------------");
+
+                $this->eliminarImagen($_POST["verificarImagen"]);
+                $this->ingresarImagen();
+
+            }
+        } else{
+            error_log("aqui-----------------------------3------------");
+
+           $this->ingresarImagen();
+        }
+        
 
     }
     private function executeAction(){
@@ -255,6 +267,7 @@ class Zapato extends PrivateController{
                 }
                 break;
             case "DEL":
+                $this->eliminarImagen($this->viewData["imagenzapato"]);
                 $deleted = \Dao\Mnt\Zapatos::delete(
                     $this->viewData["zapatocod"]
                 );
@@ -284,25 +297,61 @@ class Zapato extends PrivateController{
             $this->viewData["zapatoest_DES"] = $this->viewData["zapatoest"] === "DES" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
-                $this->viewData["marcacod"],
-                $this->viewData["departamentocod"],
-                $this->viewData["precio"],
-                $this->viewData["zapatoest"],
-                $this->viewData["imagenzapato"],
-                $this->viewData["color"],
-                $this->viewData["descripcion"],
-                $this->viewData["detalles"],
                 $this->viewData["nombrezapato"],
-                $this->viewData["zapatocod"]
+                $this->viewData["zapatocod"]     
+                
             );
             if(in_array($this->viewData["mode"], array("DSP","DEL"))){
                 $this->viewData["readonly"] = "readonly";
+                $this->viewData["disabled"] = "disabled";
             }
             if($this->viewData["mode"] === "DSP") {
                 $this->viewData["show_action"] = false;
             }
         }
         Renderer::render("mnt/zapato", $this->viewData);
+    }
+
+    private function ingresarImagen(){
+        if(isset($_FILES["imagenzapato"])){
+            $img_name = $_FILES["imagenzapato"]["name"];
+            $img_size = $_FILES["imagenzapato"]["size"];
+            $tmp_name = $_FILES["imagenzapato"]["tmp_name"];
+            $error = $_FILES["imagenzapato"]["error"];
+
+            if($error === 0){
+                if($img_size > 300000){
+                    $this->viewData["has_errors"] = true;
+                    $this->viewData["general_errors"] = "La imagen es muy grande!";
+                } else{
+                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                    $img_ex_lc = strtolower($img_ex);
+                    $allowed_exs = array("jpg","jpeg","png","webp");
+
+                    if(in_array($img_ex_lc, $allowed_exs)){
+                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                        $img_upload_path = "public/imgs/uploads/".$new_img_name;
+                        move_uploaded_file($tmp_name,$img_upload_path);
+
+                        $this->viewData["imagenzapato"] = $new_img_name;
+                    } else {
+                        $this->viewData["has_errors"] = true;
+                        $this->viewData["general_errors"] = "El formato de imagen no es permitido!";
+                    }
+                }
+
+            }else{
+                
+                throw new Exception("error en la imagen");
+            }
+        }
+    }
+
+    
+
+    private function eliminarImagen($nombre){
+        $path = "public/imgs/uploads/".$nombre;
+        unlink($path);
     }
 }
 

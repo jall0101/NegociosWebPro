@@ -15,12 +15,7 @@ class Nav {
                 "nav_label" => "Usuarios"
             );
         }
-        if (\Utilities\Security::isAuthorized($userID, "Menu_MntQuotes")) {
-            $tmpNAVIGATION[] = array(
-                "nav_url" => "index.php?page=Mnt_Quotes",
-                "nav_label" => "Citas"
-            );
-        }
+        
 
         if (\Utilities\Security::isAuthorized($userID, "Menu_PaymentCheckout")) {
             $tmpNAVIGATION[] = array(

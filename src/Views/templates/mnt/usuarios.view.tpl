@@ -30,6 +30,9 @@
           {{if ~usuarios_view}}
           <a href="index.php?page=mnt_usuario&mode=DSP&usercod={{usercod}}">{{useremail}}</a>
           {{endif ~usuarios_view}}
+          {{ifnot ~usuarios_view}}
+            {{descripciontalla}}
+          {{endifnot ~usuarios_view}}
 
         </td>
 
