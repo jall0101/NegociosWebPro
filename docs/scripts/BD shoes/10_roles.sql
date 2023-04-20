@@ -15,6 +15,6 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES ('ADMIN','administrador del sistema','ACT');
+INSERT INTO `roles` VALUES ('ADMIN','administrador del sistema','ACT'),('CLIENTE','Cliente','ACT');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;

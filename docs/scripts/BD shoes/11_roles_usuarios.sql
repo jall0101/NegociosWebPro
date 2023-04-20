@@ -20,6 +20,6 @@ CREATE TABLE `roles_usuarios` (
 
 LOCK TABLES `roles_usuarios` WRITE;
 /*!40000 ALTER TABLE `roles_usuarios` DISABLE KEYS */;
-INSERT INTO `roles_usuarios` VALUES (6,'ADMIN','ACT','2023-02-12 00:00:00','2023-04-29 00:00:00');
+INSERT INTO `roles_usuarios` VALUES (4,'CLIENTE','ACT','2023-04-20 08:10:21','2023-05-06 00:00:00'),(6,'ADMIN','ACT','2023-02-12 00:00:00','2023-04-29 00:00:00');
 /*!40000 ALTER TABLE `roles_usuarios` ENABLE KEYS */;
 UNLOCK TABLES;

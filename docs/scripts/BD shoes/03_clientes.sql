@@ -14,7 +14,7 @@ CREATE TABLE `clientes` (
   UNIQUE KEY `unique_clientname` (`clientname`),
   UNIQUE KEY `unique_clientemail` (`clientemail`),
   UNIQUE KEY `unique_clientphone1` (`clientphone1`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -23,5 +23,6 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,'Denisse Garcia','F','33786545','agarciagomez13@gmail.com','ACT','2023-04-18 15:12:35',4);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;

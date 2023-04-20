@@ -12,7 +12,7 @@ CREATE TABLE `detalleventa` (
   KEY `talla_zapatocod` (`talla_zapatocod`),
   CONSTRAINT `detalleventa_ibfk_1` FOREIGN KEY (`ventacod`) REFERENCES `ventas` (`ventacod`),
   CONSTRAINT `detalleventa_ibfk_2` FOREIGN KEY (`talla_zapatocod`) REFERENCES `tallas_zapatos` (`talla_zapatocod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -21,5 +21,6 @@ CREATE TABLE `detalleventa` (
 
 LOCK TABLES `detalleventa` WRITE;
 /*!40000 ALTER TABLE `detalleventa` DISABLE KEYS */;
+INSERT INTO `detalleventa` VALUES (1,1,23,1,55),(2,1,88,1,50),(3,2,48,1,45),(4,3,15,2,45),(5,3,41,1,35),(6,4,9,1,60),(7,4,88,2,50);
 /*!40000 ALTER TABLE `detalleventa` ENABLE KEYS */;
 UNLOCK TABLES;

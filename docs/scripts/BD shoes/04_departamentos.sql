@@ -6,7 +6,7 @@ CREATE TABLE `departamentos` (
   `nombredepartamento` varchar(50) NOT NULL,
   PRIMARY KEY (`departamentocod`),
   UNIQUE KEY `unique_nombredepartamento` (`nombredepartamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -15,6 +15,6 @@ CREATE TABLE `departamentos` (
 
 LOCK TABLES `departamentos` WRITE;
 /*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
-INSERT INTO `departamentos` VALUES (1,'caballeros'),(2,'damas'),(3,'niños');
+INSERT INTO `departamentos` VALUES (1,'Caballeros'),(2,'Damas'),(3,'Niños');
 /*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
 UNLOCK TABLES;
