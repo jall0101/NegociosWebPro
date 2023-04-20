@@ -14,7 +14,7 @@
         <input type="text" {{readonly_edit}} class="form-control" name="rolescoddummy" value="{{rolescod}}" />
       </section>
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="usercod" class="col-4 form-label">Código Función</label>
+        <label for="usercod" class="col-4 form-label">Código Usuario</label>
         <input type="hidden" id="usercod" name="usercod" value="{{usercod}}" />
         <input type="hidden" id="mode" name="mode" value="{{mode}}" />
         <input type="hidden" name="xssToken" value="{{xssToken}}">

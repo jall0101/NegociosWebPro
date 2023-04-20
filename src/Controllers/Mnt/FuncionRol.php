@@ -30,7 +30,7 @@ class FuncionRol extends PrivateController{
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
-        "INS" => "Nuevo FunRol",
+        "INS" => "Nuevo Función-Rol",
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );

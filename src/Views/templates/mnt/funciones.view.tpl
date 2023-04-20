@@ -5,18 +5,18 @@
 <section class="WWList table-responsive">
   <table class="table table-striped table-hover tb-align">
     <thead>
-      <tr class="bg-gris_oscuro tb-align text-white p-5"></tr>
-      <th scope="col">Código</th>
-      <th scope="col">Descripción</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Tipo</th>
-      {{if funciones_new}}
-      <th>
+      <tr class="bg-gris_oscuro tb-align text-white p-5">
+        <th scope="col">Código</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Tipo</th>
+        {{if ~funciones_new}}
+        <th>
 
-        <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
 
-      </th>
-      {{endif funciones_new}}
+        </th>
+        {{endif ~funciones_new}}
       </tr>
     </thead>
     <tbody>
@@ -26,11 +26,11 @@
         <td>
           {{if ~funciones_view}}
           <a href="index.php?page=mnt_funcion&mode=DSP&fncod={{fncod}}">{{fndsc}}</a>
-        
-        {{endif ~funciones_view}}
-        {{ifnot ~funciones_view}}
-        {{fndsc}}
-        {{endifnot ~funciones_view}}
+
+          {{endif ~funciones_view}}
+          {{ifnot ~funciones_view}}
+          {{fndsc}}
+          {{endifnot ~funciones_view}}
         </td>
         </td>
         <td>{{fnest}}</td>

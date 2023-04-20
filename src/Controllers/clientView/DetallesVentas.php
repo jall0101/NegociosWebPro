@@ -13,10 +13,17 @@ class DetallesVentas extends PublicController {
 
     public function run() :void
     {
-        $this->page_loaded();       
+        if(!\Utilities\Security::isLogged())
+        {
+            \Utilities\Site::redirectToWithMsg("index.php?page=sec_login", "Debe iniciar sesión para poder acceder a esta página");
+        } else {
+            $this->page_loaded();       
         
-        $this->viewData["detalles"] = \Dao\Mnt\DetallesVentas::findByVentaId($this->viewData["ventacod"]);
-        Renderer::render('clientView/detallesVentas', $this->viewData);
+            $this->viewData["detalles"] = \Dao\Mnt\DetallesVentas::findByVentaId($this->viewData["ventacod"]);
+            Renderer::render('clientView/detallesVentas', $this->viewData);
+        }
+
+        
     }
 
     private function page_loaded()

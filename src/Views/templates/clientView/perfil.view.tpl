@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb m-4">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php?page=index" class="text-dark">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Perfil</li>
         </ol>
     </nav>
@@ -24,7 +24,6 @@
             <h5>Phone: {{clientphone1}}</h5>
             <h5>Email: {{clientemail}}</h5>
             <ol class="breadcrumb m-4">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Edit Profile</a></li>
         </ol>
         <br>
             <br>
@@ -35,9 +34,9 @@
                 <li class="breadcrumb-item"><a href="#" class="text-dark">Términos y Privacidad</a></li>
             </ol>
 
-            
+            <br><br><br>
 
-            <i class="fa-solid fa-book fa-xl" style="color: #050505;"></i>
+            <i class="fa-solid fa-book fa-xl" style="color: #050505;"></i><br><br>
             <h4 class="text-dark">Historal</h4>
             <hr>
             <ol class="breadcrumb m-4">

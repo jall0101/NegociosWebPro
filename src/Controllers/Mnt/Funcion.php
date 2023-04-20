@@ -10,14 +10,14 @@ class Funcion extends PrivateController{
     private $viewData = array(
         "mode" => "DSP",
         "modedsc" => "",
-        "fncod" => 0,
+        "fncod" => "",
         "fndsc" => "",
         "fnest" => "ACT",
         "fntyp" => "PGN",
         "fnest_ACT" => "selected",
         "fnest_INA" => "",
-        "fntyp_PGN" => "selected",
-        "fntyp_FNC" => "",        
+        "fntyp_PGN" => "",
+        "fntyp_CTR" => "selected",        
         "general_errors"=> array(),
         "has_errors" =>false,
         "show_action" => true,
@@ -27,7 +27,7 @@ class Funcion extends PrivateController{
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
-        "INS" => "Nueva Funcion",
+        "INS" => "Nueva Función",
         "UPD" => "Editar %s (%s)",
         "DEL" => "Borrar %s (%s)"
     );
@@ -112,7 +112,7 @@ class Funcion extends PrivateController{
             }
         }
         if(isset($_POST["fntyp"])){
-            if (!in_array( $_POST["fntyp"], array("PGN","FNC"))){
+            if (!in_array( $_POST["fntyp"], array("PGN","CTR"))){
                 throw new Exception("fntyp incorrect value");
             }
         }else {
@@ -210,7 +210,7 @@ class Funcion extends PrivateController{
             $this->viewData["fnest_ACT"] = $this->viewData["fnest"] === "ACT" ? "selected": "";
             $this->viewData["fnest_INA"] = $this->viewData["fnest"] === "INA" ? "selected": "";
             $this->viewData["fntyp_PGN"] = $this->viewData["fntyp"] === "PGN" ? "selected": "";
-            $this->viewData["fnest_FNC"] = $this->viewData["fntyp"] === "FNC" ? "selected": "";
+            $this->viewData["fnest_CTR"] = $this->viewData["fntyp"] === "CTR" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
                 $this->viewData["fndsc"],

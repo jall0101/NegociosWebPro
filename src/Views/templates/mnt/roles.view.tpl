@@ -20,7 +20,7 @@
     <tbody>
       {{foreach roles}}
       <tr class="bg-white">
-        <td>{{rolescod}}</td>
+        <td><b>{{rolescod}}</b></td>
         {{if ~roles_view}}
         <td><a href="index.php?page=mnt_rol&mode=DSP&rolescod={{rolescod}}">{{rolesdsc}}</a></td>
          {{endif ~roles_view}}

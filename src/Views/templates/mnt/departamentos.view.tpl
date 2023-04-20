@@ -33,7 +33,7 @@
              <input type="hidden" name="page" value="Mnt_Departamento"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="departamentocod" value={{departamentocod}} />
-              <button type="submit">Editar</button>
+              <button type="submit" class="bg-primary"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
           </form>
            {{endif ~departamentos_edit}}
           {{if ~departamentos_delete}}
@@ -41,7 +41,7 @@
              <input type="hidden" name="page" value="Mnt_Departamento"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="departamentocod" value={{departamentocod}} />
-              <button type="submit">Eliminar</button>
+              <button type="submit" class="bg-danger"><i class="fa-solid fa-trash fa-lg"></i></button>
           </form>
           {{endif ~departamentos_delete}}
         </td>

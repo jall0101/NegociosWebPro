@@ -20,7 +20,7 @@ class RolesUsuario extends PrivateController{
         "mode" => "DSP",
         "modedsc" => "",
         "usercod" => 0,
-        "rolescod" => 0,
+        "rolescod" => "",
         "roleuserest" => "DSP",          
         "roleuserexp" => "",      
         "general_errors"=> array(),
@@ -55,7 +55,7 @@ class RolesUsuario extends PrivateController{
             }
             $this->render();
         } catch (Exception $error) {
-            unset($_SESSION["xssToken_Mnt_Rol"]);
+            unset($_SESSION["xssToken_Mnt_RolesUsuarios"]);
             error_log(sprintf("Controller/Mnt/RolesUsuario ERROR: %s", $error->getMessage()));
             \Utilities\Site::redirectToWithMsg(
                 $this->redirectTo,
@@ -91,8 +91,8 @@ class RolesUsuario extends PrivateController{
     }
     private function validatePostData(){
         if(isset($_POST["xssToken"])){
-            if(isset($_SESSION["xssToken_Mnt_Rol"])){
-                if($_POST["xssToken"] !== $_SESSION["xssToken_Mnt_Rol"]){
+            if(isset($_SESSION["xssToken_Mnt_RolesUsuarios"])){
+                if($_POST["xssToken"] !== $_SESSION["xssToken_Mnt_RolesUsuarios"]){
                     throw new Exception("Invalid Xss Token no match");
                 }
             } else {
@@ -183,7 +183,7 @@ class RolesUsuario extends PrivateController{
     private function render(){
         $xssToken = md5("ROLES_USUARIO" . rand(0,4000) * rand(5000,9999));
         $this-> viewData["xssToken"] = $xssToken;
-        $_SESSION["xssToken_Mnt_Roles_Usuario"] = $xssToken;
+        $_SESSION["xssToken_Mnt_RolesUsuarios"] = $xssToken;
 
         if($this->viewData["mode"] === "INS") {
             $this->viewData["modedsc"] = $this->modes["INS"];
