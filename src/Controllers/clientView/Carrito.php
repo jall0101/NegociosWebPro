@@ -22,7 +22,9 @@ class Carrito extends PublicController {
         "crrctd" => 0
     );
     public function run() :void
-    {        
+    {      
+        \Dao\Cart\Catalogo::quitarDeCarretilla();
+        \Dao\Cart\Catalogo::quitarDeCarretillaAnon();  
         $user = intval(\Utilities\Security::getUserId());   
         
         if(!\Utilities\Security::isLogged()){
@@ -81,7 +83,7 @@ class Carrito extends PublicController {
     private function deleteProductCarritoAnonimo()
     {
         $delete = \Dao\Cart\CarretillaAnon::delete(session_id(), $this->delData["talla_zapatocod"]);
-        $update =  \Dao\Cart\CarretillaAnon::disiminuirStock($this->delData["crrctd"], $this->delData["talla_zapatocod"]);
+        $update =  \Dao\Cart\CarretillaAnon::aumentarStock($this->delData["crrctd"], $this->delData["talla_zapatocod"]);
 
         if($delete && $update)
         {
@@ -96,7 +98,7 @@ class Carrito extends PublicController {
     {
         $userId = intval(\Utilities\Security::getUserId());
         $delete = \Dao\Cart\Carretilla::delete($userId, $this->delData["talla_zapatocod"]);
-        $update =  \Dao\Cart\Carretilla::disiminuirStock($this->delData["crrctd"], $this->delData["talla_zapatocod"]);
+        $update =  \Dao\Cart\Carretilla::aumentarStock($this->delData["crrctd"], $this->delData["talla_zapatocod"]);
 
         if($delete && $update)
         {

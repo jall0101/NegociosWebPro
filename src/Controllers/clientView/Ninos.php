@@ -12,6 +12,8 @@ class Ninos extends PublicController {
     public function run() :void
     {
         $this->page_loaded();
+        \Dao\Cart\Catalogo::quitarDeCarretilla();
+        \Dao\Cart\Catalogo::quitarDeCarretillaAnon();  
         $this->viewData["cantidad"] = count($this->viewData["ninos"]);
         $this->viewData["marcas"] = \Dao\Mnt\Marcas::findAll();      
         Renderer::render('clientView/ninos',  $this->viewData);

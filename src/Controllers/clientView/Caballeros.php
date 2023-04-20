@@ -13,6 +13,8 @@ class Caballeros extends PublicController {
     {
            
         $this->page_loaded();
+        \Dao\Cart\Catalogo::quitarDeCarretilla();
+        \Dao\Cart\Catalogo::quitarDeCarretillaAnon();  
         $this->viewData["cantidad"] = count($this->viewData["caballeros"]);
         $this->viewData["marcas"] = \Dao\Mnt\Marcas::findAll();  
         Renderer::render('clientView/caballeros', $this->viewData);

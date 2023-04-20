@@ -153,4 +153,9 @@ class CarretillaAnon extends Table{
         );
         return $row;
     }
+
+    public static function findAllByDeltaTime($delta){
+        $sqlstr = "SELECT * FROM carretillaanon WHERE TIME_TO_SEC(TIMEDIFF(now(), crrfching)) > :delta;";
+        return self::obtenerRegistros($sqlstr, array("delta" => $delta));
+    }
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb m-4">
-      <li class="breadcrumb-item"><a href="#" class="text-dark">Home</a></li>
+      <li class="breadcrumb-item"><a href="index.php?page=index" class="text-dark">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Niños</li>
     </ol>
   </nav>

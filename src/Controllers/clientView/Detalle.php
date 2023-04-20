@@ -46,7 +46,9 @@ class Detalle extends PublicController
     public function run(): void
     {
         try {            
-            $this->page_loaded();            
+            $this->page_loaded();     
+            \Dao\Cart\Catalogo::quitarDeCarretilla();
+            \Dao\Cart\Catalogo::quitarDeCarretillaAnon();    
             $zapato = \Dao\Mnt\Zapatos::findById($this->viewData["zapatocod"]);
             $depart = \Dao\Mnt\Departamentos::findById($zapato["departamentocod"]);
             \Utilities\ArrUtils::mergeFullArrayTo($zapato, $this->viewData2);

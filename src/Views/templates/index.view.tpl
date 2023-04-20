@@ -27,7 +27,7 @@
             {{foreach hombres}}
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
+                    <img src="public\imgs\uploads\{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{nombrezapato}}</h5>
                         <p class="card-text txt-rojo">$ {{precio}}</p>
@@ -56,7 +56,7 @@
             {{foreach mujeres}}
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
+                    <img src="public\imgs\uploads\{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{nombrezapato}}</h5>
                         <p class="card-text txt-rojo">$ {{precio}}</p>
@@ -85,7 +85,7 @@
             {{foreach ninos}}
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
-                    <img src="{{imagenzapato}}" class="card-img-top" alt="...">
+                    <img src="public\imgs\uploads\{{imagenzapato}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{nombrezapato}}</h5>
                         <p class="card-text txt-rojo">$ {{precio}}</p>

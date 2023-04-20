@@ -156,4 +156,11 @@ class Carretilla extends Table{
         );
         return $row;
     }
+
+    public static function findAllByDeltaTime($delta){
+        $sqlstr = "SELECT * FROM carretilla WHERE TIME_TO_SEC(TIMEDIFF(now(), crrfching)) > :delta;";
+        return self::obtenerRegistros($sqlstr, array("delta" => $delta));
+    }
+
+
 }

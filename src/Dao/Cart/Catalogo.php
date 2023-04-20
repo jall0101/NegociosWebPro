@@ -98,5 +98,29 @@ class Catalogo extends \Dao\Table {
         return $productosDisponibles;
     }
 
+    public static function quitarDeCarretilla(){
+        $deltaAutorizada = \Utilities\Cart\CartFns::getAuthTimeDelta();
+        $productos = \Dao\Cart\Carretilla::findAllByDeltaTime($deltaAutorizada);
+
+        foreach($productos as $item){
+            \Dao\Cart\Carretilla::aumentarStock($item["crrctd"],$item["talla_zapatocod"]);
+            \Dao\Cart\Carretilla::delete($item["usercod"], $item["talla_zapatocod"]);            
+        }
+
+    }
+
+    public static function quitarDeCarretillaAnon(){
+        $deltaAutorizada = \Utilities\Cart\CartFns::getUnAuthTimeDelta();
+        $productos = \Dao\Cart\CarretillaAnon::findAllByDeltaTime($deltaAutorizada);
+
+        foreach($productos as $item){
+            \Dao\Cart\CarretillaAnon::aumentarStock($item["crrctd"],$item["talla_zapatocod"]);
+            \Dao\Cart\CarretillaAnon::delete($item["anoncod"], $item["talla_zapatocod"]);
+            
+        }
+
+
+    }
+
     
 }

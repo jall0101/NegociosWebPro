@@ -13,6 +13,8 @@ class Damas extends PublicController {
     {
            
         $this->page_loaded();
+        \Dao\Cart\Catalogo::quitarDeCarretilla();
+        \Dao\Cart\Catalogo::quitarDeCarretillaAnon();  
         $this->viewData["cantidad"] = count($this->viewData["damas"]);
         $this->viewData["marcas"] = \Dao\Mnt\Marcas::findAll();  
         Renderer::render('clientView/damas', $this->viewData);
