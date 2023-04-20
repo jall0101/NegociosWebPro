@@ -101,10 +101,75 @@ class Zapato extends PrivateController{
             }
         } else {
             throw new Exception("Invalid xss Token");
+        }        
+        if(isset($_POST["marcacod"])){
+            if(\Utilities\Validators::IsEmpty($_POST["marcacod"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "La marca no puede ir vacía!";
+            }
+        } else {
+            throw new Exception("marcacod not present in form");
         }
-        
-        
-        
+        if(isset($_POST["departamentocod"])){
+            if(\Utilities\Validators::IsEmpty($_POST["departamentocod"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "El departamento no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("departamentocod not present in form");
+        }
+        if(isset($_POST["precio"])){
+            if(\Utilities\Validators::IsEmpty($_POST["precio"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "El precio no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("precio not present in form");
+        }
+        if(isset($_POST["imagenzapato"])){
+            if(\Utilities\Validators::IsEmpty($_POST["imagenzapato"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "La imagen zapato no puede ir vacía!";
+            }
+        } else {
+            throw new Exception("imagenzapato not present in form");
+        }
+        if(isset($_POST["color"])){
+            if(\Utilities\Validators::IsEmpty($_POST["color"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "El color no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("color not present in form");
+        }
+
+        if(isset($_POST["descripcion"])){
+            if(\Utilities\Validators::IsEmpty($_POST["descripcion"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "La descripcion no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("descripcion not present in form");
+        }
+
+        if(isset($_POST["detalles"])){
+            if(\Utilities\Validators::IsEmpty($_POST["detalles"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "El campo detalles no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("detalles not present in form");
+        }
+
+        if(isset($_POST["nombrezapato"])){
+            if(\Utilities\Validators::IsEmpty($_POST["nombrezapato"])){
+                $this->viewData["has_errors"] = true;
+                $this->viewData["general_errors"] = "El campo nombrezapato no puede ir vacío!";
+            }
+        } else {
+            throw new Exception("nombrezapato not present in form");
+        }
+
         if(isset($_POST["zapatoest"])){
             if (!in_array( $_POST["zapatoest"], array("ACT","DES"))){
                 throw new Exception("zapato state incorrect value");
@@ -124,6 +189,7 @@ class Zapato extends PrivateController{
         }else {
             throw new Exception("mode not present in form");
         }
+
         if(isset($_POST["zapatocod"])){
             if(($this->viewData["mode"] !== "INS" && intval($_POST["zapatocod"])<=0)){
                 throw new Exception("zapatocod is not Valid");
@@ -134,6 +200,17 @@ class Zapato extends PrivateController{
         }else {
             throw new Exception("zapatocod not present in form");
         }
+
+        $this->viewData["marcacod"] = $_POST["marcacod"];
+        $this->viewData["departamentocod"]= $_POST["departamentocod"];
+        $this->viewData["precio"]= $_POST["precio"];        
+        $this->viewData["imagenzapato"]= $_POST["imagenzapato"];
+        $this->viewData["color"]= $_POST["color"];
+        $this->viewData["descripcion"]= $_POST["descripcion"];
+        $this->viewData["detalles"]= $_POST["detalles"];
+        $this->viewData["nombrezapato"]= $_POST["nombrezapato"];
+
+
     }
     private function executeAction(){
         switch($this->viewData["mode"]){
@@ -158,16 +235,17 @@ class Zapato extends PrivateController{
                 break;
             case "UPD":
                 $updated = \Dao\Mnt\Zapatos::update(
+                    $this->viewData["zapatocod"],
                     $this->viewData["marcacod"],
                     $this->viewData["departamentocod"],
-                    $this->viewData["precio"],
+                    floatval($this->viewData["precio"]),
                     $this->viewData["zapatoest"],
                     $this->viewData["imagenzapato"],
                     $this->viewData["color"],
                     $this->viewData["descripcion"],
                     $this->viewData["detalles"],
                     $this->viewData["nombrezapato"],
-                    $this->viewData["zapatocod"]
+                    
                 );
                 if($updated > 0){
                     \Utilities\Site::redirectToWithMsg(
