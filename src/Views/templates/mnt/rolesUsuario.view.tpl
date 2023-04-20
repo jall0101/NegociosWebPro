@@ -4,26 +4,34 @@
 
 <section class="container">
   <div class="row justify-content-center">
-    <form action="index.php?page=Mnt_Rol&mode={{mode}}&rolescod={{rolescod}}" method="POST"
+    <form action="index.php?page=Mnt_rolesUsuario&mode={{mode}}&rolescod={{rolescod}}&usercod={{usercod}}" method="POST"
       class="col-10 align-self-center bg-gris_claro p-4 rounded">
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="rolescod" class="col-4 form-label">Código</label>
+        <label for="rolescod" class="col-4 form-label">Código Rol</label>
         <input type="hidden" id="rolescod" name="rolescod" value="{{rolescod}}" />
         <input type="hidden" id="mode" name="mode" value="{{mode}}" />
         <input type="hidden" name="xssToken" value="{{xssToken}}">
         <input type="text" {{readonly_edit}} class="form-control" name="rolescoddummy" value="{{rolescod}}" />
       </section>
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="rolesdsc" class="col-4 form-label">Descripción</label>
-        <input type="text" {{readonly}} name="rolesdsc" class="form-control" value="{{rolesdsc}}" maxlength="45"
-          placeholder="Nombre de Rol" />
+        <label for="usercod" class="col-4 form-label">Código Función</label>
+        <input type="hidden" id="usercod" name="usercod" value="{{usercod}}" />
+        <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+        <input type="hidden" name="xssToken" value="{{xssToken}}">
+        <input type="text" {{readonly_edit}} class="form-control" name="usercoddummy" value="{{usercod}}" />
       </section>
+      
       <section class="row mb-3 bg-gris_claro2 p-3 rounded">
-        <label for="rolesest" class="col-4 form-label">Estado</label>
-        <select id="rolesest" class="form-select" name="rolesest" {{if readonly}}disabled{{endif readonly}}>
-          <option value="ACT" {{rolesest_ACT}}>Activo</option>
-          <option value="INA" {{rolesest_INA}}>Inactivo</option>
+        <label for="roleuserest" class="col-4 form-label">Estado</label>
+        <select id="roleuserest" class="form-select" name="roleuserest" {{if readonly}}disabled{{endif readonly}}>
+          <option value="ACT" {{roleuserest_ACT}}>Activo</option>
+          <option value="INA" {{roleuserest_INA}}>Inactivo</option>
         </select>
+      </section>
+
+      <section class="row mb-3 bg-gris_claro2 p-3 rounded">
+        <label for="roleuserexp" class="col-4 form-label">Fecha de Expiración</label>
+        <input type="date" {{readonly}} name="roleuserexp" class="form-control" value="{{roleuserexp}}"/>
       </section>
       {{if has_errors}}
       <section>

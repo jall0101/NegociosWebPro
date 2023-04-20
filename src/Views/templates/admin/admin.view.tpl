@@ -12,6 +12,7 @@
   <div class="container-fluid">
     <div class="row gy-4 gx-4">
         <button type="button" class="btn btn-outline-secondary p-5 col-md-3 offset-sm-1">
+          <i class="fa-regular fa-user fa-2xl" style="color: #000000;"></i> <br><br>
           <a href="index.php?page=mnt_usuarios" class="text-decoration-none text-dark">USUARIOS</a>
         </button>
 

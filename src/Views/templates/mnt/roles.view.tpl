@@ -9,11 +9,12 @@
         <th scope="col">Código</th>
         <th scope="col">Descripción</th>
         <th scope="col">Estado</th>   
-        <th>
-          {{if new_enabled}}
+        {{if roles_new}}
+        <th>          
           <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-          {{endif new_enabled}}
+          
         </th>
+        {{endif roles_new}}
       </tr>
     </thead>
     <tbody>

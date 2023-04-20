@@ -10,7 +10,7 @@
         <th scope="col">Talla</th>
         <th>
           {{if tallas_new}}
-          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;">Nuevo</button>
+          <button class="bg-dark rounded" id="btnAdd"><i class="fa-solid fa-plus" style="color: #ffffff;"></button>
           {{endif tallas_new}}
         </th>
       </tr>

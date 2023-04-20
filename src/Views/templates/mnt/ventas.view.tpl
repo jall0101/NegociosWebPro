@@ -25,7 +25,7 @@
                 <a href="index.php?page=Mnt_Venta&mode=DSP&cod={{ventacod}}">{{ventacod}}</a>
             </td>
             <td>
-                <a href="index.php?page=Mnt_Venta&mode=DSP&cod={{usercod}}">{{usercod}}</a>
+                {{usercod}}
             </td>
 
             <td>{{fechaventa}}</td>

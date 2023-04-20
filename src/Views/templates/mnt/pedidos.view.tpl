@@ -8,12 +8,12 @@
       <tr class="bg-gris_oscuro tb-align text-white p-5">
         <th scope="col">Código Pedido</th>
         <th scope="col">Código venta</th>
-        <th scope="col">Direccion</th>
+        <th scope="col">Dirección</th>
         <th scope="col">Ciudad</th>
         <th scope="col">Estado</th>
-        <th scope="col">Pais</th>
-        <th scope="col">Telefono Cont</th>
-        <th scope="col">Pedido Estado</th>
+        <th scope="col">País</th>
+        <th scope="col">Teléfono Contacto</th>
+        <th scope="col">Estado</th>
       </tr>
     </thead>
 
@@ -22,10 +22,10 @@
       {{foreach pedidos}}
         <tr class="bg-white">
             <td>
-              <a href="index.php?page=Mnt_Pedido&mode=DSP&cod={{pedidocod}}">{{pedidocod}}</a>
+              {{pedidocod}}
               </td>
             <td>
-                <a href="index.php?page=Mnt_Pedido&mode=DSP&cod={{ventacod}}">{{ventacod}}</a>
+                {{ventacod}}
             </td>
             <td>{{direccion}}</td>
 

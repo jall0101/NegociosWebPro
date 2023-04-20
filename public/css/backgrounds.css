@@ -168,7 +168,7 @@
 }
 
 .banner {
-    background: url(../imgs/inicio/banner1.png);    
+    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.49343487394957986) 55%, rgba(0,0,0,0) 100%), url(../imgs/inicio/banner1.png);    
     background-repeat: no-repeat;
     background-size: cover;    
     background-position: center;
@@ -177,7 +177,7 @@
 }
 
 .banner2 {
-    background: url(../imgs/inicio/banner2.png);    
+    background:linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.49343487394957986) 55%, rgba(0,0,0,0) 100%) ,url(../imgs/inicio/banner2.png);    
     background-repeat: no-repeat;
     background-size: cover;    
     background-position: center;
@@ -186,7 +186,7 @@
 }
 
 .banner3 {
-    background: url(../imgs/inicio/banner3.jpg);    
+    background:linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.49343487394957986) 55%, rgba(0,0,0,0) 100%), url(../imgs/inicio/banner3.jpg);    
     background-repeat: no-repeat;
     background-size: cover;    
     background-position: center;

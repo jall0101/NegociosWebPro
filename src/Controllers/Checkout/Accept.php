@@ -15,7 +15,7 @@ class Accept extends PublicController{
             $dataview["orderjson"] = json_encode($result, JSON_PRETTY_PRINT);
             $grossAmount = $result->result->purchase_units[0]->payments->captures[0]->seller_receivable_breakdown->gross_amount->value;
             $paypal_fee = $result->result->purchase_units[0]->payments->captures[0]->seller_receivable_breakdown->paypal_fee->value;
-            $net_amount = $result->result->purchase_units[0]->payments->captures[0]->seller_receivable_breakdown->gross_amount->value;
+            $net_amount = $result->result->purchase_units[0]->payments->captures[0]->seller_receivable_breakdown->net_amount->value;
             $amout = $grossAmount/1.15;
             $isv = $amout * 0.15;
             try{                

@@ -14,15 +14,14 @@ CREATE TABLE `roles_usuarios` (
   `roleuserexp` datetime DEFAULT NULL,
 */
 
-class Rol extends PrivateController{
-    private $redirectTo = "index.php?page=Mnt-Roles";
+class RolesUsuario extends PrivateController{
+    private $redirectTo = "index.php?page=Mnt-RolesUsuarios";
     private $viewData = array(
         "mode" => "DSP",
         "modedsc" => "",
         "usercod" => 0,
-        "rolescod" => "",
-        "roleuserest" => "DSP",
-        "roleuserfch" => "",        
+        "rolescod" => 0,
+        "roleuserest" => "DSP",          
         "roleuserexp" => "",      
         "general_errors"=> array(),
         "has_errors" =>false,
@@ -33,14 +32,16 @@ class Rol extends PrivateController{
     );
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
-        "INS" => "Nuevo Roles",
+        "INS" => "Nuevo Rol-Usuario",
         "UPD" => "Editar %s (%s)",
+        "DEL" => "Eliminar %s (%s)"
 
     );
     private $modesAuth = array(
-        "DSP" => "mnt_roles_usuario_view",
-        "INS" => "mnt_roles_usuario_new",
-        "UPD" => "mnt_roles_usuario_edit",
+        "DSP" => "mnt_rolesUsuarios_view",
+        "INS" => "mnt_rolesUsuarios_new",
+        "UPD" => "mnt_rolesUsuarios_edit",
+        "DEL" => "mnt_rolesUsuarios_delete"
     );
     public function run() :void
     {
@@ -55,7 +56,7 @@ class Rol extends PrivateController{
             $this->render();
         } catch (Exception $error) {
             unset($_SESSION["xssToken_Mnt_Rol"]);
-            error_log(sprintf("Controller/Mnt/Roles_Usuario ERROR: %s", $error->getMessage()));
+            error_log(sprintf("Controller/Mnt/RolesUsuario ERROR: %s", $error->getMessage()));
             \Utilities\Site::redirectToWithMsg(
                 $this->redirectTo,
                 "Algo Inesperado Sucedió. Intente de Nuevo."
@@ -79,7 +80,12 @@ class Rol extends PrivateController{
             if(isset($_GET['usercod'])){
                 $this->viewData["usercod"] = $_GET["usercod"];
             } else {
-                throw new Exception("Id not found on Query Params");
+                throw new Exception("usercod not found on Query Params");
+            }
+            if(isset($_GET['rolescod'])){
+                $this->viewData["rolescod"] = $_GET["rolescod"];
+            } else {
+                throw new Exception("rolescod not found on Query Params");
             }
         }
     }
@@ -114,36 +120,62 @@ class Rol extends PrivateController{
         }else {
             throw new Exception("usercod not present in form");
         }
+        if(isset($_POST["rolescod"])){            
+            if($this->viewData["rolescod"]!== $_POST["rolescod"] && $this->viewData["mode"] !== "INS"){
+                throw new Exception("rolescod value is different from query");
+            }
+        }else {
+            throw new Exception("rolescod not present in form");
+        }
         if($this->viewData["mode"] === "INS"){
-            $this->viewData["usercod"] = $_POST["usercoddummy"];       
+            $this->viewData["usercod"] = $_POST["usercoddummy"];   
+            $this->viewData["rolescod"] = $_POST["rolescoddummy"];       
             
-        }        
+        }     
+        
+        $this->viewData["roleuserexp"] = $_POST["roleuserexp"];
+        if($this->viewData["mode"]!=="DEL"){
+            $this->viewData["roleuserest"] = $_POST["roleuserest"];
+        }
     }
     private function executeAction(){
         switch($this->viewData["mode"]){
             case "INS":
-                $inserted = \Dao\Mnt\Roles::insert(
+                $inserted = \Dao\Mnt\RolesUsuarios::insert(
+                    $this->viewData["usercod"],
                     $this->viewData["rolescod"],
-                    $this->viewData["rolesdsc"],
-                    $this->viewData["rolesest"]                    
+                    $this->viewData["roleuserest"],
+                    $this->viewData["roleuserexp"]                    
                 );
                 if($inserted > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Rol Creado Exitosamente"
+                        "Rol-Usuario Creado Exitosamente"
                     );
                 }
                 break;
             case "UPD":
-                $updated = \Dao\Mnt\Roles::update(
+                $updated = \Dao\Mnt\RolesUsuarios::update(
+                    $this->viewData["usercod"],
                     $this->viewData["rolescod"],
-                    $this->viewData["rolesdsc"],
-                    $this->viewData["rolesest"] 
+                    $this->viewData["roleuserest"],
+                    $this->viewData["roleuserexp"]       
                 );
                 if($updated > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Rol Actualizado Exitosamente"
+                        "Rol-Usuario Actualizado Exitosamente"
+                    );
+                }
+            case "DEL":
+                $deleted = \Dao\Mnt\RolesUsuarios::delete(
+                    $this->viewData["usercod"],
+                    $this->viewData["rolescod"]     
+                );
+                if($deleted > 0){
+                    \Utilities\Site::redirectToWithMsg(
+                        $this->redirectTo,
+                        "Rol-Usuario Eliminado Exitosamente"
                     );
                 }
     }
@@ -156,20 +188,17 @@ class Rol extends PrivateController{
         if($this->viewData["mode"] === "INS") {
             $this->viewData["modedsc"] = $this->modes["INS"];
         } else {
-            $tmpRoles = \Dao\Mnt\Roles_Usuarios::findById($this->viewData["rolescod"]);
+            $tmpRoles = \Dao\Mnt\RolesUsuarios::findById($this->viewData["usercod"],$this->viewData["rolescod"]);
             if(!$tmpRoles){
-                throw new Exception("Rol no existe en DB");
+                throw new Exception("Usuario-Rol no existe en DB");
             }
             \Utilities\ArrUtils::mergeFullArrayTo($tmpRoles, $this->viewData);
-            $this->viewData["rolesest_ACT"] = $this->viewData["rolesest"] === "ACT" ? "selected": "";
-            $this->viewData["rolesest_INA"] = $this->viewData["rolesest"] === "INA" ? "selected": "";
+            $this->viewData["roleuserest_ACT"] = $this->viewData["roleuserest"] === "ACT" ? "selected": "";
+            $this->viewData["roleuserest_INA"] = $this->viewData["roleuserest"] === "INA" ? "selected": "";
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
-                $this->viewData["usercod"],
                 $this->viewData["rolescod"],
-                $this->viewData["roleuserest"],
-                $this->viewData["roleuserfch"],
-                $this->viewData["roleuserexp"]
+                $this->viewData["usercod"]                
             );
             if($this->viewData["mode"] === "DSP") {
                 $this->viewData["show_action"] = false;
@@ -178,7 +207,7 @@ class Rol extends PrivateController{
                 $this->viewData["readonly_edit"] = "readonly";
             }
         }
-        Renderer::render("mnt/roles_usuario", $this->viewData);
+        Renderer::render("mnt/rolesUsuario", $this->viewData);
     }
 }
 

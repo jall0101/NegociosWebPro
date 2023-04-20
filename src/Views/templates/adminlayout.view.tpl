@@ -72,10 +72,7 @@
           
         </ul>
         <ul class="navbar-nav mx-3">          
-          <li class="nav-item mx-4 menuAdmin2 p-1">
-            <a class="nav-link active" style="color:var(--blanco)" href="#"><i class="fa-solid fa-user"
-                style="color: #ffffff;"></i></a>
-          </li>
+          
           <li class="nav-item mx-4 menuAdmin2 p-1">
             <a class="nav-link active" style="color:var(--blanco)" href="index.php?page=sec_logout"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
           </li>
